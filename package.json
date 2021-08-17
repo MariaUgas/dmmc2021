@@ -2,7 +2,7 @@
   "name": "instilap",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dmmc2021.github.io/react-ilap/",
+  "homepage": "https://github.com/MariaUgas/dmmc2021/",
   "dependencies": {
     "@leafygreen-ui/radio-box-group": "^6.1.4",
     "@testing-library/jest-dom": "^5.14.1",
