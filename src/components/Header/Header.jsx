@@ -16,6 +16,7 @@ function Header(){
             <img src="img/ilap-logo.png" alt="logo"></img>
             <h1>Instituto Latinoamericano de Actualización Profesional</h1>
             <p><span>Excelencia</span> en enseñanza y aprendizaje</p>
+            <input type="button" value="Ven con Nosotros" className="cta"/>
             
         </div>
         <div className="svg-hero" style={{height: "150px", overflow: "hidden"}}>

@@ -84,11 +84,11 @@ const Pago=()=>{
             <Form>
               <Form.Group className='mb-3' controlId='formGroupEmail'>
                 <Form.Label style={{ color: "#000000" }}>Email</Form.Label>
-                <Form.Control type='text' placeholder='Ingrese nombre completo' ref={nombreRef} style={{ width: "100%", height:"50px"}} />
+                <Form.Control type='text' placeholder='Ingrese email Ejemplo abc@xyz.xx' ref={nombreRef} style={{ width: "100%", height:"50px"}} />
               </Form.Group>
               <Form.Group className='mb-3' controlId='formGroupNombre'>
                 <Form.Label style={{ color: "#000000" }}>Nombre</Form.Label>
-                <Form.Control type="email" placeholder='Ingrese email Ejemplo abc@xyz.xx' ref={emailRef} style={{ width: "100%", height:"50px" }} />
+                <Form.Control type="email" placeholder='Ingrese nombre completo' ref={emailRef} style={{ width: "100%", height:"50px" }} />
               </Form.Group>
               <Row className="mb-4">
                 <Form.Group as={Col} controlId="formGrroupCodigo" md={4}>

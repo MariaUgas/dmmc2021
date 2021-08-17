@@ -7,7 +7,7 @@ function Ofrecemos(){
     return(
         <section className="cards contenedor">
         
-        <div className="content-cards">
+        <div className="content-cards" id="media-id">
             <article className="card">
                 <FaRegClone className="pluma"/>
                 <h3>Conócenos</h3>
