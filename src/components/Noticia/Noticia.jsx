@@ -2,7 +2,7 @@ import React from "react"
 
 export const Noticia = ({noticia})=>{
   const { titulo, autor, contenido, fecha, image} = noticia
-  console.log("contenido => ",contenido);
+  const htmlNews=contenido.substring(1, contenido.length-1)
 
   return ( 
     <section className="noticia-ddia">
@@ -16,11 +16,10 @@ export const Noticia = ({noticia})=>{
           <img className="img-not" src={image} alt='noticia' />
         </div>
 
+       
       <div className="body-not" id="txt1" >  
-         {
-           //document.getElementById("txt1").innerHTML= contenido
-           contenido
-         }
+        <div dangerouslySetInnerHTML={{__html: htmlNews}}></div>
+        
       </div>
         
         <div className='fmt-fecha'>
