@@ -1475,3 +1475,7 @@ select > option {
 #progressBar {
   height: 5px;
 }
+/* Editor Noticia*/
+.sun-editor .se-wrapper .se-wrapper-inner {
+  min-height: 150px;
+}

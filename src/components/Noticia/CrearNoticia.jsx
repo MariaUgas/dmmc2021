@@ -1,12 +1,19 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import store from "../../firebase/firebase.js";
-
+import SunEditor from "suneditor-react";
+import "suneditor/dist/css/suneditor.min.css";
 
 
 const CrearNoticia = () => {
   
+  let responseString = "";
+  const handleEditorChange = (content) => {
+    responseString= "\"".concat(content).concat("\"");
+
+  };
+
   const fecha = new Date().toLocaleDateString();
   const fechaRef = useRef();
   const tituloRef = useRef();
@@ -32,7 +39,7 @@ const CrearNoticia = () => {
       store.collection("noticia").doc("p3TjDoNXKrBGnvgebuFi").set({
         titulo: tituloRef.current.value,
         fecha: fechaRef.current.defaultValue,
-        contenido: contenidoRef.current.value,
+        contenido: responseString,
         autor: autorRef.current.value,
         image: imagenRef.current.value,
     })
@@ -46,13 +53,15 @@ const CrearNoticia = () => {
     
       
       tituloRef.current.value = "";
-      contenidoRef.current.value = "";
+     // contenidoRef.current.value = "";
       autorRef.current.value = "";
       imagenRef.current.value = "";
 
       
      
   };
+
+
   return (
     
      <div className="contenedorN">
@@ -71,7 +80,31 @@ const CrearNoticia = () => {
             </Form.Group>
             <Form.Group className='mb-3' controlId='formGroupContenido'>
               <Form.Label style={{ color: "#000000" }}>Contenido </Form.Label>
-              <Form.Control as='textarea' style={{ height: "200px" }} placeholder='Ingrese Contenido' ref={contenidoRef} />
+              <SunEditor
+                setContents=""
+                showToolbar={true}
+                //ref={contenidoRef}
+                placeholder="Ingrese contenido..."
+                minHeight="160px !important"
+                //height="160px"
+                onChange={handleEditorChange}
+                setDefaultStyle="height: auto"
+                setOptions={{
+                  buttonList: [
+                    ["undo", "redo"],
+                    [
+                      "bold",
+                      "underline",
+                      "italic",
+                      "strike",
+                      "list",
+                      "align",
+                      "fontSize",
+                      "formatBlock",
+                    ]
+                  ]
+                }}
+              />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formGroupAutor'>
               <Form.Label style={{ color: "#000000" }}>Autor</Form.Label>
