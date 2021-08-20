@@ -6,7 +6,7 @@ export const Noticia = ({noticia})=>{
 
   return ( 
     <section className="noticia-ddia">
-    <h4><u>Noticia del día</u></h4>
+    <h5>NOTICIA DEL DIA</h5>
     <div className="caja-not" >
     <div className="caja1">
       <div className="title-not">

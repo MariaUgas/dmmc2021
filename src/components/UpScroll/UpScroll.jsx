@@ -55,7 +55,3 @@ const UpScroll =() => {
 }
 
 export default UpScroll
-
-
-
-

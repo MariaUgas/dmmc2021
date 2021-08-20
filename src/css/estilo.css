@@ -415,8 +415,9 @@ nav {
   flex-direction: column;
 }
 
-.noticia-ddia > h4 {
+.noticia-ddia > h5 {
   text-align: center;
+  padding-top: 50px;
 }
 .img-not {
   max-width: 500px;
@@ -850,6 +851,7 @@ select > option {
 .twitter {
   margin-left: 150px;
   margin-right: 150px;
+  padding: 0 50px;
   color: #2c303b;
 }
 
@@ -1478,4 +1480,16 @@ select > option {
 /* Editor Noticia*/
 .sun-editor .se-wrapper .se-wrapper-inner {
   min-height: 150px;
+}
+/* Sticky toast */
+.div-toast {
+  display: flex;
+  width: 100vw;
+  justify-content: flex-end;
+  position: sticky !important;
+}
+.sticky-div {
+  position: sticky !important;
+  top: 0;
+  right: 0;
 }

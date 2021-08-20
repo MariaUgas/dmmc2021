@@ -34,13 +34,13 @@ const CrearNoticia = () => {
     autorRef.current.value = "";
     imagenRef.current.value = "";
   }
-  // useEffect(() => {
-  //   tituloRef.current.value = "Ley de Texas modifica la educación sobre raza ";
+   useEffect(() => {
+     tituloRef.current.value = "Ley de Texas modifica la educación sobre raza ";
   //   // contenido.current.value = "";
-  //   autorRef.current.value = "Leuzga";
-  //   imagenRef.current.value = "https://cnnespanol.cnn.com/wp-content/uploads/2021/08/2F210810122252-01-lupe-aleman-super-tease.jpg?resize=1024,576";
+     autorRef.current.value = "Leuzga";
+    imagenRef.current.value = "https://cnnespanol.cnn.com/wp-content/uploads/2021/08/2F210810122252-01-lupe-aleman-super-tease.jpg?resize=1024,576";
   
-  // },[])
+   },[])
   useEffect(() => {
     if(send===false) return;
     store.collection("noticia").doc("p3TjDoNXKrBGnvgebuFi").set({
@@ -68,9 +68,21 @@ const CrearNoticia = () => {
 
   return (
     <>
-     <div className="contenedorN">
+      <div className="div-toast">
+          <ToastContainer  className="p-3 sticky-div" >
+            <Toast onClose={() => setShow(false)} bg={tipoAlert} show={show} >
+              <Toast.Header closeButton={false}>
+                <GoInfo size={24}/>
+                <strong className="me-auto">&nbsp;&nbsp;&nbsp;Información</strong>
+                <small>Justo ahora...</small>
+              </Toast.Header>
+              <Toast.Body>{message}</Toast.Body>
+            </Toast>
+          </ToastContainer>
+      </div> 
+     <div className="contenedorN">  
         <div className="tit-crear-n">
-          <h2>Formulario para la creación de noticias</h2>
+          <h2>Creación de noticias</h2>
         </div>
         <div style={{ paddingLeft: "30px", paddingRight: "30px" }}>
           <Form>
@@ -126,22 +138,13 @@ const CrearNoticia = () => {
             </Form.Group>
           </Form>
           <div className="btn-not">
-            <Button variant='primary' onClick={() => setSend(true)}>
+            <Button variant='primary' style={{background:"#2c303b"}} onClick={() => setSend(true)}>
               Crear Noticia
             </Button>
           </div>
         </div>
         </div>
-        <ToastContainer className="p-3" position="top-end" >
-          <Toast onClose={() => setShow(false)} bg={tipoAlert} show={show} autohide delay={4000}>
-            <Toast.Header closeButton={false}>
-              <GoInfo size={24}/>
-              <strong className="me-auto">&nbsp;&nbsp;&nbsp;Información</strong>
-              <small>Justo ahora...</small>
-            </Toast.Header>
-            <Toast.Body>{message}</Toast.Body>
-          </Toast>
-        </ToastContainer>
+        
       </>  
   );
 };
