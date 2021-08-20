@@ -10,11 +10,11 @@ function Social(){
         
         <div class="social">
             <div className="social-flex">
-                <a href="http://www.facebook.com/institutolap" target="_blank"><GrFacebook style={{fill:"#2c303b"}}/></a>
-                <a href="http://www.twitter.com/institutolap" target="_blank" className="twitter"><AiOutlineTwitter style={{fill:"#2c303b"}}/></a>
-                <a href="http://www.instagram.com/institutolap" target="_blank"><GrInstagram style={{fill:"#2c303b"}}/></a>
+                <a href="http://www.facebook.com/institutolap" target="_blank"  rel="noreferrer" ><GrFacebook style={{fill:"#2c303b"}}/></a>
+                <a href="http://www.twitter.com/institutolap" target="_blank"  rel="noreferrer" className="twitter"><AiOutlineTwitter style={{fill:"#2c303b"}}/></a>
+                <a href="http://www.instagram.com/institutolap" target="_blank" rel="noreferrer" ><GrInstagram style={{fill:"#2c303b"}}/></a>
             </div>
-             <div className="copyright">
+            <div className="copyright">
                 <p style={{fontSize:"small"}}><BiCopyright />Derechos reservados Instituto LAP - <span className="moodle">Soportado por Moodle.org</span> </p>
             </div>  
         </div>
