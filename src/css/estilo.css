@@ -292,7 +292,7 @@ nav {
 }
 
 .cards.contenedor {
-  background-color: rgb(244, 156, 56, 0.1);
+  background-color: #f6f6f6;
   margin-bottom: 60px;
   border-radius: 30px;
   box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
@@ -849,8 +849,6 @@ select > option {
 }
 
 .twitter {
-  margin-left: 150px;
-  margin-right: 150px;
   padding: 0 50px;
   color: #2c303b;
 }
