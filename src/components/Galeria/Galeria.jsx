@@ -21,10 +21,7 @@ function Galeria() {
               <img className='d-block w-100 block-foto' src='img/foto4.webp' alt='slide 4' />
             </Carousel.Item>
             <Carousel.Item>
-              <img className='d-block w-100 block-foto' src='img/foto5.webp' alt='slide 5' />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img className='d-block w-100 block-foto' src='img/foto6.webp' alt='slide 6' />
+              <img className='d-block w-100 block-foto' src='img/foto5.webp' alt='slide 6' />
             </Carousel.Item>
           </Carousel>
         </div>

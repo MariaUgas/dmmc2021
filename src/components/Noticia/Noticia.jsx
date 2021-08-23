@@ -5,7 +5,7 @@ export const Noticia = ({noticia})=>{
   const htmlNews=contenido.substring(1, contenido.length-1)
 
   return ( 
-    <section className="noticia-ddia">
+    <section className="noticia-ddia" id="noticia-id">
     <h5>NOTICIA DEL DIA</h5>
     <div className="caja-not" >
     <div className="caja1">
