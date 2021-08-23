@@ -1,14 +1,11 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
 import BarNav from "../BarNav/BarNav";
 
 
 
 function Header(){
     return(
-     <>   
-     
-   
+    <>   
     <header className="hero">
         <BarNav  />
         

@@ -1,6 +1,4 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
-import { FaFeatherAlt } from 'react-icons/fa';
 import { FaRegClone } from 'react-icons/fa';
 
 function Ofrecemos(){
