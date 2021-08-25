@@ -304,15 +304,16 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50%;
+  width: 55%;
   text-align: center;
   height: 300px;
   margin-bottom: 30px;
+  margin-left: 55px;
+  margin-right: 100px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   transform: scale(1);
   transition: transform 0.6s;
   
-  margin-right: 60px;
 }
 
 .content-media > p {
@@ -356,7 +357,8 @@ nav {
 
 .card1, .card2{
   display: flex;
-  margin-left: 220px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .card1{
@@ -369,9 +371,10 @@ nav {
 }
 
 .img-ofr > img{
-  width: 400px;
-  margin-right: 100px;
-  margin-left: 65px;
+  width: 420px;
+  height: 300px;
+  
+  
 }
 
 .pluma {
