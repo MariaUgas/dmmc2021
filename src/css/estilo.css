@@ -134,10 +134,11 @@ a {
 .website {
   display: flex;
   justify-content: space-between;
+  margin-top: 100px
 }
 
 .website img {
-  width: 48%;
+  width: 40%;
 }
 
 .website .contenedor-textos-main {
@@ -303,9 +304,9 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 80%;
+  width: 50%;
   text-align: center;
-  height: 350px;
+  height: 300px;
   margin-bottom: 30px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   transform: scale(1);
@@ -351,6 +352,24 @@ nav {
   margin-right: auto;
   bottom: 10px;
   background: #92340f;
+}
+
+.card1, .card2{
+  display: flex;
+}
+
+.card1{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.card2{
+  margin-bottom: 100px;
+}
+
+.img-ofr > img{
+  width: 400px;
+  margin-right: 100px;
 }
 
 .pluma {
@@ -413,11 +432,16 @@ nav {
 .caja-not {
   display: flex;
   flex-direction: column;
+  
 }
 
 .noticia-ddia > h5 {
   text-align: center;
   padding-top: 50px;
+}
+
+.noticia-ddia{
+  margin-top: 100px;
 }
 .img-not {
   max-width: 500px;
