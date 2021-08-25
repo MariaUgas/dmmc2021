@@ -311,8 +311,8 @@ nav {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   transform: scale(1);
   transition: transform 0.6s;
-  margin-left: auto;
-  margin-right: auto;
+  
+  margin-right: 60px;
 }
 
 .content-media > p {
@@ -356,6 +356,7 @@ nav {
 
 .card1, .card2{
   display: flex;
+  margin-left: 220px;
 }
 
 .card1{
@@ -370,6 +371,7 @@ nav {
 .img-ofr > img{
   width: 400px;
   margin-right: 100px;
+  margin-left: 65px;
 }
 
 .pluma {
