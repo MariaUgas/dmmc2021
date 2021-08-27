@@ -16,6 +16,8 @@ export const ContainerArea=()=>{
     })
 }, [])
 
+console.log(areas)
+
 
 
     return(

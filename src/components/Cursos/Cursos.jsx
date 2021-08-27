@@ -1,4 +1,5 @@
 import { Accordion } from 'react-bootstrap';
+import TablaCursos from "../TablaCursos/TablaCursos.jsx";
 
 function Cursos(){
     
@@ -23,13 +24,9 @@ return(
   <Accordion.Item eventKey="1">
     <Accordion.Header>Contabilidad</Accordion.Header>
     <Accordion.Body style={{textAlign:"left"}}>
-      <ul>
-        <li>Auditoria Administrativa</li>
-        <li>Auditoria Operativa</li>
-        <li>Consolidacion de Estados Financieros</li>
-        <li>Principios de Contabilidad Bancaria en Venezuela</li>
-        <li>Principios Fundamentales de Contabilidad</li>
-      </ul>
+      
+      <TablaCursos idarea="CON00" />
+    
     </Accordion.Body>
   </Accordion.Item>
   <Accordion.Item eventKey="2">

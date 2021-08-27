@@ -8,7 +8,7 @@ export const VerEdicion = ({cursos})=>{
     
     store.collection("cursos").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          console.log(`${doc.id} => ${doc.data()}`)
+          /*console.log(`${doc.id} => ${doc.data()}`)*/
         })
     })
 
@@ -37,7 +37,7 @@ export const VerEdicion = ({cursos})=>{
 
         boton.onClick = function(){
 
-            const editarRef = store.collection("cursos").doc(cursos.id);
+            const editarRef = store.collection("cursos").doc(cursos.id).set();
 
             const idarea = document.getElementById("idarea").value;
             const idcurso = document.getElementById("idcurso").value;

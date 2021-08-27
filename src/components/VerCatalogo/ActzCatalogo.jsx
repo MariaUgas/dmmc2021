@@ -61,30 +61,31 @@ const ActzCatalogo = () => {
         </div>
         <div style={{ paddingLeft: "30px", paddingRight: "30px" }}>
           <Form>
+          
           <Form.Group className='mb-3' controlId='formGroupIdArea'>
               <Form.Label style={{ color: "#000000" }}>Id del Area</Form.Label>
-              <Form.Control type='text' placeholder='Ingrese el id del area' ref={idAreaRef} style={{ width: "100%" }} />
+              <Form.Control type='text' placeholder='Ingrese el id del area' ref={idAreaRef} style={{ width: "100%" }} id="id-area"/>
             </Form.Group>
             <Form.Group className='mb-3' controlId='formGroupIdCurso'>
               <Form.Label style={{ color: "#000000" }}>Id del Curso</Form.Label>
-              <Form.Control type='text' placeholder='Ingrese el id del curso' ref={idCursoRef} style={{ width: "100%" }} />
+              <Form.Control type='text' placeholder='Ingrese el id del curso' ref={idCursoRef} style={{ width: "100%" }} id="id-curso"/>
             </Form.Group>
             <Form.Group className='mb-3' controlId='formGroupcurso'>
               <Form.Label style={{ color: "#000000" }}>curso</Form.Label>
-              <Form.Control type='text' placeholder='Ingrese el curso' ref={cursoRef} style={{ width: "100%" }} />
+              <Form.Control type='text' placeholder='Ingrese el curso' ref={cursoRef} style={{ width: "100%" }} id="n-curso"/>
             </Form.Group>
             <Form.Group className='mb-3' controlId='formGroupmodalidad'>
               <Form.Label style={{ color: "#000000" }}>Modalidad</Form.Label>
-              <Form.Control type='text' placeholder='Ingrese presencial o virtual' ref={modalidadRef} style={{ width: "100%" }} />
+              <Form.Control type='text' placeholder='Ingrese presencial o virtual' ref={modalidadRef} style={{ width: "100%" }} id="modal" />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formGroupCosto'>
               <Form.Label style={{ color: "#000000" }}>Costo</Form.Label>
-              <Form.Control type='text' placeholder='Ingrese el costo' ref={costoRef} style={{ width: "100%" }} />
+              <Form.Control type='text' placeholder='Ingrese el costo' ref={costoRef} style={{ width: "100%" }} id="cost"/>
             </Form.Group>
                         
            
           </Form>
-          <Button variant='primary' onClick={() => handlerClick()}>
+          <Button variant='primary' onClick={() => handlerClick()} id="boton">
             agregar 
           </Button>
         </div>

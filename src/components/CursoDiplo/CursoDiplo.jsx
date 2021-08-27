@@ -1,5 +1,5 @@
 import React from "react";
-import Cursos from "../../components/Cursos/Cursos.jsx";
+import ItemAcordeonArea from "../ItemAcordeonArea/ItemAcordeonArea.jsx";
 
 
 
@@ -7,8 +7,7 @@ function CursoDiplo(){
     return(
         
         <div className="cur-dip">
-        <Cursos/>
-        
+            <ItemAcordeonArea/>
         
         </div>
     

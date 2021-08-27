@@ -1053,6 +1053,11 @@ select > option {
   color: #f38115;
 }
 
+.tabla-cursos{
+  width: 800px;
+  margin: 0 auto;
+}
+
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*RESPONSIVE*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 
 @media screen and (max-width: 600px) {
