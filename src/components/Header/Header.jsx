@@ -1,5 +1,6 @@
 import React from "react";
 import BarNav from "../BarNav/BarNav";
+import ilaplogo from "../../img/ilap-logo.png"
 
 
 
@@ -10,7 +11,7 @@ function Header(){
         <BarNav  />
         
         <div className="textos-hero">
-            <img src="img/ilap-logo.png" alt="logo"></img>
+            <img src={ilaplogo} alt="logo"></img>
             <h1>Instituto Latinoamericano de Actualización Profesional</h1>
             <p><span>Excelencia</span> en enseñanza y aprendizaje</p>
             <input type="button" value="Ven con Nosotros" className="cta"/>
