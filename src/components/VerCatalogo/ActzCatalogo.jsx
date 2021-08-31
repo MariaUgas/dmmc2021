@@ -52,26 +52,33 @@ const ActzCatalogo = () => {
       costoRef.current.value = "";
       modalidadRef.current.value = "";
       
-};
-  return (
+}
+
+function eliminar(){
+
+  store.collection("cursos").doc().delete()
+  .then(() => {
+      console.log("Document successfully deleted!");
+  }).catch((error) => {
+      console.error("Error removing document: ", error);
+  });
+}
+  
+return (
     <section className='actz-cur' >
       <div className='contenedor'>
         <div>
-          <h2>Pruebas actualizacion de cursos</h2>
+          <h2>Carga y Edicion de Cursos</h2>
         </div>
         <div style={{ paddingLeft: "30px", paddingRight: "30px" }}>
           <Form>
           
           <Form.Group className='mb-3' controlId='formGroupIdArea'>
-              <Form.Label style={{ color: "#000000" }}>Id del Area</Form.Label>
+              <Form.Label style={{ color: "#000000" }}>Area</Form.Label>
               <Form.Control type='text' placeholder='Ingrese el id del area' ref={idAreaRef} style={{ width: "100%" }} id="id-area"/>
             </Form.Group>
-            <Form.Group className='mb-3' controlId='formGroupIdCurso'>
-              <Form.Label style={{ color: "#000000" }}>Id del Curso</Form.Label>
-              <Form.Control type='text' placeholder='Ingrese el id del curso' ref={idCursoRef} style={{ width: "100%" }} id="id-curso"/>
-            </Form.Group>
             <Form.Group className='mb-3' controlId='formGroupcurso'>
-              <Form.Label style={{ color: "#000000" }}>curso</Form.Label>
+              <Form.Label style={{ color: "#000000" }}> Curso</Form.Label>
               <Form.Control type='text' placeholder='Ingrese el curso' ref={cursoRef} style={{ width: "100%" }} id="n-curso"/>
             </Form.Group>
             <Form.Group className='mb-3' controlId='formGroupmodalidad'>
@@ -82,12 +89,18 @@ const ActzCatalogo = () => {
               <Form.Label style={{ color: "#000000" }}>Costo</Form.Label>
               <Form.Control type='text' placeholder='Ingrese el costo' ref={costoRef} style={{ width: "100%" }} id="cost"/>
             </Form.Group>
-                        
-           
           </Form>
-          <Button variant='primary' onClick={() => handlerClick()} id="boton">
+
+          <Button variant='primary' style={{marginRight:"50px"}} onClick={() => handlerClick()} id="boton">
             agregar 
           </Button>
+          <Button variant="success" style={{marginRight:"50px"}}>
+            Listar
+          </Button>
+          <Button variant="danger" onClick={()=>eliminar()}>
+            Borrar
+          </Button>
+          
         </div>
       </div>
     </section>

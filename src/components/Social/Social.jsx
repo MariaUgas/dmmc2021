@@ -17,7 +17,7 @@ function Social(){
                 <a href="http://wa.me/581112223344/?text=Hola%20Instituto%20LAP%20desde%20el%20post" target="_blank" className="twitter"><AiOutlineWhatsApp style={{fill:"#2c303b"}}/></a>
             </div>
              <div className="copyright">
-                <p style={{fontSize:"small"}}><BiCopyright />Derechos reservados Instituto LAP - <span className="moodle">Soportado por Moodle.org</span> </p>
+                <p style={{fontSize:"small"}}><BiCopyright />2021 Derechos reservados Instituto LAP - <span className="moodle">Soportado por Moodle.org</span> </p>
             </div>  
         </div>
     

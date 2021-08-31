@@ -29,4 +29,4 @@ import "./firebase/firebase"
 const divRoot = document.querySelector("#root");
 
 
-ReactDOM.render([<UpScroll />,<Header />,<Impulsa />, <Ofrecemos />, <CursoDiplo/>, <Galeria />, <Container />, <Inscribete />, <Contacto />, <Social />, <CrearNoticia />, <EdicionCatalogo />, <EdicionCursos/>], divRoot)
+ReactDOM.render([<UpScroll />,<Header />,<Impulsa />, <Ofrecemos />, <CursoDiplo/>, <Galeria />, <Container />, <Inscribete />, <Contacto />, <Social />, <CrearNoticia />], divRoot)
