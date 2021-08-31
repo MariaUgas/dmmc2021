@@ -13,7 +13,7 @@ export const ItemAcordeonArea = ({ mapaAreasObj }) => {
             return (
               <Accordion.Item eventKey={i}>
                 <Accordion.Header>{a.nombre}</Accordion.Header>
-                <Accordion.Body style={{ textAlign: "left" }}>
+                <Accordion.Body >
                   <TablaCursos idarea={a.codigo} />
                 </Accordion.Body>
               </Accordion.Item>

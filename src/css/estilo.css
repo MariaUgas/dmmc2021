@@ -55,7 +55,7 @@ a {
 }
 
 .textos-hero h1 {
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
   color: #2c303b;
   margin-bottom: 50px;
@@ -97,6 +97,10 @@ a {
 
 .textos-hero span {
   font-weight: bold;
+}
+
+.textos-hero > a{
+  background: transparent;
 }
 
 /*ESTILOS GENERALES*/
@@ -173,7 +177,7 @@ a {
   display: flex;
 }
 
-/*CATALOGO*/
+/*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMCATALOGOMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 
 .cursos {
   background: #1c0f92;
@@ -283,7 +287,15 @@ nav {
   padding-top: 20px;
 }
 
-/*CARDS*/
+.tabla-cursos > thead{
+  width: 500px;
+}
+
+.table .table-sm .table-striped .table-bordered .table-hover{
+  width: 720px;
+}
+
+/*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMCARDSMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 
 .content-cards {
   display: flex;
@@ -371,7 +383,7 @@ nav {
 }
 
 .img-ofr > img{
-  width: 420px;
+  width: 530px;
   height: 300px;
   
   
@@ -1065,7 +1077,7 @@ select > option {
     text-align: center;
     font-size: 30px;
   }
-  .container-nav li {
+  .container-nav > li {
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -1074,9 +1086,16 @@ select > option {
   .wave-contenedor {
     width: 100%;
   }
+  
+  .svg-hero{
+    display: none;
+  }
 
-  .titulo {
-    font-size: 35px;
+  .textos-hero h1 {
+    font-size: 30px;
+    text-align: center;
+    color: #2c303b;
+    margin-bottom: 50px;
   }
 
   .titulo.left {
@@ -1116,11 +1135,11 @@ select > option {
   }
 
   .website img {
-    width: 100%;
+    width: 80%;
   }
 
   .website .contenedor-textos-main {
-    width: 100%;
+    width: 80%;
   }
 
   /*cards*/
@@ -1129,6 +1148,13 @@ select > option {
     margin-bottom: 20px;
   }
 
+  .img-ofr > img{
+    width: 90%;
+   }
+
+  .card1 > iframe{
+    width: 70%;
+  }
   /*galeria*/
   .galeria-cont > img {
     width: 48%;
@@ -1143,7 +1169,25 @@ select > option {
     margin-bottom: 20px;
   }
 
+  .card1, .card2{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card{
+    height: 400px;
+  }
+
+  .card2 > article{
+    height: 400px;
+  }
+
   /*Catalogo*/
+
+
+  .tabla-cursos{
+    width: 90%px;
+  }
   /*vitrina noticia*/
 
   .vitrina {

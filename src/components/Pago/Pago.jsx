@@ -4,12 +4,10 @@ import { useRef,useState } from "react";
 import { Col, Form , Row, } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { RadioBox, RadioBoxGroup } from '@leafygreen-ui/radio-box-group';
+import { RadioButton, RadioGroup } from '@trendmicro/react-radio';
 
-
-
-
-
-
+// Be sure to include styles at some point, probably during your bootstraping
+import '@trendmicro/react-radio/dist/react-radio.css';
 
 
 const Pago=()=>{
@@ -19,8 +17,8 @@ const Pago=()=>{
   const tlfRef= useRef();
   const itemBancoDestinoRef= useRef();
   const itemCursoRef= useRef();
-  
-  
+  const bancoOrigenRef= useRef();
+  const monedaRef= useRef();
   const fechaPagoRef= useRef();
   const idDepositoRef= useRef();
   const montoRef= useRef();
@@ -37,11 +35,13 @@ const Pago=()=>{
   }*/
 
 
-  const [bancoOrigenSelected, setBancoOrigenSelected]=useState();
-  const handleChange=(e)=> {
+  
+  /*const handleChange=(e)=> {
 
     setBancoOrigenSelected( e.target.value)
-  }
+  }*/
+
+
   const handlerClick = () => {
 
   const pago =
@@ -53,9 +53,10 @@ const Pago=()=>{
         bancoDestino: itemBancoDestinoRef.current.value,
         telefono: tlfRef.current.value,
         curso: itemCursoRef.current.value,
-        bancOrigen:bancoOrigenSelected,
+        bancoOrigen:bancoOrigenRef.current.value,
         fechaPago: fechaPagoRef.current.value,
         idDeposito: idDepositoRef.current.value,
+        moneda: monedaRef.current.value,
         monto: montoRef.current.value,
         
       }]
@@ -73,8 +74,15 @@ const Pago=()=>{
       fechaPagoRef.current.value="";
       idDepositoRef.current.value="";
       montoRef.current.value="";
+
+        
       
   };
+
+  
+
+
+    
     return(
         <footer id="contacto">
         
@@ -160,13 +168,20 @@ const Pago=()=>{
                 </Form.Group>
                 <Form.Label style={{ color: "#000000" }}>Banco origen</Form.Label>
                 <Row>
-                
-                <RadioBoxGroup className="radio-box-group-style" onChange={(e) =>handleChange(e)}>
-                  <RadioBox value="Mismo Banco">Mismo Banco</RadioBox>
-                  <RadioBox value="Otro Banco">Otro Banco</RadioBox>
-                </RadioBoxGroup>
-                    
+                <RadioGroup name="bancoOrigen"  ref={bancoOrigenRef}>
+                    <div className="row">
+                        <div className="col-xs-12 col-sm-6">
+                            <RadioButton value="mismo"> Mismo banco</RadioButton>
+                           
+                        </div>
+                        <div className="col-xs-12 col-sm-6">
+                            <RadioButton value="otro">Otro banco</RadioButton>
+                           
+                        </div>
+                    </div>
+                </RadioGroup>
               </Row>
+              <br />
                   <Form.Group className='mb-3' controlId='formGroupFecha'>
                     <Form.Label style={{ color: "#000000" }}>Fecha</Form.Label>
                     <Form.Control type='date' placeholder='Ingrese nombre completo' ref={fechaPagoRef} style={{ width: "100%", height:"50px"}} />
@@ -175,6 +190,22 @@ const Pago=()=>{
                     <Form.Label style={{ color: "#000000" }}>Numero de operacion</Form.Label>
                     <Form.Control type='text' placeholder='Ingrese numero de operacion bancaria' ref={idDepositoRef} style={{ width: "100%", height:"50px", marginBottom:"25px"}} />
                   </Form.Group>
+                  <Form.Label style={{ color: "#000000" }}>Moneda de operación</Form.Label>
+                  <Row>
+                <RadioGroup name="moneda" ref={monedaRef}>
+                    <div className="row">
+                        <div className="col-xs-12 col-sm-6">
+                            <RadioButton value="dolar">USD</RadioButton>
+                           
+                        </div>
+                        <div className="col-xs-12 col-sm-6">
+                            <RadioButton value="bolivar">Bs.</RadioButton>
+                           
+                        </div>
+                    </div>
+                </RadioGroup>
+              </Row>
+              <br />
                   <Form.Group className='mb-3' controlId='formGroupMonto'>
                     <Form.Label style={{ color: "#000000" }}>Monto</Form.Label>
                     <Form.Control type='text' placeholder='Ingrese monto de operacion' ref={montoRef} style={{ width: "100%", height:"50px"}} />

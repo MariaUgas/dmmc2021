@@ -23,28 +23,38 @@ export const TablaCursos = ({ idarea }) => {
     }
   });
 
-  return (
-    <div className="tabla-cursos">
-      <Table striped bordered hover size="sm">
-        <thead>
-          <tr>
-            <th scope="col">Curso</th>
-            <th scope="col">Modalidad</th>
-            <th scope="col">Costo</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filterByArea.map((curso) => (
-            <tr>
-              <td>{curso.curso}</td>
-              <td>{curso.modalidad}</td>
-              <td>{curso.costo}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
+    console.log(filterByArea)
+
+return(
+    <div className="accordion-body">
+        <div className="tabla-cursos">
+           
+           <Table striped bordered hover size="sm" style={{width:"90%"}}>
+                <thead>
+                    <tr>
+                       <th scope="col">Curso</th>
+                       <th scope="col" width="20%">Modalidad</th>
+                       <th scope="col" width="15%">Costo (USD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {
+                       filterByArea.map((curso)=>(
+                        <tr>
+                            <td>{curso.curso}</td>
+                            <td>{curso.modalidad}</td>
+                            <td>{curso.costo}</td>
+                        </tr>
+                      ))
+
+                    }
+                </tbody>
+            </Table>
+       </div>
     </div>
-  );
-};
+       
+    )
+
+}
 
 export default TablaCursos;

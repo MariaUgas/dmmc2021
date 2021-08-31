@@ -15,12 +15,12 @@ function Ofrecemos(){
                     <h3>Conócenos</h3>
                     <p>En el Instituto Latinoamericano de Actualizacion Profesional somos una gran familia de profesionales del area empresarial altamente calificados, poniendo su conocimiento a tu disposicion para el logro de tus metas. </p>
                     <div className="content-media">
-                        <p>Video institucional aqui.</p>
+                    
                     </div>
                 </article>
                 
                     <div className="img-ofr">
-                        <img src={ofr1} alt=""></img>
+                    <iframe width="530px" height="300px" src="https://www.youtube.com/embed/Abz905tklPA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
                     </div>
                 </div>
             
