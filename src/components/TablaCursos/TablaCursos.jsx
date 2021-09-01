@@ -23,7 +23,7 @@ export const TablaCursos = ({ idarea }) => {
     }
   });
 
-  console.log(filterByArea);
+  //console.log(filterByArea);
 
   return (
     <div className="accordion-body">

@@ -15,13 +15,13 @@ function CursoDiplo() {
     });
   }, []);
 
-  console.log("areasObj =>", areasObj);
+  // console.log("areasObj =>", areasObj);
 
   const mapaAreasObj = areasObj.map((areaObj) => {
     return areaObj.areas;
   });
 
-  console.log("mapaAreasObj =>", mapaAreasObj);
+  // console.log("mapaAreasObj =>", mapaAreasObj);
   return (
     <div className="cur-dip">
       <ItemAcordeonArea mapaAreasObj={mapaAreasObj[0]} />

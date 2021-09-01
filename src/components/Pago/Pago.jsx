@@ -1,10 +1,11 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Col, Form, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import { RadioBox, RadioBoxGroup } from "@leafygreen-ui/radio-box-group";
+//import { RadioBox, RadioBoxGroup } from "@leafygreen-ui/radio-box-group";
 import { RadioButton, RadioGroup } from "@trendmicro/react-radio";
+import store from "../../firebase/firebase.js";
 
 // Be sure to include styles at some point, probably during your bootstraping
 import "@trendmicro/react-radio/dist/react-radio.css";
@@ -15,12 +16,56 @@ const Pago = () => {
   const itemPaisRef = useRef();
   const tlfRef = useRef();
   const itemBancoDestinoRef = useRef();
+  const itemCategoriaRef = useRef("CGI00");
   const itemCursoRef = useRef();
   const bancoOrigenRef = useRef();
   const monedaRef = useRef();
   const fechaPagoRef = useRef();
   const idDepositoRef = useRef();
   const montoRef = useRef();
+
+  /*** Obtener Area */
+  const [areasObj, setAreasObj] = useState([]);
+
+  useEffect(() => {
+    store.collection("areas").onSnapshot((snap) => {
+      const documents = [];
+      snap.forEach((doc) => {
+        documents.push({ id: doc.id, ...doc.data() });
+      });
+      setAreasObj(documents);
+    });
+  }, []);
+
+  console.log("areasObj =>", areasObj);
+
+  const mapaAreasObj = areasObj.map((areaObj) => {
+    return areaObj.areas;
+  });
+
+  console.log("mapaAreasObj =>", mapaAreasObj);
+  /********  Curso **** */
+
+  const [objetoCursos, setObjetoCursos] = useState([]);
+  useEffect(() => {
+    store.collection("cursos").onSnapshot((snap) => {
+      const documents = [];
+      snap.forEach((doc) => {
+        documents.push({ id: doc.id, ...doc.data() });
+      });
+      setObjetoCursos(documents);
+    });
+  }, []);
+
+  const mapeo = objetoCursos.map((cursos) => cursos);
+
+  const filterByArea = mapeo.filter((curso) => {
+    if (curso.idarea === itemCategoriaRef.current.value) {
+      return true;
+    }
+  });
+  console.log(filterByArea);
+  /******* */
 
   /*const handlerOnChange=()=> {
     tlfRef.value = this.value;
@@ -45,6 +90,7 @@ const Pago = () => {
         codigoArea: itemPaisRef.current.value,
         bancoDestino: itemBancoDestinoRef.current.value,
         telefono: tlfRef.current.value,
+        categoria: itemCategoriaRef.current.value,
         curso: itemCursoRef.current.value,
         bancoOrigen: bancoOrigenRef.current.value,
         fechaPago: fechaPagoRef.current.value,
@@ -60,6 +106,7 @@ const Pago = () => {
     itemPaisRef.current.value = "";
     itemBancoDestinoRef.current.value = "";
     tlfRef.current.value = "";
+    itemCategoriaRef.current.value = "CGI00";
     itemCursoRef.current.value = "";
 
     fechaPagoRef.current.value = "";
@@ -160,23 +207,30 @@ const Pago = () => {
                 <Form.Label style={{ color: "#000000" }}>Categorías</Form.Label>
                 <Form.Select
                   aria-label="Default select example"
+                  placeholder="Seleccione una categoría"
+                  ref={itemCategoriaRef}
+                  style={{ width: "100%", height: "50px" }}
+                >
+                  {mapaAreasObj[0] &&
+                    mapaAreasObj[0].map((a) => {
+                      return <option value={a.codigo}>{a.nombre}</option>;
+                    })}
+                </Form.Select>
+              </Form.Group>
+            </Row>
+            <Row className="mb-3">
+              <Form.Group className="mb-3" controlId="formGroupCursos">
+                <Form.Label style={{ color: "#000000" }}>Cursos</Form.Label>
+                <Form.Select
+                  aria-label="Default select example"
+                  placeholder="Seleccione un curso"
                   ref={itemCursoRef}
                   style={{ width: "100%", height: "50px" }}
                 >
-                  <option value="">Seleccione una categoría</option>
-                  <option value="C001">
-                    Certificacion en gestion integral de credito
-                  </option>
-                  <option value="C002">Contabilidad</option>
-                  <option value="C003">Desarrollo personal - Laboral</option>
-                  <option value="C004">Desarollo Supervisorio</option>
-                  <option value="C005">Finanzas</option>
-                  <option value="C006">
-                    Gestion integral del talento humano
-                  </option>
-                  <option value="C007">Informatica</option>
-                  <option value="C008">Seguridad y salud laboral</option>
-                  <option value="C009">Legal</option>
+                  {filterByArea &&
+                    filterByArea.map((a) => {
+                      return <option value={a.idcurso}>{a.curso}</option>;
+                    })}
                 </Form.Select>
               </Form.Group>
             </Row>
