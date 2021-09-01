@@ -99,7 +99,7 @@ a {
   font-weight: bold;
 }
 
-.textos-hero > a{
+.textos-hero > a {
   background: transparent;
 }
 
@@ -138,7 +138,7 @@ a {
 .website {
   display: flex;
   justify-content: space-between;
-  margin-top: 100px
+  margin-top: 100px;
 }
 
 .website img {
@@ -287,11 +287,11 @@ nav {
   padding-top: 20px;
 }
 
-.tabla-cursos > thead{
+.tabla-cursos > thead {
   width: 500px;
 }
 
-.table .table-sm .table-striped .table-bordered .table-hover{
+.table .table-sm .table-striped .table-bordered .table-hover {
   width: 720px;
 }
 
@@ -325,7 +325,6 @@ nav {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   transform: scale(1);
   transition: transform 0.6s;
-  
 }
 
 .content-media > p {
@@ -367,26 +366,25 @@ nav {
   background: #92340f;
 }
 
-.card1, .card2{
+.card1,
+.card2 {
   display: flex;
   width: 80%;
   margin: 0 auto;
 }
 
-.card1{
+.card1 {
   margin-top: 100px;
   margin-bottom: 100px;
 }
 
-.card2{
+.card2 {
   margin-bottom: 100px;
 }
 
-.img-ofr > img{
+.img-ofr > img {
   width: 530px;
   height: 300px;
-  
-  
 }
 
 .pluma {
@@ -449,7 +447,6 @@ nav {
 .caja-not {
   display: flex;
   flex-direction: column;
-  
 }
 
 .noticia-ddia > h5 {
@@ -457,7 +454,7 @@ nav {
   padding-top: 50px;
 }
 
-.noticia-ddia{
+.noticia-ddia {
   margin-top: 100px;
 }
 .img-not {
@@ -840,7 +837,7 @@ input[type="email"] {
 }
 
 input[type="submit"] {
-  width: 120px;
+  width: 200px;
   text-align: center;
   padding: 14px 0;
   margin-left: auto;
@@ -1065,7 +1062,7 @@ select > option {
   color: #f38115;
 }
 
-.tabla-cursos{
+.tabla-cursos {
   width: 800px;
   margin: 0 auto;
 }
@@ -1086,8 +1083,8 @@ select > option {
   .wave-contenedor {
     width: 100%;
   }
-  
-  .svg-hero{
+
+  .svg-hero {
     display: none;
   }
 
@@ -1148,11 +1145,11 @@ select > option {
     margin-bottom: 20px;
   }
 
-  .img-ofr > img{
+  .img-ofr > img {
     width: 90%;
-   }
+  }
 
-  .card1 > iframe{
+  .card1 > iframe {
     width: 70%;
   }
   /*galeria*/
@@ -1169,23 +1166,23 @@ select > option {
     margin-bottom: 20px;
   }
 
-  .card1, .card2{
+  .card1,
+  .card2 {
     display: flex;
     flex-direction: column;
   }
 
-  .card{
+  .card {
     height: 400px;
   }
 
-  .card2 > article{
+  .card2 > article {
     height: 400px;
   }
 
   /*Catalogo*/
 
-
-  .tabla-cursos{
+  .tabla-cursos {
     width: 90%px;
   }
   /*vitrina noticia*/
@@ -1487,11 +1484,11 @@ select > option {
 
   .actz-cur {
     background: linear-gradient(
-    0deg,
-    rgba(217, 217, 217, 1) 0%,
-    rgba(230, 230, 230, 1) 35%,
-    rgba(246, 246, 246, 1) 100%
-  );
+      0deg,
+      rgba(217, 217, 217, 1) 0%,
+      rgba(230, 230, 230, 1) 35%,
+      rgba(246, 246, 246, 1) 100%
+    );
     width: 100%;
     margin-left: auto;
     margin-right: auto;
