@@ -392,7 +392,7 @@ nav {
   color: rgb(16, 69, 102);
   margin: 20px auto;
 }
-/* CATALOGO DE CURSOS*/
+/*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM CATALOGO DE CURSOS MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 
 .contenedor-cursos > h3 {
   color: #2c303b;
@@ -409,7 +409,13 @@ nav {
   width: 800px;
 }
 
-/*GALERIA*/
+.tabla-cursos {
+  width: 800px;
+  margin: 0 auto;
+}
+
+
+/*MMMMMMMMMMMMMMMMMMMMMMMMMMMMM GALERIA MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 
 .galeria {
   background-color: rgb(186, 191, 196);
@@ -433,7 +439,7 @@ nav {
   overflow: hidden;
 }
 
-/*VITRINA DE LA NOTICIA*/
+/*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM VITRINA DE LA NOTICIA MMMMMMMMMMMMMMMMMMMMM*/
 
 .vitrina {
   background: #f9f9f9;
@@ -489,7 +495,7 @@ nav {
   line-height: 50%;
 }
 
-/*INFO 2*/
+/*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM INFO 2 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 
 .last-section {
   display: flex;
@@ -511,7 +517,7 @@ nav {
   border-bottom: 2px solid #683ec9;
 }
 
-/*PAGO*/
+/*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM PAGO MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 
 input[type="button"] {
   cursor: pointer;
@@ -692,7 +698,7 @@ input[type="submit"]:hover {
   margin-right: auto;
 }
 
-/*FOOTER -CONTACTO*/
+/*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM FOOTER -CONTACTO MMMMMMMMMMMMMMMMMMMMMMMM*/
 
 footer {
   background: linear-gradient(
@@ -854,7 +860,7 @@ select > option {
   color: #1c0f92;
 }
 
-/*SOCIAL*/
+/*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMSOCIALMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 
 .social {
   background-color: #f38115;
@@ -1062,11 +1068,11 @@ select > option {
   color: #f38115;
 }
 
-.tabla-cursos {
-  width: 800px;
-  margin: 0 auto;
-}
+/*MMMMMMMMMMMMMMMMMMMMMMMMMM LOGIN MMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 
+.style-login > h3{
+  color: #2c303b;
+}
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*RESPONSIVE*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 
 @media screen and (max-width: 600px) {

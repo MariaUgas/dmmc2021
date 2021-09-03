@@ -3,20 +3,18 @@ import { v4 as uuidv4 } from "uuid";
 import { useRef, useState, useEffect } from "react";
 import { Col, Form, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-//import { RadioBox, RadioBoxGroup } from "@leafygreen-ui/radio-box-group";
 import { RadioButton, RadioGroup } from "@trendmicro/react-radio";
 import store from "../../firebase/firebase.js";
-
-// Be sure to include styles at some point, probably during your bootstraping
 import "@trendmicro/react-radio/dist/react-radio.css";
 
 const Pago = () => {
+  const tipoPersonaRef = useRef();
   const nombreRef = useRef();
   const emailRef = useRef();
   const itemPaisRef = useRef();
   const tlfRef = useRef();
   const itemBancoDestinoRef = useRef();
-  const itemCategoriaRef = useRef("CGI00");
+  const itemCategoriaRef = useRef();
   const itemCursoRef = useRef();
   const bancoOrigenRef = useRef();
   const monedaRef = useRef();
@@ -57,6 +55,14 @@ const Pago = () => {
     });
   }, []);
 
+  const [identCurso, setIdentCurso] = useState("");
+  
+  const handlerCargarCursos = function (e) {
+    itemCategoriaRef.current.value  = e.target.value;
+    setIdentCurso(itemCategoriaRef.current.value)
+    
+  }
+
   const mapeo = objetoCursos.map((cursos) => cursos);
 
   const filterByArea = mapeo.filter((curso) => {
@@ -64,35 +70,47 @@ const Pago = () => {
       return true;
     }
   });
+
   console.log(filterByArea);
-  /******* */
+  
+  /*MMMMMMMMMMMMMMM INPUTS RADIO MMMMMMMMMM*/
+  const [persona, setPersona] = useState("")
+  
+  const handlerTipoPersona = function (e) {
+    tipoPersonaRef.current.value  = e.target.value;
+    setPersona(tipoPersonaRef.current.value)
+    
+  }
 
-  /*const handlerOnChange=()=> {
-    tlfRef.value = this.value;
-    if((this.value).trim() !== '') {
-      tlfRef.disabled = false;
-    } else {
-      tlfRef.disabled = true
-    }
-  }*/
+  const [origen, setOrigen] = useState("")
+  
+  const handlerBancoOrigen = function (e) {
+    bancoOrigenRef.current.value  = e.target.value;
+    setOrigen(bancoOrigenRef.current.value)
+    
+  }
 
-  /*const handleChange=(e)=> {
-
-    setBancoOrigenSelected( e.target.value)
-  }*/
-
+  const [moneda, setMoneda] = useState("")
+  
+  const handlerMoneda = function (e) {
+    monedaRef.current.value  = e.target.value;
+    setMoneda(monedaRef.current.value)
+    
+  }
+/*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
   const handlerClick = () => {
     const pago = [
       {
         id: uuidv4,
+        persona: tipoPersonaRef.current.value,
         nombre: nombreRef.current.value,
         email: emailRef.current.value,
         codigoArea: itemPaisRef.current.value,
-        bancoDestino: itemBancoDestinoRef.current.value,
         telefono: tlfRef.current.value,
         categoria: itemCategoriaRef.current.value,
         curso: itemCursoRef.current.value,
         bancoOrigen: bancoOrigenRef.current.value,
+        bancoDestino: itemBancoDestinoRef.current.value,
         fechaPago: fechaPagoRef.current.value,
         idDeposito: idDepositoRef.current.value,
         moneda: monedaRef.current.value,
@@ -101,19 +119,26 @@ const Pago = () => {
     ];
     console.log(JSON.stringify(pago, null, 2));
 
+    tipoPersonaRef.current.value = "";
     nombreRef.current.value = "";
     emailRef.current.value = "";
     itemPaisRef.current.value = "";
     itemBancoDestinoRef.current.value = "";
     tlfRef.current.value = "";
-    itemCategoriaRef.current.value = "CGI00";
+    itemCategoriaRef.current.value = "";
     itemCursoRef.current.value = "";
-
+    bancoOrigenRef.current.value ="";
     fechaPagoRef.current.value = "";
     idDepositoRef.current.value = "";
+    monedaRef.current.value = "";
     montoRef.current.value = "";
   };
+  
+  
 
+ 
+
+  
   return (
     <footer id="contacto">
       <div className="contenedor">
@@ -122,6 +147,20 @@ const Pago = () => {
             Notificación de Pago
           </h2>
           <Form>
+          <Form.Label style={{ color: "#000000" }}>Persona</Form.Label>
+          <Row>
+              <RadioGroup name="bancoOrigen" ref={tipoPersonaRef} >
+                <div className="row">
+                  <div className="col-xs-12 col-sm-6">
+                    <RadioButton value="natural" checked={persona === "natural"} onClick={handlerTipoPersona}>Natural</RadioButton>
+                  </div>
+                  <div className="col-xs-12 col-sm-6">
+                    <RadioButton value="juridica" checked={persona === "juridica"} onClick={handlerTipoPersona}>Jurídica</RadioButton>
+                  </div>
+                </div>
+              </RadioGroup>
+            </Row>
+            <br/>
             <Form.Group className="mb-3" controlId="formGroupEmail">
               <Form.Label style={{ color: "#000000" }}>Email</Form.Label>
               <Form.Control
@@ -204,16 +243,18 @@ const Pago = () => {
             </Row>
             <Row className="mb-3">
               <Form.Group className="mb-3" controlId="formGroupCursos">
-                <Form.Label style={{ color: "#000000" }}>Categorías</Form.Label>
+                <Form.Label style={{ color: "#000000" }}>Categoría</Form.Label>
                 <Form.Select
                   aria-label="Default select example"
                   placeholder="Seleccione una categoría"
                   ref={itemCategoriaRef}
                   style={{ width: "100%", height: "50px" }}
+                  onClick={handlerCargarCursos}
                 >
+                  <option value={-1}>Seleccione una Categoria</option>
                   {mapaAreasObj[0] &&
-                    mapaAreasObj[0].map((a) => {
-                      return <option value={a.codigo}>{a.nombre}</option>;
+                    mapaAreasObj[0].map((identCurso) => {
+                      return <option value={identCurso.codigo}>{identCurso.nombre}</option>;
                     })}
                 </Form.Select>
               </Form.Group>
@@ -227,6 +268,7 @@ const Pago = () => {
                   ref={itemCursoRef}
                   style={{ width: "100%", height: "50px" }}
                 >
+                  <option value={-1}>Seleccione una Curso</option>
                   {filterByArea &&
                     filterByArea.map((a) => {
                       return <option value={a.idcurso}>{a.curso}</option>;
@@ -265,13 +307,13 @@ const Pago = () => {
             </Form.Group>
             <Form.Label style={{ color: "#000000" }}>Banco origen</Form.Label>
             <Row>
-              <RadioGroup name="bancoOrigen" ref={bancoOrigenRef}>
+              <RadioGroup name="bancoOrigen" ref={bancoOrigenRef} >
                 <div className="row">
                   <div className="col-xs-12 col-sm-6">
-                    <RadioButton value="mismo"> Mismo banco</RadioButton>
+                    <RadioButton value="mismo" checked={origen === "mismo"} onClick={handlerBancoOrigen}> Mismo banco</RadioButton>
                   </div>
                   <div className="col-xs-12 col-sm-6">
-                    <RadioButton value="otro">Otro banco</RadioButton>
+                    <RadioButton value="otro" checked={origen === "otro"} onClick={handlerBancoOrigen}>Otro banco</RadioButton>
                   </div>
                 </div>
               </RadioGroup>
@@ -304,10 +346,10 @@ const Pago = () => {
               <RadioGroup name="moneda" ref={monedaRef}>
                 <div className="row">
                   <div className="col-xs-12 col-sm-6">
-                    <RadioButton value="dolar">USD</RadioButton>
+                    <RadioButton value="dolar" checked={moneda === "dolar"} onClick={handlerMoneda}>USD</RadioButton>
                   </div>
                   <div className="col-xs-12 col-sm-6">
-                    <RadioButton value="bolivar">Bs.</RadioButton>
+                    <RadioButton value="bolivar" checked={moneda === "bolivar"} onClick={handlerMoneda}>Bs.</RadioButton>
                   </div>
                 </div>
               </RadioGroup>

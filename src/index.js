@@ -13,15 +13,15 @@ import Social from "./components/Social/Social.jsx"
 import UpScroll from './components/UpScroll/UpScroll.jsx';
 /*import EdicionCatalogo from "./components/EdicionCatalogo/EdicionCatalogo.jsx"*/
 /*import EdicionCursos from "./components/EdicionCursos/EdicionCursos.jsx"*/
+/*import Login from "./components/Menu/Login.jsx"*/
 /*import ActzCatalogo from "./components/VerCatalogo/ActzCatalogo.jsx"*/
 /*import ContainerArea from "./components/VerCatalogo/ContainerArea.jsx"*/
 /*import TablaCursos from "./components/TablaCursos/TablaCursos.jsx"*/
 
-
-
 import "./css/estilo.css";
 import './css/bootstrap.min.css';
 import "./firebase/firebase"
+
 
 
 

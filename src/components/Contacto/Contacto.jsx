@@ -1,9 +1,9 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Col, Form , Row} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-
+import store from "../../firebase/firebase.js";
 
 
 
@@ -13,6 +13,7 @@ function Contacto(){
   const emailRef= useRef();
   const tlfRef= useRef();
   const itemPaisRef= useRef();
+  const itemCategoriaRef= useRef();
   const itemCursoRef= useRef();
  
   
@@ -24,6 +25,57 @@ function Contacto(){
       tlfRef.disabled = true
     }
   }*/
+
+  /*** Obtener Area */
+  const [areasObj, setAreasObj] = useState([]);
+
+  useEffect(() => {
+    store.collection("areas").onSnapshot((snap) => {
+      const documents = [];
+      snap.forEach((doc) => {
+        documents.push({ id: doc.id, ...doc.data() });
+      });
+      setAreasObj(documents);
+    });
+  }, []);
+
+  console.log("areasObj =>", areasObj);
+
+  const mapaAreasObj = areasObj.map((areaObj) => {
+    return areaObj.areas;
+  });
+
+  console.log("mapaAreasObj =>", mapaAreasObj);
+  /********  Curso **** */
+
+  const [objetoCursos, setObjetoCursos] = useState([]);
+  useEffect(() => {
+    store.collection("cursos").onSnapshot((snap) => {
+      const documents = [];
+      snap.forEach((doc) => {
+        documents.push({ id: doc.id, ...doc.data() });
+      });
+      setObjetoCursos(documents);
+    });
+  }, []);
+
+  const [identCurso, setIdentCurso] = useState("");
+  
+  const handlerCargarCursos = function (e) {
+    itemCategoriaRef.current.value  = e.target.value;
+    setIdentCurso(itemCategoriaRef.current.value)
+    
+  }
+
+  const mapeo = objetoCursos.map((cursos) => cursos);
+
+  const filterByArea = mapeo.filter((curso) => {
+    if (curso.idarea === itemCategoriaRef.current.value) {
+      return true;
+    }
+  });
+
+
   const handlerClick = () => {
 
   const contacto =
@@ -33,6 +85,7 @@ function Contacto(){
         email: emailRef.current.value,
         codigoArea: itemPaisRef.current.value,
         telefono: tlfRef.current.value,
+        categoria: itemCategoriaRef.current.value,
         curso: itemCursoRef.current.value,
         
       }]
@@ -43,8 +96,8 @@ function Contacto(){
       emailRef.current.value= "";
       itemPaisRef.current.value= "";
       tlfRef.current.value= "";
-      itemCursoRef.current.value= "";
-      
+      itemCategoriaRef.current.value= "";
+      itemCursoRef.current.value="";
   };
     return(
         <footer id="contacto">
@@ -102,18 +155,25 @@ function Contacto(){
               </Row> 
               <Row className="mb-3"> 
               <Form.Group className='mb-3' controlId='formGroupCursos'>
+                <Form.Label style={{ color: "#000000" }}>Categorias</Form.Label>
+                <Form.Select aria-label="Default select example" ref={itemCategoriaRef} style={{ width: "100%", height:"50px" }} onClick={handlerCargarCursos}>
+                <option value={-1}>Seleccione una Categoria</option>
+                  {mapaAreasObj[0] &&
+                    mapaAreasObj[0].map((identCurso) => {
+                      return <option value={identCurso.codigo}>{identCurso.nombre}</option>;
+                    })}
+                </Form.Select>
+              </Form.Group>
+              </Row>
+              <Row className="mb-3"> 
+              <Form.Group className='mb-3' controlId='formGroupCursos'>
                 <Form.Label style={{ color: "#000000" }}>Cursos</Form.Label>
                 <Form.Select aria-label="Default select example" ref={itemCursoRef} style={{ width: "100%", height:"50px" }} >
-                  <option value="">Seleccione un curso</option>
-                  <option value="C001">Certificacion en gestion integral de credito</option>
-                  <option value="C002">Contabilidad</option>
-                  <option value="C003">Desarrollo personal - Laboral</option>
-                  <option value="C004">Desarollo Supervisorio</option>
-                  <option value="C005">Finanzas</option>
-                  <option value="C006">Gestion integral del talento humano</option>
-                  <option value="C007">Informatica</option>
-                  <option value="C008">Seguridad y salud laboral</option>
-                  <option value="C009">Legal</option>
+                <option value={-1}>Seleccione un Curso</option>
+                  {filterByArea &&
+                    filterByArea.map((a) => {
+                      return <option value={a.idcurso}>{a.curso}</option>;
+                    })}
                 </Form.Select>
               </Form.Group>
               </Row>
