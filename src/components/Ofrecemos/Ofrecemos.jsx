@@ -24,24 +24,19 @@ function Ofrecemos(){
                     </div>
                 </div>
             
-            <div className="card2">
-                
-                
-                <article className="card">
-                
-                    <FaRegClone className="pluma"/>
-                    <h3>Material informativo</h3>
-                    <p>En el Instituto Latinoamericano de Actualizacion Profesional somos una gran familia de profesionales del area empresarial altamente calificados, poniendo su conocimiento a tu disposicion para el logro de tus metas. </p>
-                    <div className="content-media">
-                        <p>PDF´s informativos aqui</p>
-                    </div>
-
-                </article>
-                <div className="img-ofr">
-                    <img src={ofr2} alt=""></img>
-                </div>
-            </div>
             
+            <div className="svg-wave" style={{ height: "150px", overflow: "hidden" }}>
+        <svg
+          viewBox="0 0 500 150"
+          preserveAspectRatio="none"
+          style={{ height: "100%", width: "100%" }}
+        >
+          <path
+            d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+            style={{ stroke: "none", fill: "#f6f6f6" }}
+          ></path>
+        </svg>
+      </div>
         </div>
        
     

@@ -151,11 +151,11 @@ const Pago = () => {
           <Row>
               <RadioGroup name="bancoOrigen" ref={tipoPersonaRef} >
                 <div className="row">
-                  <div className="col-xs-12 col-sm-6">
+                  <div className="col-xs-12 col-sm-3">
                     <RadioButton value="natural" checked={persona === "natural"} onClick={handlerTipoPersona}>Natural</RadioButton>
                   </div>
-                  <div className="col-xs-12 col-sm-6">
-                    <RadioButton value="juridica" checked={persona === "juridica"} onClick={handlerTipoPersona}>Jurídica</RadioButton>
+                  <div className="col-xs-12 col-sm-3">
+                    <RadioButton value="juridica" checked={persona === "juridica"} onClick={handlerTipoPersona} style={{paddingLeft:"20px"}}>Jurídica</RadioButton>
                   </div>
                 </div>
               </RadioGroup>
@@ -345,10 +345,10 @@ const Pago = () => {
             <Row>
               <RadioGroup name="moneda" ref={monedaRef}>
                 <div className="row">
-                  <div className="col-xs-12 col-sm-6">
+                  <div className="col-xs-12 col-sm-3">
                     <RadioButton value="dolar" checked={moneda === "dolar"} onClick={handlerMoneda}>USD</RadioButton>
                   </div>
-                  <div className="col-xs-12 col-sm-6">
+                  <div className="col-xs-12 col-sm-3">
                     <RadioButton value="bolivar" checked={moneda === "bolivar"} onClick={handlerMoneda}>Bs.</RadioButton>
                   </div>
                 </div>

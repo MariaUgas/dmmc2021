@@ -28,7 +28,7 @@ export const TablaCursos = ({ idarea }) => {
   return (
     <div className="accordion-body">
       <div className="tabla-cursos">
-        <Table striped bordered hover size="sm" style={{ width: "90%" }}>
+        <Table striped bordered hover size="sm" style={{ width: "72%" }}>
           <thead>
             <tr>
               <th scope="col">Curso</th>

@@ -40,12 +40,12 @@ a {
   background-image: linear-gradient(
       to top,
       rgba(59, 66, 196, 0.623) 0%,
-      rgba(169, 129, 187, 0.466) 49%,
+      rgba(169, 129, 187, 0.466) 75%,
       #a09690 100%
     ),
     url("../img/fondo_prin.jpg");
   width: 100%;
-  height: 650px;
+  height: 750px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -393,6 +393,15 @@ nav {
   margin: 20px auto;
 }
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM CATALOGO DE CURSOS MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
+.cur-dip {
+  display: flex;
+  justify-content: space-around;
+  background: #f6f6f6;
+  width: 100%;
+  
+  margin: 0 auto;
+  
+}
 
 .contenedor-cursos > h3 {
   color: #2c303b;
@@ -402,7 +411,8 @@ nav {
 }
 
 .contenedor-cursos {
-  margin-bottom: 50px;
+  
+  margin-bottom: 150px;
 }
 
 .accordion {
@@ -410,7 +420,7 @@ nav {
 }
 
 .tabla-cursos {
-  width: 800px;
+  width: 1000px;
   margin: 0 auto;
 }
 
@@ -990,16 +1000,6 @@ select > option {
   margin-left: auto;
 }
 
-.cur-dip {
-  display: flex;
-  justify-content: space-around;
-  background: #f9f9f9;
-  width: 75%;
-  border-radius: 30px;
-  margin: 0 auto;
-  box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
-}
-
 .btn-actz {
   display: flex;
   justify-content: center;
@@ -1279,10 +1279,8 @@ select > option {
     display: flex;
     flex-direction: column;
     background: #dcdee0;
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 30px;
+    width: 100%;
+   
   }
 
   .lista-dip {

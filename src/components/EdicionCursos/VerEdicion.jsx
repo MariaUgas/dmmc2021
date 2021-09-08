@@ -69,7 +69,7 @@ export const VerEdicion = ({cursos})=>{
     
          <div>
          
-            <Accordion flush >
+            <Accordion flush>
             <Accordion.Item eventKey="0">
                 <Accordion.Header>{idarea}</Accordion.Header>
                 <Accordion.Body style={{textAlign:"left"}}>
