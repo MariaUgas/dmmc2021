@@ -37,8 +37,7 @@ const CrearNoticia = () => {
     if (send === false) return;
     store
       .collection("noticia")
-      .doc("p3TjDoNXKrBGnvgebuFi")
-      .set({
+      .add({
         titulo: tituloRef.current.value,
         fecha: fechaRef.current.defaultValue,
         contenido: parrafosRef.current.value,
