@@ -1,6 +1,12 @@
 import React from "react"
+import store from "../../firebase/firebase.js";
 
 export const Noticia = ({noticia})=>{
+
+  const noticiaRef = store.collection("noticia")
+  const firstThreeRes = noticiaRef.orderBy("fecha", "desc").limit(3).get()
+  console.log(firstThreeRes)
+
   const { titulo, autor, contenido, fecha, image} = noticia
   const htmlNews=contenido.substring(1, contenido.length-1)
 

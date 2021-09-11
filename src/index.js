@@ -11,8 +11,8 @@ import Contacto from "./components/Contacto/Contacto.jsx"
 import CursoDiplo from "./components/CursoDiplo/CursoDiplo.jsx"
 import Social from "./components/Social/Social.jsx"
 import UpScroll from './components/UpScroll/UpScroll.jsx';
-/*import EdicionCatalogo from "./components/EdicionCatalogo/EdicionCatalogo.jsx"*/
-import EdicionCursos from "./components/EdicionCursos/EdicionCursos.jsx"
+import EdicionCatalogo from "./components/EdicionCatalogo/EdicionCatalogo.jsx"
+/*import EdicionCursos from "./components/EdicionCursos/EdicionCursos.jsx"*/
 /*import Login from "./components/Menu/Login.jsx"*/
 /*import ActzCatalogo from "./components/VerCatalogo/ActzCatalogo.jsx"*/
 /*import ContainerArea from "./components/VerCatalogo/ContainerArea.jsx"*/
@@ -29,4 +29,4 @@ import "./firebase/firebase"
 const divRoot = document.querySelector("#root");
 
 
-ReactDOM.render([<UpScroll />,<Header />,<Impulsa />, <Ofrecemos />, <CursoDiplo/>, <Galeria />, <Container />, <Inscribete />, <Contacto />, <Social />, <CrearNoticia />, <EdicionCursos/>], divRoot)
+ReactDOM.render([<UpScroll />,<Header />,<Impulsa />, <Ofrecemos />, <CursoDiplo/>, <Galeria />, <Container />, <Inscribete />, <Contacto />, <Social />, <CrearNoticia />, <EdicionCatalogo/>], divRoot)

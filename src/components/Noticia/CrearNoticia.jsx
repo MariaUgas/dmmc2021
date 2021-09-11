@@ -28,7 +28,7 @@ const CrearNoticia = () => {
 
   const handleClean = () => {
     tituloRef.current.value = "";
-    // contenido.current.value = "";
+    parrafosRef.current.value = "";
     autorRef.current.value = "";
     imagenRef.current.value = "";
   };

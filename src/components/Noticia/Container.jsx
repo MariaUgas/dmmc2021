@@ -13,10 +13,16 @@ export const Container=()=>{
             documents.push({id:doc.id, ...doc.data() })
         });
         setNoticias(documents)
-    })
+    }),,
 }, [])
 
-    return(
+
+    const {docs} = store.collection("noticia").orderBy("fecha", "desc").limit(3).get()
+          const nuevoArray = docs.map(item =>({id:item.id, ...item.data()}))
+          setNoticias(nuevoArray)
+
+   
+      return(
         <div className="vitrina">
             {
                 noticias.map((noticia)=>(
