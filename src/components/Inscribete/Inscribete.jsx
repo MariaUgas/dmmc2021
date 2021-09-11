@@ -54,6 +54,7 @@ function Inscribete() {
         </svg>
       </div>
     </section>
+    
   );
 }
 
