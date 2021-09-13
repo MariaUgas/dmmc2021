@@ -23,8 +23,6 @@ export const TablaCursos = ({ idarea }) => {
     }
   });
 
-  //console.log(filterByArea);
-
   return (
     <div className="accordion-body">
       <div className="tabla-cursos">

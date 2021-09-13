@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import store from "../../firebase/firebase.js";
@@ -59,7 +59,7 @@ const CrearNoticia = () => {
   }, [send]);
 
   return (
-    <>
+    <Fragment>
       <div className="div-toast">
         <ToastContainer className="p-3 sticky-div">
           <Toast onClose={() => setShow(false)} bg={tipoAlert} show={show}>
@@ -157,7 +157,7 @@ const CrearNoticia = () => {
           </div>
         </div>
       </div>
-    </>
+    </Fragment>
   );
 };
 export default CrearNoticia;

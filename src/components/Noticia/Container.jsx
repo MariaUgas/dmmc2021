@@ -1,40 +1,26 @@
-import React, {useState, useEffect} from "react";
-import {Noticia} from "../Noticia/Noticia.jsx";
+import React, { useState, useEffect } from "react";
+import { Noticia } from "../Noticia/Noticia.jsx";
 import store from "../../firebase/firebase.js";
+import Slider from "../Slider/Slider.jsx";
 
-export const Container=()=>{
-    const[noticias, setNoticias] = useState([]);
+export const Container = () => {
+  const [noticias, setNoticias] = useState([]);
 
-    useEffect(()=>{
-        store.collection("noticia")
-        .onSnapshot(snap=>{
-            const documents=[];
-            snap.forEach(doc=>{
-            documents.push({id:doc.id, ...doc.data() })
+  useEffect(() => {
+    store
+      .collection("noticia")
+      .orderBy("fecha", "desc")
+      .limit(6)
+      .onSnapshot((snap) => {
+        const documents = [];
+        snap.forEach((doc) => {
+          documents.push({ id: doc.id, ...doc.data() });
         });
-        setNoticias(documents)
-    }),,
-}, [])
+        setNoticias(documents);
+      });
+  }, []);
 
-
-    const {docs} = store.collection("noticia").orderBy("fecha", "desc").limit(3).get()
-          const nuevoArray = docs.map(item =>({id:item.id, ...item.data()}))
-          setNoticias(nuevoArray)
-
-   
-      return(
-        <div className="vitrina">
-            {
-                noticias.map((noticia)=>(
-                    <Noticia key = {noticia.id} noticia={noticia} />
-                ))
-            }
-        </div>
-    )
-
-    
-
-
-}
+  return <Slider noticias={noticias} />;
+};
 
 export default Container;
