@@ -45,7 +45,7 @@ a {
     ),
     url("../img/fondo_prin.jpg");
   width: 100%;
-  height: 750px;
+  height: 550px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -67,7 +67,7 @@ a {
 }
 
 .textos-hero {
-  height: 500px;
+  height: 300px;
   color: white;
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@ a {
 .textos-hero a {
   display: inline-block;
   text-decoration: none;
-  padding: 12px 15px;
+  padding: 0px 15px;
   background: rgb(27, 99, 145);
   border-radius: 8px;
   color: white;
@@ -92,7 +92,8 @@ a {
 }
 
 .textos-hero > img {
-  width: 300px;
+  width: 250px;
+  padding-top: 0px;
 }
 
 .textos-hero span {
@@ -297,19 +298,9 @@ nav {
 
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMCARDSMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 
-.content-cards {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: space-evenly;
-}
 
-.cards.contenedor {
-  background-color: #f6f6f6;
-  margin-bottom: 60px;
-  border-radius: 30px;
-  box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
-}
+
+
 
 .card {
   position: relative;
@@ -338,13 +329,10 @@ nav {
   cursor: pointer;
 }
 
-.card i {
-  margin: 30px 0 20px 0;
-  color: #a18cd1;
-  font-size: 50px;
-}
+
 
 .card p {
+  
   font-weight: 300;
   font-size: 20px;
   margin-top: 20px;
@@ -374,18 +362,15 @@ nav {
 }
 
 .card1 {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .card2 {
   margin-bottom: 100px;
 }
 
-.img-ofr > img {
-  width: 530px;
-  height: 300px;
-}
+
 
 .pluma {
   font-size: 35px;
@@ -436,14 +421,11 @@ nav {
   overflow: hidden;
 }
 
-.galeria-cont > img {
-  width: 30%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  display: block;
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  overflow: hidden;
+
+
+.carousel-inner{
+  width: 530px;
+  height: 300px;
 }
 
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM VITRINA DE LA NOTICIA MMMMMMMMMMMMMMMMMMMMM*/

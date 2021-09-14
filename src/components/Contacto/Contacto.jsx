@@ -92,7 +92,7 @@ function Contacto() {
     <footer id="contacto">
       <div className="contenedor">
         <div className="reductor">
-          <h2 className="titulo" id="contacto-id">
+          <h2 className="titulo">
             Contáctanos
           </h2>
           <Form>

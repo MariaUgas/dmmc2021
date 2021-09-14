@@ -11,14 +11,14 @@ function Galeria() {
       <div className="contenedor">
         {/* <h2 class="titulo">Nuestro ambiente</h2> */}
         <Carousel variant="dark">
-          <Carousel.Item interval={800}>
+          <Carousel.Item >
             <img
               className="d-block w-100 block-foto"
               src={foto1}
               alt="slide 1"
             />
           </Carousel.Item>
-          <Carousel.Item interval={500}>
+          <Carousel.Item /*interval={800}*/>
             <img
               className="d-block w-100 block-foto"
               src={foto2}
