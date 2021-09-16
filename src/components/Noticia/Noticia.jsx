@@ -1,5 +1,5 @@
 import React from "react";
-import store from "../../firebase/firebase.js";
+
 
 export const Noticia = ({ noticia }) => {
   const { titulo, autor, contenido, fecha, image } = noticia;
@@ -7,7 +7,7 @@ export const Noticia = ({ noticia }) => {
 
   return (
     <section className="noticia-ddia" id="noticia-id">
-      <h5>NOTICIA DEL DIA</h5>
+      
       <div className="caja-not">
         <div className="caja1">
           <div className="title-not">

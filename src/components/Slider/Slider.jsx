@@ -1,25 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useDebugValue } from "react";
 import Button from "react-bootstrap/Button";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
+import Modal from "react-bootstrap/Modal";
+import Noticia from "../../components/Noticia/Noticia.jsx";
 
 export default (props) => {
+
+  const [show, setShow] = useState(null)
+ 
+
   const [sizeArray, setSizeArray] = useState(props.noticias.length);
   useEffect(() => {
     setSizeArray(props.noticias.length);
   });
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, slider] = useKeenSlider({
-    slidesPerView: sizeArray / 2,
+    slidesPerView: sizeArray / sizeArray,
     initial: 0,
     slideChanged(s) {
       setCurrentSlide(s.details().relativeSlide);
     },
+    
   });
 
-  return (
+  
+
+  
+ return (
     <>
-      <section className="info-last">
+      <section className="info-last" id="noticia-id">
         <div className="contenedor">
           <h2 className="titulo">NOTICIAS</h2>
           <div className="navigation-wrapper">
@@ -35,11 +45,47 @@ export default (props) => {
                     variant="outline-light"
                     size="lg"
                     className="btn-slide"
-                  >
+                    onClick={() => setShow(true)}>
+                    
                     {noticia.titulo}
+                  
                   </Button>
                 </div>
               ))}
+              <div className="ventana">
+              
+
+              <Modal
+               
+                  show={show}
+                  onHide={() => setShow(false)}
+                  dialogClassName="modal-90w"
+                  aria-labelledby="example-custom-modal-styling-title"
+                  style={{ maxWidth: "none" }}
+                  size="xl"
+                  centered
+      >
+                  <Modal.Header closeButton>
+                    <Modal.Title id="example-custom-modal-styling-title">Noticia del dia</Modal.Title>
+                      </Modal.Header>
+                        <Modal.Body>
+                   
+
+                          {props.noticias.map((noticia, index) => (
+                          <div  key={index} className="modal-slider">
+                            
+                              <Noticia 
+                              noticia={noticia}
+                              />
+
+                        </div>
+                                               
+                          ))}
+                   
+                  </Modal.Body>
+              </Modal>
+              
+              </div>
             </div>
             {slider && (
               <>

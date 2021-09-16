@@ -1,12 +1,12 @@
 import React from "react";
 import imagen1 from "../../img/imagen1.jpg";
-import Galeria from "../Galeria/Galeria.jsx";
+
 
 function Impulsa() {
   return (
     <section className="wave-contenedor website">
-      {/* <img src={imagen1} alt=""></img> */}
-      <Galeria />
+      <img src={imagen1} alt=""></img> 
+      
       <div className="contenedor-textos-main">
         <h2 className="titulo left">Impulsa tu talento!!!</h2>
         <p className="parrafo">

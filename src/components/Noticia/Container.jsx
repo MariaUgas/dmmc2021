@@ -10,7 +10,7 @@ export const Container = () => {
     store
       .collection("noticia")
       .orderBy("fecha", "desc")
-      .limit(6)
+      .limit(9)
       .onSnapshot((snap) => {
         const documents = [];
         snap.forEach((doc) => {
@@ -20,7 +20,7 @@ export const Container = () => {
       });
   }, []);
 
-  return <Slider noticias={noticias} />;
+  return  <Slider noticias={noticias} />;
 };
 
 export default Container;

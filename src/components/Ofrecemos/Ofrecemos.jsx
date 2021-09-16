@@ -1,14 +1,16 @@
 import React from "react";
-import { FaRegClone } from "react-icons/fa";
-import ofr1 from "../../img/ofr1.jpg";
-import ofr2 from "../../img/ofr2.jpg";
+import { GiGraduateCap } from "react-icons/gi";
+import Galeria from "../Galeria/Galeria";
+
+
+
 
 function Ofrecemos() {
   return (
     <div className="content-cards" id="media-id">
       <div className="card1">
         <article className="card">
-          <FaRegClone className="pluma" />
+          <GiGraduateCap className="icono" />
           <h3>Conócenos</h3>
           <p>
             En el Instituto Latinoamericano de Actualizacion Profesional somos
@@ -19,14 +21,7 @@ function Ofrecemos() {
           <div className="content-media"></div>
         </article>
         <div className="img-ofr">
-          <iframe
-            width="530px"
-            height="300px"
-            src="https://www.youtube.com/embed/Abz905tklPA"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          ></iframe>
+          <Galeria/>
         </div>
       </div>
 
@@ -47,3 +42,11 @@ function Ofrecemos() {
 }
 
 export default Ofrecemos;
+/*<iframe
+            width="530px"
+            height="300px"
+            src="https://www.youtube.com/embed/Abz905tklPA"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          ></iframe>*/

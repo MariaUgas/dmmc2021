@@ -9,8 +9,11 @@ function Galeria() {
   return (
     <section className="info-last">
       <div className="contenedor">
-        {/* <h2 class="titulo">Nuestro ambiente</h2> */}
-        <Carousel variant="dark">
+      
+        <Carousel variant="dark" style={{width:"700px"}}>
+        <Carousel.Item >
+        
+          </Carousel.Item>
           <Carousel.Item >
             <img
               className="d-block w-100 block-foto"
@@ -25,14 +28,14 @@ function Galeria() {
               alt="slide 2"
             />
           </Carousel.Item>
-          <Carousel.Item>
+          <Carousel.Item >
             <img
               className="d-block w-100 block-foto"
               src={foto3}
               alt="slide 3"
             />
           </Carousel.Item>
-          <Carousel.Item>
+          <Carousel.Item >
             <img
               className="d-block w-100 block-foto"
               src={foto4}

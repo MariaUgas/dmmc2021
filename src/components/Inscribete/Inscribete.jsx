@@ -4,8 +4,10 @@ import Pago from "../../components/Pago/Pago.jsx";
 import Contacto from "../../components/Contacto/Contacto.jsx";
 
 function Inscribete() {
-  const [show, setShow] = useState(false);
+ 
   const [show2, setShow2] = useState(false);
+  const [show, setShow] = useState(false);
+
 
   return (
     <section className="info-last">
