@@ -31,21 +31,18 @@ function Inscribete() {
       <div className="contenedor last-section">
         
         <div className="contenedor-textos-main" id="contacto-id">
-          <h2 className="titulo left">Elige lo mejor para tu futuro!</h2>
-          <p className="parrafo">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa ullam
-            aliquam perspiciatis, dolore quaerat odio laudantium adipisci
-            laboriosam libero quis voluptas cupiditate exercitationem soluta
-            distinctio magnam dignissimos. Aspernatur, veniam aperiam.
-          </p>
-          <input
+          <div className="boton-contacto">
+
+        <input
             type="submit"
             value="Contáctanos"
             className="cta"
             onClick={() => setShow2(true)}
           />
-        </div>
-        <div className="contenedor-textos-main" id="inscribete-id">
+          </div>
+          
+          <div className="texto-contacto">
+
           <h2 className="titulo left">Elige lo mejor para tu futuro!</h2>
           <p className="parrafo">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa ullam
@@ -53,12 +50,31 @@ function Inscribete() {
             laboriosam libero quis voluptas cupiditate exercitationem soluta
             distinctio magnam dignissimos. Aspernatur, veniam aperiam.
           </p>
-          <input
+          </div>
+          
+          
+        </div>
+        <div className="contenedor-textos-main" id="inscribete-id">
+          <div className="boton-notificacion">
+
+        <input
             type="submit"
             value="Notificación de Pago"
             className="cta"
             onClick={() => setShow(true)}
           />
+          </div>
+          <div className="texto-notificacion">
+
+          <h2 className="titulo left">Elige lo mejor para tu futuro!</h2>
+          <p className="parrafo">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa ullam
+            aliquam perspiciatis, dolore quaerat odio laudantium adipisci
+            laboriosam libero quis voluptas cupiditate exercitationem soluta
+            distinctio magnam dignissimos. Aspernatur, veniam aperiam.
+          </p>
+          </div>
+         
         </div>
         </div>
      

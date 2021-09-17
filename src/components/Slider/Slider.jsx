@@ -47,6 +47,7 @@ export default (props) => {
                     variant="outline-light"
                     size="lg"
                     className="btn-slide"
+                    style={{fontWeight:"bold"}}
                     //onClick={() => setShow(true)}
                     onClick={() => handlerViewNoticia(noticia)}
                   >

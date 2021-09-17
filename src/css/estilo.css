@@ -128,6 +128,8 @@ a {
 .titulo.left {
   text-align: center;
   font-weight: 500;
+  margin-top: 40px;
+  margin-bottom:10px;
 }
 
 .titulo.right {
@@ -165,6 +167,7 @@ a {
   padding: 12px 15px;
   border-radius: 8px;
   color: white;
+  
 }
 
 .titulo {
@@ -692,6 +695,21 @@ input[type="submit"]:hover {
   margin-right: auto;
 }
 
+#contacto-id, #inscribete-id{
+  display: flex;
+}
+
+.texto-contacto, .texto-notificacion{
+  margin-left: 150px;
+}
+
+.boton-contacto{
+  margin-top: 80px;
+}
+
+.boton-notificacion{
+  margin-top: 80px;
+}
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM FOOTER -CONTACTO MMMMMMMMMMMMMMMMMMMMMMMM*/
 
 footer {
@@ -1015,6 +1033,10 @@ select > option {
 
 .radio-box-group-style {
   margin-bottom: 30px;
+}
+
+.texto-contacto{
+  float: right;
 }
 
 /*mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm BARRA DE NAVEGACION mmmmmmmmmmmmmmmmm*/
