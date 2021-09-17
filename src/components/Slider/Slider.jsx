@@ -6,9 +6,15 @@ import Modal from "react-bootstrap/Modal";
 import Noticia from "../../components/Noticia/Noticia.jsx";
 
 export default (props) => {
+  //({noticias}) => {
 
-  const [show, setShow] = useState(null)
- 
+  const [show, setShow] = useState(null);
+  const [noticiaSeleccionada, setNoticiaSeleccionada] = useState(null);
+
+  const handlerViewNoticia = (noticia) => {
+    setShow(true);
+    setNoticiaSeleccionada(noticia);
+  };
 
   const [sizeArray, setSizeArray] = useState(props.noticias.length);
   useEffect(() => {
@@ -21,13 +27,9 @@ export default (props) => {
     slideChanged(s) {
       setCurrentSlide(s.details().relativeSlide);
     },
-    
   });
 
-  
-
-  
- return (
+  return (
     <>
       <section className="info-last" id="noticia-id">
         <div className="contenedor">
@@ -45,18 +47,15 @@ export default (props) => {
                     variant="outline-light"
                     size="lg"
                     className="btn-slide"
-                    onClick={() => setShow(true)}>
-                    
+                    //onClick={() => setShow(true)}
+                    onClick={() => handlerViewNoticia(noticia)}
+                  >
                     {noticia.titulo}
-                  
                   </Button>
                 </div>
               ))}
               <div className="ventana">
-              
-
-              <Modal
-               
+                <Modal
                   show={show}
                   onHide={() => setShow(false)}
                   dialogClassName="modal-90w"
@@ -64,27 +63,16 @@ export default (props) => {
                   style={{ maxWidth: "none" }}
                   size="xl"
                   centered
-      >
+                >
                   <Modal.Header closeButton>
-                    <Modal.Title id="example-custom-modal-styling-title">Noticia del dia</Modal.Title>
-                      </Modal.Header>
-                        <Modal.Body>
-                   
-
-                          {props.noticias.map((noticia, index) => (
-                          <div  key={index} className="modal-slider">
-                            
-                              <Noticia 
-                              noticia={noticia}
-                              />
-
-                        </div>
-                                               
-                          ))}
-                   
+                    <Modal.Title id="example-custom-modal-styling-title">
+                      Noticia del dia
+                    </Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Noticia noticia={noticiaSeleccionada} />
                   </Modal.Body>
-              </Modal>
-              
+                </Modal>
               </div>
             </div>
             {slider && (
