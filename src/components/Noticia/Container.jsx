@@ -19,8 +19,11 @@ export const Container = () => {
         setNoticias(documents);
       });
   }, []);
+  
 
   return  <Slider noticias={noticias} />;
+  
+  
 };
 
 export default Container;

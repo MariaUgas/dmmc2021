@@ -9,6 +9,9 @@ import { AiOutlineWhatsApp } from 'react-icons/ai'
 function Social(){
     return(
         
+
+        
+        
         <div class="social">
             <div className="social-flex">
                 <a href="http://www.facebook.com/institutolap" target="_blank" className="twitter" ><GrFacebook style={{fill:"#2c303b"}}/></a>
@@ -20,6 +23,7 @@ function Social(){
                 <p style={{fontSize:"small"}}><BiCopyright />2021 Derechos reservados Instituto LAP - <span className="moodle">Soportado por Moodle.org</span> </p>
             </div>  
         </div>
+        
     
     
         

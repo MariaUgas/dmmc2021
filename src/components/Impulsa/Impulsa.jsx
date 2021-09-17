@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
+import Modal from "react-bootstrap/Modal";
 import imagen1 from "../../img/imagen1.jpg";
 
 
 function Impulsa() {
+
+  const [show, setShow]=useState(null)
+
+
   return (
     <section className="wave-contenedor website">
       <img src={imagen1} alt=""></img> 
@@ -16,9 +21,28 @@ function Impulsa() {
           de capacitación, tanto presencial como online, para facilitar el
           aprendizaje e impulsar el talento humano.
         </p>
-        <input type="submit" className="cta" value="+Info" />
+        <input type="submit" className="cta" value="+Info" onClick={() => setShow(true)} />
+      </div>
+      <div className="modal">
+      <Modal
+        show={show}
+        onHide={() => setShow(false)}
+        dialogClassName="modal-90w"
+        aria-labelledby="example-custom-modal-styling-title"
+        style={{ maxWidth: "none" }}
+        size="xl"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-custom-modal-styling-title"></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h2>Mision y Vision del Instituto AQUI</h2>
+        </Modal.Body>
+      </Modal>
       </div>
     </section>
+   
   );
 }
 

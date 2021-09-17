@@ -9,7 +9,7 @@ function Ofrecemos() {
   return (
     <div className="content-cards" id="media-id">
       <div className="card1">
-        <article className="card">
+        <article className="conocenos">
           <GiGraduateCap className="icono" />
           <h3>Conócenos</h3>
           <p>

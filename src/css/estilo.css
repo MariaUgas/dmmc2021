@@ -126,7 +126,7 @@ a {
 }
 
 .titulo.left {
-  text-align: left;
+  text-align: center;
   font-weight: 500;
 }
 
@@ -147,13 +147,14 @@ a {
 }
 
 .website .contenedor-textos-main {
-  width: 40%;
+  width: 50%;
 }
 
 
 
 .parrafo {
-  text-align: justify;
+  text-align: center;
+  font-size: 1.2em;
   margin-bottom: 20px;
 }
 
@@ -362,6 +363,23 @@ nav {
   color: rgb(16, 69, 102);
   margin: 20px auto;
 }
+
+.conocenos{
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+}
+
+.conocenos > h3{
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.conocenos > p{
+  text-align: center;
+  font-size: 1.2em;
+}
+
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM CATALOGO DE CURSOS MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
 .cur-dip {
   display: flex;
@@ -409,7 +427,7 @@ nav {
 
 
 .carousel-inner{
-  width: 530px;
+  width: 400px;
   height: 300px;
 }
 
@@ -472,7 +490,13 @@ nav {
   flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 40px;
+ 
 }
+
+ .info-ult{
+  background: #f6f6f6;
+}
+
 
 .last-section img {
   width: 48%;

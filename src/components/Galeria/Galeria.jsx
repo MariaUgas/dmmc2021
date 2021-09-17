@@ -7,13 +7,10 @@ import foto4 from "../../img/foto4.webp";
 
 function Galeria() {
   return (
-    <section className="info-last">
-      <div className="contenedor">
+   
+      <div className="carrusel-galeria">
       
         <Carousel variant="dark" style={{width:"700px"}}>
-        <Carousel.Item >
-        
-          </Carousel.Item>
           <Carousel.Item >
             <img
               className="d-block w-100 block-foto"
@@ -44,7 +41,7 @@ function Galeria() {
           </Carousel.Item>
         </Carousel>
       </div>
-    </section>
+   
   );
 }
 
