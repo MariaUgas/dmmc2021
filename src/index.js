@@ -7,7 +7,6 @@ import Ofrecemos from "./components/Ofrecemos/Ofrecemos.jsx";
 import Inscribete from "./components/Inscribete/Inscribete.jsx";
 import Container from "./components/Noticia/Container.jsx";
 import CursoDiplo from "./components/CursoDiplo/CursoDiplo.jsx";
-import CrearNoticia from "./components/Noticia/CrearNoticia.jsx";
 import Social from "./components/Social/Social.jsx";
 import UpScroll from "./components/UpScroll/UpScroll.jsx";
 
@@ -27,8 +26,8 @@ ReactDOM.render(
     // <Galeria />,
     <Container />,
     <Inscribete />,
-    <Social />,
-    <CrearNoticia/>
+    <Social />
+    
   ],
   divRoot
 );
