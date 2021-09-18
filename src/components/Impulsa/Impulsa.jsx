@@ -13,8 +13,8 @@ function Impulsa() {
       <img src={imagen1} alt=""></img> 
       
       <div className="contenedor-textos-main">
-        <h2 className="titulo left">Impulsa tu talento!!!</h2>
-        <p className="parrafo">
+        <h2 className="titulo left2">Impulsa tu talento!!!</h2>
+        <p className="parrafo2">
           El Instituto Latinoamericano de Actualización Profesional, ILAP, nace
           con el objetivo de satisfacer las crecientes necesidades de
           adiestramiento dentro del mundo empresarial en Latinoamérica a través
