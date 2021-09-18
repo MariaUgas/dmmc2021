@@ -10,7 +10,17 @@ function Impulsa() {
 
   return (
     <section className="wave-contenedor website">
-      <img src={imagen1} alt=""></img> 
+      
+          <iframe
+            width="530px"
+            height="300px"
+            style={{marginTop:"60px"}}
+            src="https://www.youtube.com/embed/Abz905tklPA"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          ></iframe>
+      
       
       <div className="contenedor-textos-main">
         <h2 className="titulo left2">Impulsa tu talento!!!</h2>
@@ -21,7 +31,8 @@ function Impulsa() {
           de capacitación, tanto presencial como online, para facilitar el
           aprendizaje e impulsar el talento humano.
         </p>
-        <input type="submit" className="cta" value="+Info" onClick={() => setShow(true)} />
+      
+      <input type="submit" className="cta" value="+Info" onClick={() => setShow(true)} />
       </div>
       <div className="modal">
       <Modal

@@ -135,7 +135,7 @@ a {
 .titulo.left2 {
   text-align: center;
   font-weight: 500;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom:10px;
 }
 
@@ -370,6 +370,10 @@ nav {
 
 .card2 {
   margin-bottom: 30px;
+}
+
+.video{
+  display: flex;
 }
 
 
