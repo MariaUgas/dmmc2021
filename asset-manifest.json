@@ -1,32 +1,30 @@
 {
   "files": {
-    "main.css": "/dmmc2021/static/css/main.59cd0385.chunk.css",
-    "main.js": "/dmmc2021/static/js/main.49e26ef7.chunk.js",
-    "main.js.map": "/dmmc2021/static/js/main.49e26ef7.chunk.js.map",
+    "main.css": "/dmmc2021/static/css/main.85e3c1e0.chunk.css",
+    "main.js": "/dmmc2021/static/js/main.b295da93.chunk.js",
+    "main.js.map": "/dmmc2021/static/js/main.b295da93.chunk.js.map",
     "runtime-main.js": "/dmmc2021/static/js/runtime-main.96853ddd.js",
     "runtime-main.js.map": "/dmmc2021/static/js/runtime-main.96853ddd.js.map",
-    "static/css/2.869fbba4.chunk.css": "/dmmc2021/static/css/2.869fbba4.chunk.css",
-    "static/js/2.e5134bbd.chunk.js": "/dmmc2021/static/js/2.e5134bbd.chunk.js",
-    "static/js/2.e5134bbd.chunk.js.map": "/dmmc2021/static/js/2.e5134bbd.chunk.js.map",
+    "static/css/2.202aa6c8.chunk.css": "/dmmc2021/static/css/2.202aa6c8.chunk.css",
+    "static/js/2.01472730.chunk.js": "/dmmc2021/static/js/2.01472730.chunk.js",
+    "static/js/2.01472730.chunk.js.map": "/dmmc2021/static/js/2.01472730.chunk.js.map",
     "index.html": "/dmmc2021/index.html",
-    "static/css/2.869fbba4.chunk.css.map": "/dmmc2021/static/css/2.869fbba4.chunk.css.map",
-    "static/css/main.59cd0385.chunk.css.map": "/dmmc2021/static/css/main.59cd0385.chunk.css.map",
-    "static/js/2.e5134bbd.chunk.js.LICENSE.txt": "/dmmc2021/static/js/2.e5134bbd.chunk.js.LICENSE.txt",
+    "static/css/2.202aa6c8.chunk.css.map": "/dmmc2021/static/css/2.202aa6c8.chunk.css.map",
+    "static/css/main.85e3c1e0.chunk.css.map": "/dmmc2021/static/css/main.85e3c1e0.chunk.css.map",
+    "static/js/2.01472730.chunk.js.LICENSE.txt": "/dmmc2021/static/js/2.01472730.chunk.js.LICENSE.txt",
     "static/media/estilo.css": "/dmmc2021/static/media/fondo_prin.8ec5241b.jpg",
     "static/media/foto1.479abd24.webp": "/dmmc2021/static/media/foto1.479abd24.webp",
     "static/media/foto2.b5f10e9f.webp": "/dmmc2021/static/media/foto2.b5f10e9f.webp",
     "static/media/foto3.d84be010.webp": "/dmmc2021/static/media/foto3.d84be010.webp",
     "static/media/foto4.0b63e908.webp": "/dmmc2021/static/media/foto4.0b63e908.webp",
     "static/media/ilap-logo.6471880b.png": "/dmmc2021/static/media/ilap-logo.6471880b.png",
-    "static/media/imagen1.1351b80c.jpg": "/dmmc2021/static/media/imagen1.1351b80c.jpg",
-    "static/media/ofr1.0f777be6.jpg": "/dmmc2021/static/media/ofr1.0f777be6.jpg",
-    "static/media/ofr2.6af72dd3.jpg": "/dmmc2021/static/media/ofr2.6af72dd3.jpg"
+    "static/media/imagen1.1351b80c.jpg": "/dmmc2021/static/media/imagen1.1351b80c.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.96853ddd.js",
-    "static/css/2.869fbba4.chunk.css",
-    "static/js/2.e5134bbd.chunk.js",
-    "static/css/main.59cd0385.chunk.css",
-    "static/js/main.49e26ef7.chunk.js"
+    "static/css/2.202aa6c8.chunk.css",
+    "static/js/2.01472730.chunk.js",
+    "static/css/main.85e3c1e0.chunk.css",
+    "static/js/main.b295da93.chunk.js"
   ]
 }
