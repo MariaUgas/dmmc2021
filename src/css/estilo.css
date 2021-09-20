@@ -115,7 +115,7 @@ a {
 }
 
 .contenedor {
-  padding: 80px 0;
+  padding: 20px 0;
 }
 
 .titulo {
@@ -418,7 +418,7 @@ nav {
 }
 
 .contenedor-cursos {
-  margin-bottom: 150px;
+  margin-bottom: 50px;
 }
 
 .accordion {
@@ -428,6 +428,15 @@ nav {
 .tabla-cursos {
   width: 1000px;
   margin: 0 auto;
+}
+
+.pdfs{
+  background: #f6f6f6;
+}
+
+.pdfs > a{
+  color: #f38115;
+  font-weight: bold;
 }
 
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMM GALERIA MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
@@ -481,7 +490,8 @@ nav {
 
 .title-not {
   padding-left: 50px;
-  padding-top: 30px;
+  padding-top: 0px;
+  padding-bottom: 20px;
 }
 
 .titulo.left {
@@ -916,19 +926,28 @@ select > option {
 
 .social-flex {
   display: flex;
-  justify-content: center;
-  padding-bottom: 20px;
+  justify-content: inherit;
+  padding-bottom: 30px;
   color: #2c303b;
 }
 
+.sociales{
+  display: flex;
+  justify-content: flex-end;
+}
+
 .twitter {
-  padding: 0 50px;
+  padding-left: 40px;
   color: #2c303b;
+}
+
+.bcv{
+  padding-right: 40px;
 }
 
 .copyright {
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 50px;
   color: #d9d7df;
 }
 

@@ -24,7 +24,11 @@ function CursoDiplo() {
       <div className="cur-dip">
         <ItemAcordeonArea mapaAreasObj={mapaAreasObj[0]} />
       </div>
+      <div className="pdfs" style={{textAlign:"center"}}>
+        <a href="#" target="_blank" rel="noreferrer" >PDF´s informativos aqui</a>
+      </div>
       <div>
+        
         <div
           className="svg-wave"
           style={{ height: "150px", overflow: "hidden", background: "#f6f6f6" }}
