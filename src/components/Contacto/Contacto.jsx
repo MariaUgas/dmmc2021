@@ -2,6 +2,7 @@ import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useRef, useState, useEffect } from "react";
 import { Col, Form, Row } from "react-bootstrap";
+import { RadioButton, RadioGroup } from "@trendmicro/react-radio";
 import Button from "react-bootstrap/Button";
 import store from "../../firebase/firebase.js";
 
@@ -12,6 +13,7 @@ function Contacto() {
   const itemPaisRef = useRef();
   const itemCategoriaRef = useRef();
   const itemCursoRef = useRef();
+  const tipoPersonaRef = useRef();
 
   /*const handlerOnChange=()=> {
     tlfRef.value = this.value;
@@ -71,6 +73,7 @@ function Contacto() {
     const contacto = [
       {
         id: uuidv4,
+        tipo: tipoPersonaRef.current.value,
         nombre: nombreRef.current.value,
         email: emailRef.current.value,
         codigoArea: itemPaisRef.current.value,
@@ -80,14 +83,25 @@ function Contacto() {
       },
     ];
     console.log(JSON.stringify(contacto, null, 2));
-
+    tipoPersonaRef.current.value = "";
     nombreRef.current.value = "";
     emailRef.current.value = "";
     itemPaisRef.current.value = "";
     tlfRef.current.value = "";
     itemCategoriaRef.current.value = "";
     itemCursoRef.current.value = "";
+
   };
+  
+  const [tipoPersona, setTipoPersona] = useState("")
+
+  const handlerTipoPersona = function (e) {
+    tipoPersonaRef.current.value = e.target.value;
+    setTipoPersona(tipoPersonaRef.current.value);
+  
+  
+  };
+  
   return (
     <footer id="contacto">
       <div className="contenedor">
@@ -96,6 +110,19 @@ function Contacto() {
             Contáctanos
           </h2>
           <Form>
+          <Row>
+              <RadioGroup name="tipoPersona" ref={tipoPersonaRef} >
+                <div className="row">
+                  <div className="col-xs-12 col-sm-6">
+                    <RadioButton value="persona" checked={tipoPersona === "persona"} onClick={handlerTipoPersona}>Persona</RadioButton>
+                  </div>
+                  <div className="col-xs-12 col-sm-6">
+                    <RadioButton value="empresa" checked={tipoPersona === "empresa"} onClick={handlerTipoPersona}>Empresa</RadioButton>
+                  </div>
+                </div>
+              </RadioGroup>
+            </Row>
+            <br />
             <Form.Group className="mb-3" controlId="formGroupNombre">
               <Form.Label style={{ color: "#000000" }}>Nombre</Form.Label>
               <Form.Control

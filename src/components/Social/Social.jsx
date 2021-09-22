@@ -20,13 +20,7 @@ function Social(){
         <div class="social">
             <div className="social-flex">
                 <div className="institucional">
-                <OverlayTrigger
-                      overlay={
-                        <Tooltip >
-                          Banco Central de Venezuela
-                        </Tooltip>
-                      }
-                    ><a href="http://bcv.org.ve/" target="_blank" className="bcv" rel="noreferrer" ><img src={bcvLogo} width="60px"/></a></OverlayTrigger>
+                
                     <a href="http://www.consultoresicg.com/" target="_blank" className="bcv" rel="noreferrer"><img src={icgLogo} width="60px"/></a>
                      <OverlayTrigger
                       overlay={
@@ -35,6 +29,13 @@ function Social(){
                         </Tooltip>
                       }
                     ><a href="https://www.avesid.net/" target="_blank" className="bcv" rel="noreferrer"><img src={avesidLogo} width="60px"/></a></OverlayTrigger>
+                    <OverlayTrigger
+                      overlay={
+                        <Tooltip >
+                          Banco Central de Venezuela
+                        </Tooltip>
+                      }
+                    ><a href="http://bcv.org.ve/" target="_blank" className="bcv" rel="noreferrer" ><img src={bcvLogo} width="60px"/></a></OverlayTrigger>
                 </div>
                 <div className="sociales">
                      <OverlayTrigger

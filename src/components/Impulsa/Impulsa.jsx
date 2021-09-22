@@ -1,11 +1,13 @@
 import React, {useState} from "react";
 import Modal from "react-bootstrap/Modal";
-import imagen1 from "../../img/imagen1.jpg";
+import { GiGraduateCap } from "react-icons/gi";
+import Galeria from "../Galeria/Galeria";
 
 
 function Impulsa() {
 
   const [show, setShow]=useState(null)
+  const [show2, setShow2]=useState(null)
 
 
   return (
@@ -29,18 +31,20 @@ function Impulsa() {
           con el objetivo de satisfacer las crecientes necesidades de
           adiestramiento dentro del mundo empresarial en Latinoamérica a través
           de capacitación, tanto presencial como online, para facilitar el
-          aprendizaje e impulsar el talento humano.
-        </p>
-      
-      <input type="submit" className="cta" value="+Info" onClick={() => setShow(true)} />
+          aprendizaje e impulsar el talento humano. Conoce mas de nosotros en nuestra galeria de <a href="javascript:void(0)" target="" onClick={() => setShow2(true)}>imágenes</a>
+         </p>
+      <div className="btn-imp">
+        <input type="submit" className="cta" value="+Info" onClick={() => setShow(true)} />
       </div>
+      
+      
       <div className="modal">
       <Modal
         show={show}
         onHide={() => setShow(false)}
         dialogClassName="modal-90w"
         aria-labelledby="example-custom-modal-styling-title"
-        style={{ maxWidth: "none" }}
+        style={{ maxWidth: "none"}}
         size="xl"
         centered
       >
@@ -48,9 +52,39 @@ function Impulsa() {
           <Modal.Title id="example-custom-modal-styling-title"></Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h2>Mision y Vision del Instituto AQUI</h2>
+        <div className="card1">
+          <article className="conocenos">
+            <GiGraduateCap className="icono" />
+              <p>
+                En el Instituto Latinoamericano de Actualizacion Profesional somos
+                una gran familia de profesionales del area empresarial altamente
+                calificados, poniendo su conocimiento a tu disposicion para el logro
+                de tus metas.{" "}
+              </p>
+          </article>
+        </div>
         </Modal.Body>
       </Modal>
+      </div>
+      <div className="modal">
+    
+      <Modal
+        show={show2}
+        onHide={() => setShow2(false)}
+        dialogClassName="modal-90w"
+        aria-labelledby="example-custom-modal-styling-title"
+        style={{ maxWidth: "760px"}}
+        size="xl"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="modal-galeria">Nuestro Ambiente</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Galeria/>
+        </Modal.Body>
+      </Modal>
+      </div>
       </div>
     </section>
    

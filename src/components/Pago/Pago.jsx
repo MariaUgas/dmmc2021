@@ -21,9 +21,11 @@ const Pago = () => {
   const fechaPagoRef = useRef();
   const idDepositoRef = useRef();
   const montoRef = useRef();
+  const tipoOperacionRef = useRef();
 
   /*** Obtener Area */
   const [areasObj, setAreasObj] = useState([]);
+  
 
   useEffect(() => {
     store.collection("areas").onSnapshot((snap) => {
@@ -97,7 +99,19 @@ const Pago = () => {
     setMoneda(monedaRef.current.value)
     
   }
-/*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
+
+  const [tipoOperacion, setTipoOperacion] = useState("")
+  const [modoOperacion, setModoOperacion] = useState(null)
+  
+  const handlerTipoOperacion = function (e) {
+    tipoOperacionRef.current.value  = e.target.value;
+    setTipoOperacion(tipoOperacionRef.current.value)
+    
+      if (tipoOperacion === "transferencia"){
+        setModoOperacion(true)
+      }
+  }
+    /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
   const handlerClick = () => {
     const pago = [
       {
@@ -109,6 +123,7 @@ const Pago = () => {
         telefono: tlfRef.current.value,
         categoria: itemCategoriaRef.current.value,
         curso: itemCursoRef.current.value,
+        tipoOperacion: tipoOperacionRef.current.value,
         bancoOrigen: bancoOrigenRef.current.value,
         bancoDestino: itemBancoDestinoRef.current.value,
         fechaPago: fechaPagoRef.current.value,
@@ -127,6 +142,7 @@ const Pago = () => {
     tlfRef.current.value = "";
     itemCategoriaRef.current.value = "";
     itemCursoRef.current.value = "";
+    tipoOperacionRef.current.value = "";
     bancoOrigenRef.current.value ="";
     fechaPagoRef.current.value = "";
     idDepositoRef.current.value = "";
@@ -147,6 +163,25 @@ const Pago = () => {
             Notificación de Pago
           </h2>
           <Form>
+          <Form.Label style={{ color: "#000000" }}>
+              Moneda de operación
+            </Form.Label>
+            <Row>
+              <RadioGroup name="moneda" ref={monedaRef}>
+                <div className="row">
+                  <div className="col-xs-12 col-sm-3">
+                    <RadioButton value="dolar" checked={moneda === "dolar"} onClick={handlerMoneda}>USD</RadioButton>
+                  </div>
+                  <div className="col-xs-12 col-sm-3">
+                    <RadioButton value="bolivar" checked={moneda === "bolivar"} onClick={handlerMoneda}>Bs.</RadioButton>
+                  </div>
+                </div>
+              </RadioGroup>
+            </Row>
+            <br />
+            <h4>Datos alumno</h4>
+            <hr />
+            <br />
           <Form.Label style={{ color: "#000000" }}>Persona</Form.Label>
           <Row>
               <RadioGroup name="bancoOrigen" ref={tipoPersonaRef} >
@@ -241,6 +276,8 @@ const Pago = () => {
                 />
               </Form.Group>
             </Row>
+            <h4>Selección de curso</h4>
+            <hr />
             <Row className="mb-3">
               <Form.Group className="mb-3" controlId="formGroupCursos">
                 <Form.Label style={{ color: "#000000" }}>Categoría</Form.Label>
@@ -279,101 +316,201 @@ const Pago = () => {
             <br />
             <h4>Datos de Operacion</h4>
             <hr />
-            <Form.Group as={Col} controlId="formGroupBancos">
-              <Form.Label
-                style={{
-                  color: "#000000",
-                  width: "250px !important",
-                  display: "inline",
-                }}
-              >
-                Banco destino
-              </Form.Label>
-              <Form.Select
-                aria-label="Default select example"
-                style={{
-                  height: "50px",
-                  position: "relative",
-                  marginTop: "8px",
-                  marginBottom: "30px",
-                }}
-                ref={itemBancoDestinoRef} /*onChange={()=>handlerOnChange()}*/
-              >
-                <option value="">Seleccione Banco destino</option>
-                <option value="Banesco">Banesco</option>
-                <option value="">B.O.D.</option>
-                <option value="">Jp Morgan Chase</option>
-              </Form.Select>
-            </Form.Group>
-            <Form.Label style={{ color: "#000000" }}>Banco origen</Form.Label>
-            <Row>
-              <RadioGroup name="bancoOrigen" ref={bancoOrigenRef} >
-                <div className="row">
-                  <div className="col-xs-12 col-sm-6">
-                    <RadioButton value="mismo" checked={origen === "mismo"} onClick={handlerBancoOrigen}> Mismo banco</RadioButton>
-                  </div>
-                  <div className="col-xs-12 col-sm-6">
-                    <RadioButton value="otro" checked={origen === "otro"} onClick={handlerBancoOrigen}>Otro banco</RadioButton>
-                  </div>
-                </div>
-              </RadioGroup>
-            </Row>
-            <br />
-            <Form.Group className="mb-3" controlId="formGroupFecha">
-              <Form.Label style={{ color: "#000000" }}>Fecha</Form.Label>
-              <Form.Control
-                type="date"
-                placeholder="Ingrese nombre completo"
-                ref={fechaPagoRef}
-                style={{ width: "100%", height: "50px" }}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formGroupDeposito">
-              <Form.Label style={{ color: "#000000" }}>
-                Numero de operacion
-              </Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Ingrese numero de operacion bancaria"
-                ref={idDepositoRef}
-                style={{ width: "100%", height: "50px", marginBottom: "25px" }}
-              />
-            </Form.Group>
+            
             <Form.Label style={{ color: "#000000" }}>
-              Moneda de operación
+              Tipo de operación
             </Form.Label>
             <Row>
-              <RadioGroup name="moneda" ref={monedaRef}>
+              <RadioGroup name="tipo" ref={tipoOperacionRef}>
                 <div className="row">
-                  <div className="col-xs-12 col-sm-3">
-                    <RadioButton value="dolar" checked={moneda === "dolar"} onClick={handlerMoneda}>USD</RadioButton>
+                  <div className="col-xs-12 col-sm-4">
+                    <RadioButton value="efectivo" checked={tipoOperacion === "efectivo"} onClick={handlerTipoOperacion}>Efectivo (USD)</RadioButton>
                   </div>
-                  <div className="col-xs-12 col-sm-3">
-                    <RadioButton value="bolivar" checked={moneda === "bolivar"} onClick={handlerMoneda}>Bs.</RadioButton>
+                  <div className="col-xs-12 col-sm-4">
+                    <RadioButton value="transferencia" checked={tipoOperacion === "transferencia"} onClick={handlerTipoOperacion}>Transferencia</RadioButton>
+                  </div>
+                  <div className="col-xs-12 col-sm-4">
+                    <RadioButton value="pagoMovil" checked={tipoOperacion === "pagoMovil"} onClick={handlerTipoOperacion}>Pago-movil</RadioButton>
                   </div>
                 </div>
               </RadioGroup>
             </Row>
             <br />
-            <Form.Group className="mb-3" controlId="formGroupMonto">
-              <Form.Label style={{ color: "#000000" }}>Monto</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Ingrese monto de operacion"
-                ref={montoRef}
-                style={{ width: "100%", height: "50px" }}
-              />
-            </Form.Group>
+           
+            {
+              modoOperacion ?
+              (
+                <div>
+                    <Form>
+                      <Form.Group as={Col} controlId="formGroupBancos" className="groupBancos">
+                        <Form.Label
+                          style={{
+                          color: "#000000",
+                          width: "250px !important",
+                          display: "inline",
+                          }}>
+                            Banco destino
+                          </Form.Label>
+                          <Form.Select
+                            aria-label="Default select example"
+                            style={{
+                            height: "50px",
+                            position: "relative",
+                            marginTop: "8px",
+                            marginBottom: "30px",
+                          }}
+                            ref={itemBancoDestinoRef}>
+                              <option value="">Seleccione Banco destino</option>
+                              <option value="Banesco">Banesco</option>
+                              <option value="Banco Venezolano de Credito">Banco Venezolano de Crédito</option>
+                              <option value="Banesco Panama">Banesco Panamá</option>
+                            </Form.Select>
+                      </Form.Group>
+                      <Form.Label style={{ color: "#000000" }}>Banco origen</Form.Label>
+                      <Row>
+                        <RadioGroup name="bancoOrigen" ref={bancoOrigenRef} >
+                          <div className="row">
+                            <div className="col-xs-12 col-sm-6">
+                              <RadioButton value="mismo" checked={origen === "mismo"} onClick={handlerBancoOrigen}> Mismo banco</RadioButton>
+                            </div>
+                            <div className="col-xs-12 col-sm-6">
+                              <RadioButton value="otro" checked={origen === "otro"} onClick={handlerBancoOrigen}>Otro banco</RadioButton>
+                            </div>
+                          </div>
+                        </RadioGroup>
+                      </Row>
+                      <br />
+                      <Form.Group className="mb-3" controlId="formGroupFecha">
+                        <Form.Label style={{ color: "#000000" }}>Fecha</Form.Label>
+                          <Form.Control
+                            type="date"
+                            placeholder="Ingrese nombre completo"
+                            ref={fechaPagoRef}
+                            style={{ width: "100%", height: "50px" }}
+                          />
+                      </Form.Group>
+                      <Form.Group className="mb-3" controlId="formGroupDeposito">
+                        <Form.Label style={{ color: "#000000" }}>
+                          Numero de operacion
+                        </Form.Label>
+                        <Form.Control
+                          type="text"
+                          placeholder="Ingrese numero de operacion bancaria"
+                          ref={idDepositoRef}
+                          style={{ width: "100%", height: "50px", marginBottom: "25px" }}
+                        />
+                      </Form.Group>
+           
+                      <Form.Group className="mb-3" controlId="formGroupMonto">
+                        <Form.Label style={{ color: "#000000" }}>Monto</Form.Label>
+                        <Form.Control
+                          type="text"
+                          placeholder="Ingrese monto de operacion"
+                          ref={montoRef}
+                          style={{ width: "100%", height: "50px" }}
+                        />
+                      </Form.Group>
+                    </Form>
+                    <div className="btnContacto">
+                      <Button
+                        variant="primary"
+                        style={{ background: "#2c303b" }}
+                        onClick={() => handlerClick()}
+                      >
+                        Enviar
+                      </Button>
+                    </div>
+                </div>
+                   
+              )
+              :
+              (
+               <div>
+
+                    <Form>
+                      <Form.Group as={Col} controlId="formGroupBancos" className="groupBancos" style={{display:"none"}}>
+                        <Form.Label
+                          style={{
+                          color: "#000000",
+                          width: "250px !important",
+                          display: "inline",
+                          }}>
+                            Banco destino
+                          </Form.Label>
+                          <Form.Select
+                            aria-label="Default select example"
+                            style={{
+                            height: "50px",
+                            position: "relative",
+                            marginTop: "8px",
+                            marginBottom: "30px",
+                          }}
+                            ref={itemBancoDestinoRef}>
+                              <option value="">Seleccione Banco destino</option>
+                              <option value="Banesco">Banesco</option>
+                              <option value="Banco Venezolano de Credito">Banco Venezolano de Crédito</option>
+                              <option value="Banesco Panama">Banesco Panamá</option>
+                            </Form.Select>
+                      </Form.Group>
+                      <Form.Label style={{ color: "#000000", display:"none" }}>Banco origen</Form.Label>
+                      <Row>
+                        <RadioGroup name="bancoOrigen" ref={bancoOrigenRef} >
+                          <div className="row">
+                            <div className="col-xs-12 col-sm-6">
+                              <RadioButton value="mismo" checked={origen === "mismo"} onClick={handlerBancoOrigen} style={{display:"none"}}> Mismo banco</RadioButton>
+                            </div>
+                            <div className="col-xs-12 col-sm-6">
+                              <RadioButton value="otro" checked={origen === "otro"} onClick={handlerBancoOrigen} style={{display:"none"}}>Otro banco</RadioButton>
+                            </div>
+                          </div>
+                        </RadioGroup>
+                      </Row>
+                    <br />
+                    <Form.Group className="mb-3" controlId="formGroupFecha">
+                      <Form.Label style={{ color: "#000000" }}>Fecha</Form.Label>
+                        <Form.Control
+                          type="date"
+                          placeholder="Ingrese nombre completo"
+                          ref={fechaPagoRef}
+                          style={{ width: "100%", height: "50px" }}
+                        />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formGroupDeposito">
+                      <Form.Label style={{ color: "#000000" }}>
+                        Numero de operacion
+                      </Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="Opcion para Pago-movil"
+                        ref={idDepositoRef}
+                        style={{ width: "100%", height: "50px", marginBottom: "25px" }}
+                      />
+                    </Form.Group>
+         
+                    <Form.Group className="mb-3" controlId="formGroupMonto">
+                      <Form.Label style={{ color: "#000000" }}>Monto</Form.Label>
+                      <Form.Control
+                        type="number"
+                        placeholder="Ingrese monto de operacion"
+                        ref={montoRef}
+                        style={{ width: "100%", height: "50px" }}
+                      />
+                    </Form.Group>
+                  </Form>
+                  <div className="btnContacto">
+                    <Button
+                      variant="primary"
+                      style={{ background: "#2c303b" }}
+                      onClick={() => handlerClick()}
+                    >
+                      Enviar
+                    </Button>
+                  </div>
+               </div>
+                 
+              )
+            }
           </Form>
-          <div className="btnContacto">
-            <Button
-              variant="primary"
-              style={{ background: "#2c303b" }}
-              onClick={() => handlerClick()}
-            >
-              Enviar
-            </Button>
-          </div>
         </div>
       </div>
     </footer>

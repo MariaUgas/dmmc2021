@@ -115,7 +115,7 @@ a {
 }
 
 .contenedor {
-  padding: 20px 0;
+  padding-top: 0;
 }
 
 .titulo {
@@ -148,7 +148,7 @@ a {
 .website {
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
+  margin-top: 0px;
 }
 
 .website img {
@@ -181,6 +181,10 @@ a {
   border-radius: 8px;
   color: white;
   
+}
+
+.btn-imp{
+  display: flex;
 }
 
 .titulo {
@@ -398,6 +402,10 @@ nav {
 .conocenos > p{
   text-align: center;
   font-size: 1.2em;
+}
+
+.modal.90w{
+  text-align: center;
 }
 
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM CATALOGO DE CURSOS MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/

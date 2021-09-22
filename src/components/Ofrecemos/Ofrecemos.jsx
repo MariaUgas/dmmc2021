@@ -8,23 +8,6 @@ import Galeria from "../Galeria/Galeria";
 function Ofrecemos() {
   return (
     <div className="content-cards" id="media-id">
-      <div className="card1">
-        <article className="conocenos">
-          <GiGraduateCap className="icono" />
-          <h3>Conócenos</h3>
-          <p>
-            En el Instituto Latinoamericano de Actualizacion Profesional somos
-            una gran familia de profesionales del area empresarial altamente
-            calificados, poniendo su conocimiento a tu disposicion para el logro
-            de tus metas.{" "}
-          </p>
-          <div className="content-media"></div>
-        </article>
-        <div className="img-ofr">
-          <Galeria/>
-        </div>
-      </div>
-
       <div className="svg-wave" style={{ height: "150px", overflow: "hidden" }}>
         <svg
           viewBox="0 0 500 150"
