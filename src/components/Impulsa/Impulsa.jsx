@@ -74,7 +74,7 @@ function Impulsa() {
         dialogClassName="modal-90w"
         aria-labelledby="example-custom-modal-styling-title"
         style={{ maxWidth: "760px"}}
-        size="xl"
+        size="xl" 
         centered
       >
         <Modal.Header closeButton>

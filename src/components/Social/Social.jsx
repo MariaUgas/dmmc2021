@@ -21,21 +21,21 @@ function Social(){
             <div className="social-flex">
                 <div className="institucional">
                 
-                    <a href="http://www.consultoresicg.com/" target="_blank" className="bcv" rel="noreferrer"><img src={icgLogo} width="60px"/></a>
+                    <a href="http://www.consultoresicg.com/" target="_blank" className="bcv" alt="logo-icg" rel="noreferrer"><img src={icgLogo} width="60px"/></a>
                      <OverlayTrigger
                       overlay={
                         <Tooltip >
                           Avesid.net
                         </Tooltip>
                       }
-                    ><a href="https://www.avesid.net/" target="_blank" className="bcv" rel="noreferrer"><img src={avesidLogo} width="60px"/></a></OverlayTrigger>
+                    ><a href="https://www.avesid.net/" target="_blank" className="bcv" alt="logo-avesid" rel="noreferrer"><img src={avesidLogo} width="60px"/></a></OverlayTrigger>
                     <OverlayTrigger
                       overlay={
                         <Tooltip >
                           Banco Central de Venezuela
                         </Tooltip>
                       }
-                    ><a href="http://bcv.org.ve/" target="_blank" className="bcv" rel="noreferrer" ><img src={bcvLogo} width="60px"/></a></OverlayTrigger>
+                    ><a href="http://bcv.org.ve/" target="_blank" className="bcv" alt="logo-bcv" rel="noreferrer" ><img src={bcvLogo} width="60px"/></a></OverlayTrigger>
                 </div>
                 <div className="sociales">
                      <OverlayTrigger

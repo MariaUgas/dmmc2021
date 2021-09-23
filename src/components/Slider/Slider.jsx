@@ -66,8 +66,8 @@ export default (props) => {
                   centered
                 >
                   <Modal.Header closeButton>
-                    <Modal.Title id="example-custom-modal-styling-title">
-                      Noticia del dia
+                    <Modal.Title id="example-custom-modal-styling-title" style={{marginLeft:"400px", color:"#f38115", fontSize:"2em"}}>
+                      NOTICIA DEL DIA
                     </Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
