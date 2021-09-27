@@ -123,8 +123,8 @@ function Contacto() {
               </RadioGroup>
             </Row>
             <br />
-            <Form.Group className="mb-3" controlId="formGroupNombre">
-              <Form.Label style={{ color: "#000000" }}>Nombre</Form.Label>
+            <Form.Group className="mb-2" controlId="formGroupNombre">
+              <Form.Label style={{ color: "#000000", fontSize:".8em"}}>Nombre</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Ingrese nombre completo"
@@ -132,8 +132,8 @@ function Contacto() {
                 style={{ width: "100%", height: "50px" }}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formGroupEmail">
-              <Form.Label style={{ color: "#000000" }}>Email</Form.Label>
+            <Form.Group className="mb-2" controlId="formGroupEmail">
+              <Form.Label style={{ color: "#000000", fontSize:".8em" }}>Email</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Ingrese email Ejemplo abc@xyz.xx"
@@ -141,23 +141,24 @@ function Contacto() {
                 style={{ width: "100%", height: "50px" }}
               />
             </Form.Group>
-            <Row className="mb-4 resp-cont">
+            <Row className="mb-2 resp-cont">
               <Form.Group as={Col} controlId="formGrroupCodigo" md={4}>
                 <Form.Label
                   style={{
                     color: "#000000",
                     width: "250px !important",
                     display: "inline",
+                    fontSize:".8em"
                   }}
                 >
                   Código de area
-                </Form.Label>
+                </Form.Label >
                 <Form.Select
                   aria-label="Default select example"
                   style={{
                     height: "50px",
                     position: "relative",
-                    marginTop: "8px",
+                    marginTop: "8px"
                   }}
                   ref={itemPaisRef} /*onChange={()=>handlerOnChange()}*/
                 >
@@ -194,7 +195,7 @@ function Contacto() {
                 </Form.Select>
               </Form.Group>
               <Form.Group as={Col} controlId="formGroupTlf">
-                <Form.Label style={{ color: "#000000" }}>Teléfono</Form.Label>
+                <Form.Label style={{ color: "#000000" , fontSize:".8em"}}>Teléfono</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Ingrese teléfono. Ejemplo 1234567"
@@ -205,7 +206,7 @@ function Contacto() {
             </Row>
             <Row className="mb-3">
               <Form.Group className="mb-3" controlId="formGroupCursos">
-                <Form.Label style={{ color: "#000000" }}>Categorias</Form.Label>
+                <Form.Label style={{ color: "#000000" , fontSize:".8em"}}>Categorias</Form.Label>
                 <Form.Select
                   aria-label="Default select example"
                   ref={itemCategoriaRef}
@@ -226,7 +227,7 @@ function Contacto() {
             </Row>
             <Row className="mb-3">
               <Form.Group className="mb-3" controlId="formGroupCursos">
-                <Form.Label style={{ color: "#000000" }}>Cursos</Form.Label>
+                <Form.Label style={{ color: "#000000" , fontSize:".8em"}}>Cursos</Form.Label>
                 <Form.Select
                   aria-label="Default select example"
                   ref={itemCursoRef}

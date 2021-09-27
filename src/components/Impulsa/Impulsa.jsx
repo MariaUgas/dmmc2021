@@ -31,10 +31,10 @@ function Impulsa() {
           con el objetivo de satisfacer las crecientes necesidades de
           adiestramiento dentro del mundo empresarial en Latinoamérica a través
           de capacitación, tanto presencial como online, para facilitar el
-          aprendizaje e impulsar el talento humano. Conoce mas de nosotros en nuestra galeria de <a href="javascript:void(0)" target="" onClick={() => setShow2(true)}>imágenes</a>
+          aprendizaje e impulsar el talento humano. Conoce mas de nosotros en nuestra galeria de <a href="javascript:void(0)" target="" onClick={() => setShow(true)} style={{textDecoration:"none", color:"black", fontWeight:"bold"}}>imágenes</a>
          </p>
       <div className="btn-imp">
-        <input type="submit" className="cta" value="+Info" onClick={() => setShow(true)} />
+        <input type="submit" className="cta" value="+Info" onClick={() => setShow2(true)} />
       </div>
       
       
@@ -42,6 +42,21 @@ function Impulsa() {
       <Modal
         show={show}
         onHide={() => setShow(false)}
+        dialogClassName="modal-90w"
+        aria-labelledby="example-custom-modal-styling-title"
+        size="lg" 
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="modal-galeria">Nuestro Ambiente</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Galeria/>
+        </Modal.Body>
+      </Modal>
+      <Modal
+        show={show2}
+        onHide={() => setShow2(false)}
         dialogClassName="modal-90w"
         aria-labelledby="example-custom-modal-styling-title"
         style={{ maxWidth: "none"}}
@@ -65,25 +80,9 @@ function Impulsa() {
         </div>
         </Modal.Body>
       </Modal>
-      </div>
-      <div className="modal">
+     
     
-      <Modal
-        show={show2}
-        onHide={() => setShow2(false)}
-        dialogClassName="modal-90w"
-        aria-labelledby="example-custom-modal-styling-title"
-        style={{ maxWidth: "760px"}}
-        size="xl" 
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="modal-galeria">Nuestro Ambiente</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Galeria/>
-        </Modal.Body>
-      </Modal>
+     
       </div>
       </div>
     </section>
