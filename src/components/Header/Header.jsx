@@ -15,7 +15,7 @@ function Header() {
             <span>Excelencia</span> en enseñanza y aprendizaje
           </p>
           <a href="#media-id">
-            <input type="button" value="Ven con Nosotros" className="cta" />
+            <input type="button" value="Ven con Nosotros" className="cta cta1" />
           </a>
         </div>
         <div

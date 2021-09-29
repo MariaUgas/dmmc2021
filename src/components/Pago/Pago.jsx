@@ -101,16 +101,13 @@ const Pago = () => {
   }
 
   const [tipoOperacion, setTipoOperacion] = useState("")
-  const [modoOperacion, setModoOperacion] = useState(null)
+  const [modoOperacion, setModoOperacion] = useState(false)
   
-  const handlerTipoOperacion = function (e) {
-    tipoOperacionRef.current.value  = e.target.value;
-    setTipoOperacion(tipoOperacionRef.current.value)
+  useEffect(() => {
+    tipoOperacion === "transferencia" ? setModoOperacion(true) : setModoOperacion(false);
     
-      if (tipoOperacion === "transferencia"){
-        setModoOperacion(true)
-      }
-  }
+  }, [tipoOperacion]);
+
     /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
   const handlerClick = () => {
     const pago = [
@@ -163,17 +160,17 @@ const Pago = () => {
             Notificación de Pago
           </h2>
           <Form>
-          <Form.Label style={{ color: "#000000" }}>
+          <Form.Label className="etiqueta" style={{ color: "#000000" }}>
               Moneda de operación
             </Form.Label>
             <Row>
               <RadioGroup name="moneda" ref={monedaRef}>
                 <div className="row">
                   <div className="col-xs-12 col-sm-3">
-                    <RadioButton value="dolar" checked={moneda === "dolar"} onClick={handlerMoneda}>USD</RadioButton>
+                    <RadioButton value="dolar" checked={moneda === "dolar"} onClick={handlerMoneda} style={{color:"black"}}>USD</RadioButton>
                   </div>
                   <div className="col-xs-12 col-sm-3">
-                    <RadioButton value="bolivar" checked={moneda === "bolivar"} onClick={handlerMoneda}>Bs.</RadioButton>
+                    <RadioButton value="bolivar" checked={moneda === "bolivar"} onClick={handlerMoneda} style={{color:"black"}}>Bs.</RadioButton>
                   </div>
                 </div>
               </RadioGroup>
@@ -182,33 +179,33 @@ const Pago = () => {
             <h4>Datos alumno</h4>
             <hr />
             <br />
-          <Form.Label style={{ color: "#000000" }}>Persona</Form.Label>
+          <Form.Label className="etiqueta" style={{ color: "black" }}>Persona</Form.Label>
           <Row>
               <RadioGroup name="bancoOrigen" ref={tipoPersonaRef} >
                 <div className="row">
                   <div className="col-xs-12 col-sm-3">
-                    <RadioButton value="natural" checked={persona === "natural"} onClick={handlerTipoPersona}>Natural</RadioButton>
+                    <RadioButton value="natural" checked={persona === "natural"} onClick={handlerTipoPersona} style={{color:"black"}}>Natural</RadioButton>
                   </div>
                   <div className="col-xs-12 col-sm-3">
-                    <RadioButton value="juridica" checked={persona === "juridica"} onClick={handlerTipoPersona} style={{paddingLeft:"20px"}}>Jurídica</RadioButton>
+                    <RadioButton value="juridica" checked={persona === "juridica"} onClick={handlerTipoPersona} style={{paddingLeft:"20px", color:"black"}}>Jurídica</RadioButton>
                   </div>
                 </div>
               </RadioGroup>
             </Row>
             <br/>
             <Form.Group className="mb-3" controlId="formGroupEmail">
-              <Form.Label style={{ color: "#000000" }}>Email</Form.Label>
+              <Form.Label className="etiqueta" style={{ color: "#000000" }}>Email</Form.Label>
               <Form.Control
-                type="text"
+                type="email"
                 placeholder="Ingrese email Ejemplo abc@xyz.xx"
                 ref={nombreRef}
                 style={{ width: "100%", height: "50px" }}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formGroupNombre">
-              <Form.Label style={{ color: "#000000" }}>Nombre</Form.Label>
+              <Form.Label className="etiqueta" style={{ color: "#000000" }}>Nombre</Form.Label>
               <Form.Control
-                type="email"
+                type="text"
                 placeholder="Ingrese nombre completo"
                 ref={emailRef}
                 style={{ width: "100%", height: "50px" }}
@@ -222,6 +219,7 @@ const Pago = () => {
                     width: "250px !important",
                     display: "inline",
                   }}
+                  className="etiqueta"
                 >
                   Código de area
                 </Form.Label>
@@ -232,6 +230,7 @@ const Pago = () => {
                     position: "relative",
                     marginTop: "8px",
                   }}
+                  className="etiqueta"
                   ref={itemPaisRef} /*onChange={()=>handlerOnChange()}*/
                 >
                   <option value="">País</option>
@@ -267,7 +266,7 @@ const Pago = () => {
                 </Form.Select>
               </Form.Group>
               <Form.Group as={Col} controlId="formGroupTlf">
-                <Form.Label style={{ color: "#000000" }}>Teléfono</Form.Label>
+                <Form.Label className="etiqueta" style={{ color: "#000000" }}>Teléfono</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Ingrese teléfono. Ejemplo 1234567"
@@ -280,7 +279,7 @@ const Pago = () => {
             <hr />
             <Row className="mb-3">
               <Form.Group className="mb-3" controlId="formGroupCursos">
-                <Form.Label style={{ color: "#000000" }}>Categoría</Form.Label>
+                <Form.Label className="etiqueta" style={{ color: "#000000" }}>Categoría</Form.Label>
                 <Form.Select
                   aria-label="Default select example"
                   placeholder="Seleccione una categoría"
@@ -298,14 +297,14 @@ const Pago = () => {
             </Row>
             <Row className="mb-3">
               <Form.Group className="mb-3" controlId="formGroupCursos">
-                <Form.Label style={{ color: "#000000" }}>Cursos</Form.Label>
+                <Form.Label className="etiqueta" style={{ color: "#000000" }}>Cursos</Form.Label>
                 <Form.Select
                   aria-label="Default select example"
                   placeholder="Seleccione un curso"
                   ref={itemCursoRef}
                   style={{ width: "100%", height: "50px" }}
                 >
-                  <option value={-1}>Seleccione una Curso</option>
+                  <option value={-1}>Seleccione un Curso</option>
                   {filterByArea &&
                     filterByArea.map((a) => {
                       return <option value={a.idcurso}>{a.curso}</option>;
@@ -317,20 +316,20 @@ const Pago = () => {
             <h4>Datos de Operacion</h4>
             <hr />
             
-            <Form.Label style={{ color: "#000000" }}>
+            <Form.Label className="etiqueta" style={{ color: "#000000" }}>
               Tipo de operación
             </Form.Label>
             <Row>
               <RadioGroup name="tipo" ref={tipoOperacionRef}>
                 <div className="row">
                   <div className="col-xs-12 col-sm-4">
-                    <RadioButton value="efectivo" checked={tipoOperacion === "efectivo"} onClick={handlerTipoOperacion}>Efectivo (USD)</RadioButton>
+                    <RadioButton value="efectivo" checked={tipoOperacion === "efectivo"} onClick={()=>setTipoOperacion("efectivo")} style={{color:"black"}}>Efectivo (USD)</RadioButton>
                   </div>
                   <div className="col-xs-12 col-sm-4">
-                    <RadioButton value="transferencia" checked={tipoOperacion === "transferencia"} onClick={handlerTipoOperacion}>Transferencia</RadioButton>
+                    <RadioButton value="transferencia" checked={tipoOperacion === "transferencia"} onClick={()=>setTipoOperacion("transferencia")} style={{color:"black"}}>Transferencia</RadioButton>
                   </div>
                   <div className="col-xs-12 col-sm-4">
-                    <RadioButton value="pagoMovil" checked={tipoOperacion === "pagoMovil"} onClick={handlerTipoOperacion}>Pago-movil</RadioButton>
+                    <RadioButton value="pagoMovil" checked={tipoOperacion === "pagoMovil"} onClick={()=>setTipoOperacion("pagoMovil")} style={{color:"black"}}>Pago-movil</RadioButton>
                   </div>
                 </div>
               </RadioGroup>
@@ -348,7 +347,8 @@ const Pago = () => {
                           color: "#000000",
                           width: "250px !important",
                           display: "inline",
-                          }}>
+                          }}
+                          className="etiqueta">
                             Banco destino
                           </Form.Label>
                           <Form.Select
@@ -366,7 +366,7 @@ const Pago = () => {
                               <option value="Banesco Panama">Banesco Panamá</option>
                             </Form.Select>
                       </Form.Group>
-                      <Form.Label style={{ color: "#000000" }}>Banco origen</Form.Label>
+                      <Form.Label className="etiqueta" style={{ color: "#000000" }}>Banco origen</Form.Label>
                       <Row>
                         <RadioGroup name="bancoOrigen" ref={bancoOrigenRef} >
                           <div className="row">
@@ -381,7 +381,7 @@ const Pago = () => {
                       </Row>
                       <br />
                       <Form.Group className="mb-3" controlId="formGroupFecha">
-                        <Form.Label style={{ color: "#000000" }}>Fecha</Form.Label>
+                        <Form.Label className="etiqueta" style={{ color: "#000000" }}>Fecha</Form.Label>
                           <Form.Control
                             type="date"
                             placeholder="Ingrese nombre completo"
@@ -390,7 +390,7 @@ const Pago = () => {
                           />
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="formGroupDeposito">
-                        <Form.Label style={{ color: "#000000" }}>
+                        <Form.Label className="etiqueta" style={{ color: "#000000" }}>
                           Numero de operacion
                         </Form.Label>
                         <Form.Control
@@ -402,7 +402,7 @@ const Pago = () => {
                       </Form.Group>
            
                       <Form.Group className="mb-3" controlId="formGroupMonto">
-                        <Form.Label style={{ color: "#000000" }}>Monto</Form.Label>
+                        <Form.Label className="etiqueta" style={{ color: "#000000" }}>Monto</Form.Label>
                         <Form.Control
                           type="text"
                           placeholder="Ingrese monto de operacion"
@@ -434,7 +434,8 @@ const Pago = () => {
                           color: "#000000",
                           width: "250px !important",
                           display: "inline",
-                          }}>
+                          }}
+                          className="etiqueta">
                             Banco destino
                           </Form.Label>
                           <Form.Select
@@ -445,6 +446,7 @@ const Pago = () => {
                             marginTop: "8px",
                             marginBottom: "30px",
                           }}
+                          className="etiqueta"
                             ref={itemBancoDestinoRef}>
                               <option value="">Seleccione Banco destino</option>
                               <option value="Banesco">Banesco</option>
@@ -467,7 +469,7 @@ const Pago = () => {
                       </Row>
                     <br />
                     <Form.Group className="mb-3" controlId="formGroupFecha">
-                      <Form.Label style={{ color: "#000000" }}>Fecha</Form.Label>
+                      <Form.Label className="etiqueta" style={{ color: "#000000" }}>Fecha</Form.Label>
                         <Form.Control
                           type="date"
                           placeholder="Ingrese nombre completo"
@@ -476,19 +478,19 @@ const Pago = () => {
                         />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupDeposito">
-                      <Form.Label style={{ color: "#000000" }}>
+                      <Form.Label className="etiqueta" style={{ color: "#000000" }}>
                         Numero de operacion
                       </Form.Label>
                       <Form.Control
                         type="text"
-                        placeholder="Opcion para Pago-movil"
+                        placeholder="Opcion solo para Pago-movil"
                         ref={idDepositoRef}
                         style={{ width: "100%", height: "50px", marginBottom: "25px" }}
                       />
                     </Form.Group>
          
                     <Form.Group className="mb-3" controlId="formGroupMonto">
-                      <Form.Label style={{ color: "#000000" }}>Monto</Form.Label>
+                      <Form.Label className="etiqueta" style={{ color: "#000000" }}>Monto</Form.Label>
                       <Form.Control
                         type="number"
                         placeholder="Ingrese monto de operacion"

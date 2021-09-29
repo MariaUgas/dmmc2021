@@ -21,7 +21,13 @@ function Social(){
             <div className="social-flex">
                 <div className="institucional">
                 
-                    <a href="http://www.consultoresicg.com/" target="_blank" className="bcv" alt="logo-icg" rel="noreferrer"><img src={icgLogo} width="60px"/></a>
+                <OverlayTrigger
+                      overlay={
+                        <Tooltip >
+                          ICG Consultores
+                        </Tooltip>
+                      }
+                    ><a href="http://www.consultoresicg.com/" target="_blank" className="bcv" alt="logo-icg" rel="noreferrer"><img src={icgLogo} width="60px"/></a></OverlayTrigger>
                      <OverlayTrigger
                       overlay={
                         <Tooltip >

@@ -61,7 +61,7 @@ const CrearNoticia = () => {
   return (
     <Fragment>
       <div className="div-toast">
-        <ToastContainer className="p-3 sticky-div">
+        <ToastContainer className="p-3 sticky-div" >
           <Toast onClose={() => setShow(false)} bg={tipoAlert} show={show}>
             <Toast.Header closeButton={false}>
               <GoInfo size={24} />
