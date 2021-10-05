@@ -106,14 +106,16 @@ function Contacto() {
     <footer id="contacto">
       <div className="contenedor">
         <div className="reductor">
-          <h2 className="titulo">
+          <h1 className="titulo">
             Contáctanos
-          </h2>
+          </h1>
           <Form>
           <Row>
               <RadioGroup name="tipoPersona" ref={tipoPersonaRef} >
+              <h4>Datos del alumno</h4>
+            <hr />
                 <div className="row">
-                  <div className="col-xs-12 col-sm-6">
+                  <div className="col-xs-12 col-sm-4">
                     <RadioButton value="persona" className="etiqueta" checked={tipoPersona === "persona"} onClick={handlerTipoPersona} style={{color:"black"}}>Persona</RadioButton>
                   </div>
                   <div className="col-xs-12 col-sm-6">
@@ -204,7 +206,10 @@ function Contacto() {
                   style={{ width: "100%", height: "50px" }}
                 />
               </Form.Group>
+             
             </Row>
+            <h4>Selección de curso</h4>
+            <hr />
             <Row className="mb-3">
               <Form.Group className="mb-3" controlId="formGroupCursos">
                 <Form.Label className="etiqueta" style={{ color: "#000000" , fontSize:".8em"}}>Categorias</Form.Label>

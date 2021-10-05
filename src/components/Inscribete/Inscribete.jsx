@@ -67,7 +67,7 @@ function Inscribete() {
           <div className="texto-notificacion">
 
           <h2 className="titulo left">Elige lo mejor para tu futuro!</h2>
-          <p className="parrafo">
+          <p className="parrafo parrafo2">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa ullam
             aliquam perspiciatis, dolore quaerat odio laudantium adipisci
             laboriosam libero quis voluptas cupiditate exercitationem soluta

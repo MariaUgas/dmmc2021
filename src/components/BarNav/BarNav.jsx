@@ -50,6 +50,7 @@ const BarNav = () => {
                           Aula Virtual
                         </Tooltip>
                       }
+                      placement="bottom"
                     ><a href="https://aula.institutolap.com/" target="_blank"><img src={aulaVirtual} alt="aulaVirtual" width="70px"/></a></OverlayTrigger>
         </li>
       </ul>

@@ -4,6 +4,7 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import Modal from "react-bootstrap/Modal";
 import Noticia from "../../components/Noticia/Noticia.jsx";
+import ilapLogo from "../../img/ilap-logo.png";
 
 export default (props) => {
   //({noticias}) => {
@@ -66,8 +67,8 @@ export default (props) => {
                   centered
                 >
                   <Modal.Header closeButton>
-                    <Modal.Title id="example-custom-modal-styling-title" style={{marginLeft:"100px", color:"#f38115", fontSize:"1.5em"}}>
-                      NOTICIA DEL DIA
+                    <Modal.Title id="example-custom-modal-styling-title" style={{color:"#f38115", fontSize:"1.8em"}}>
+                    <img src={ilapLogo} alt="ilapLogo" width="100px" margin-right="200px"/>NOTICIA DEL DIA
                     </Modal.Title>
                   </Modal.Header>
                   <Modal.Body>

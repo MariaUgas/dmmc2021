@@ -11,7 +11,7 @@ export const Noticia = ({ noticia }) => {
       <div className="caja-not">
         <div className="caja1">
           <div className="title-not">
-            <h2 className="titulo left"><u>{titulo}</u></h2>
+            <h1 className="titulo left">{titulo}</h1>
           </div>
           <div className="caja2">
             <img className="img-not" src={image} alt="noticia" />

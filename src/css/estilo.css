@@ -503,6 +503,7 @@ nav {
 
 .titulo.left {
   padding-bottom: 0;
+  font-size: 30px;
 }
 
 .body-not {
@@ -518,6 +519,10 @@ nav {
 
 .fmt-fecha > p {
   line-height: 50%;
+}
+
+#example-custom-modal-styling-title > img{
+  margin-right: 300px;
 }
 
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM INFO 2 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
@@ -560,6 +565,14 @@ input[type="button"] {
 
 .pago {
   width: 100%;
+}
+
+#formGroupEmail{
+  margin-bottom: 10px;
+}
+
+#formGroupNombre{
+  margin-bottom: 10px;
 }
 
 .container-genp {
@@ -755,9 +768,11 @@ footer {
   );
 }
 
-#contacto h2 {
-  color: #2c303b;
+#contacto h1 {
+  color: black;
   font-weight: 500;
+  text-align: center;
+  margin-left: 50px;
 }
 
 .resp-cont {
@@ -915,7 +930,7 @@ select > option {
 
 .social {
   background-color: #f38115;
-  height: 110px;
+  height: 135px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -949,7 +964,7 @@ select > option {
 }
 
 .twitter {
-  padding-left: 40px;
+  padding-right: 40px;
   color: #2c303b;
 }
 
@@ -957,10 +972,13 @@ select > option {
   padding-right: 40px;
 }
 
+
 .copyright {
   text-align: center;
+  padding-top: 10px;
   margin-bottom: 50px;
   color: #d9d7df;
+  background: #f38115;
 }
 
 .ref-moodle {
@@ -1289,6 +1307,12 @@ select > option {
   margin-right: auto;
 }
 
+.institucional, .sociales{
+  margin-top: 60px;
+}
+
+
+
 
 
 /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*RESPONSIVE*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
@@ -1366,6 +1390,14 @@ select > option {
     font-size: .5em;
     
   }
+
+  #contacto-id > div.boton-contacto > input{
+    margin-left: 45px;
+  }
+
+  #inscribete-id > div.boton-notificacion > input{
+    margin-left: 45px;
+  }
   
    /*section*/
   .website {
@@ -1389,6 +1421,10 @@ select > option {
 
   .texto-contacto, .texto-notificacion{
     margin-left: 0;
+  }
+
+  .resp-ocult{
+    display: none;
   }
   /*cards*/
   .card {
@@ -1501,6 +1537,16 @@ select > option {
     margin-right: auto;
   }
 
+  .parrafo {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+
+  .parrafo2{
+    margin-bottom: 120px;
+  }
+
   .reductor {
     width: 100%;
   }
@@ -1553,6 +1599,15 @@ select > option {
   .pago {
     width: 100%;
   }
+
+  #contacto > label{
+    padding-left: 0px;
+  }
+
+  .boton-notificacion{
+    margin-top: 40px;
+  }
+  
 
   .container-genp {
     width: auto;
@@ -1780,18 +1835,31 @@ select > option {
   }
 
   .institucional{
-    padding-top: 20px;
-    padding-bottom: 30px;
-    padding-left: 60px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
   }
 
   .sociales{
-    padding-right: 40px;
+    padding-right: 0px;
+    margin-top: 30px;
   }
 
   .copyright{
     background: #f38115;
   }
+
+  .direccion > p{
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+
+  .bcv {
+    padding-right: 0px;
+}
+
+
 }
 
 /*########################### Barra progreso  ###########################*/

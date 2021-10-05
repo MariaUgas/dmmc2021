@@ -156,9 +156,9 @@ const Pago = () => {
     <footer id="contacto">
       <div className="contenedor">
         <div className="reductor">
-          <h2 className="titulo" id="contacto-id">
+          <h1 className="titulo" id="contacto-id">
             Notificación de Pago
-          </h2>
+          </h1>
           <Form>
           <Form.Label className="etiqueta" style={{ color: "#000000" }}>
               Moneda de operación
@@ -167,16 +167,16 @@ const Pago = () => {
               <RadioGroup name="moneda" ref={monedaRef}>
                 <div className="row">
                   <div className="col-xs-12 col-sm-3">
-                    <RadioButton value="dolar" checked={moneda === "dolar"} onClick={handlerMoneda} style={{color:"black"}}>USD</RadioButton>
+                    <RadioButton value="dolar" checked={moneda === "dolar"} onClick={handlerMoneda} style={{color:"black", fontSize:".8em"}}><strong>USD</strong></RadioButton>
                   </div>
                   <div className="col-xs-12 col-sm-3">
-                    <RadioButton value="bolivar" checked={moneda === "bolivar"} onClick={handlerMoneda} style={{color:"black"}}>Bs.</RadioButton>
+                    <RadioButton value="bolivar" checked={moneda === "bolivar"} onClick={handlerMoneda} style={{color:"black", fontSize:".8em"}}><strong>Bs.</strong></RadioButton>
                   </div>
                 </div>
               </RadioGroup>
             </Row>
             <br />
-            <h4>Datos alumno</h4>
+            <h4>Datos del alumno</h4>
             <hr />
             <br />
           <Form.Label className="etiqueta" style={{ color: "black" }}>Persona</Form.Label>
@@ -184,10 +184,10 @@ const Pago = () => {
               <RadioGroup name="bancoOrigen" ref={tipoPersonaRef} >
                 <div className="row">
                   <div className="col-xs-12 col-sm-3">
-                    <RadioButton value="natural" checked={persona === "natural"} onClick={handlerTipoPersona} style={{color:"black"}}>Natural</RadioButton>
+                    <RadioButton value="natural" checked={persona === "natural"} onClick={handlerTipoPersona} style={{color:"black", fontSize:".8em"}}><strong>Natural</strong></RadioButton>
                   </div>
                   <div className="col-xs-12 col-sm-3">
-                    <RadioButton value="juridica" checked={persona === "juridica"} onClick={handlerTipoPersona} style={{paddingLeft:"20px", color:"black"}}>Jurídica</RadioButton>
+                    <RadioButton value="juridica" checked={persona === "juridica"} onClick={handlerTipoPersona} style={{paddingLeft:"0px", color:"black", fontSize:".8em"}}><strong>Jurídica</strong></RadioButton>
                   </div>
                 </div>
               </RadioGroup>
@@ -323,13 +323,13 @@ const Pago = () => {
               <RadioGroup name="tipo" ref={tipoOperacionRef}>
                 <div className="row">
                   <div className="col-xs-12 col-sm-4">
-                    <RadioButton value="efectivo" checked={tipoOperacion === "efectivo"} onClick={()=>setTipoOperacion("efectivo")} style={{color:"black"}}>Efectivo (USD)</RadioButton>
+                    <RadioButton value="efectivo" checked={tipoOperacion === "efectivo"} onClick={()=>setTipoOperacion("efectivo")} style={{color:"black", fontSize:".8em"}}><strong>Efectivo (USD)</strong></RadioButton>
                   </div>
                   <div className="col-xs-12 col-sm-4">
-                    <RadioButton value="transferencia" checked={tipoOperacion === "transferencia"} onClick={()=>setTipoOperacion("transferencia")} style={{color:"black"}}>Transferencia</RadioButton>
+                    <RadioButton value="transferencia" checked={tipoOperacion === "transferencia"} onClick={()=>setTipoOperacion("transferencia")} style={{color:"black", fontSize:".8em"}}><strong>Transferencia</strong></RadioButton>
                   </div>
                   <div className="col-xs-12 col-sm-4">
-                    <RadioButton value="pagoMovil" checked={tipoOperacion === "pagoMovil"} onClick={()=>setTipoOperacion("pagoMovil")} style={{color:"black"}}>Pago-movil</RadioButton>
+                    <RadioButton value="pagoMovil" checked={tipoOperacion === "pagoMovil"} onClick={()=>setTipoOperacion("pagoMovil")} style={{color:"black", fontSize:".8em"}}><strong>Pago-movil</strong></RadioButton>
                   </div>
                 </div>
               </RadioGroup>
@@ -341,6 +341,19 @@ const Pago = () => {
               (
                 <div>
                     <Form>
+                    <Form.Label className="etiqueta" style={{ color: "#000000" }}>Banco origen</Form.Label>
+                      <Row style={{marginBottom:"20px"}}>
+                        <RadioGroup name="bancoOrigen" ref={bancoOrigenRef} >
+                          <div className="row">
+                            <div className="col-xs-12 col-sm-4">
+                              <RadioButton value="mismo" checked={origen === "mismo"} onClick={handlerBancoOrigen} style={{color:"black", fontSize:".8em"}}><strong>Mismo banco</strong></RadioButton>
+                            </div>
+                            <div className="col-xs-12 col-sm-6">
+                              <RadioButton value="otro" checked={origen === "otro"} onClick={handlerBancoOrigen} style={{color:"black", fontSize:".8em"}}><strong>Otro banco</strong></RadioButton>
+                            </div>
+                          </div>
+                        </RadioGroup>
+                      </Row>
                       <Form.Group as={Col} controlId="formGroupBancos" className="groupBancos">
                         <Form.Label
                           style={{
@@ -357,7 +370,7 @@ const Pago = () => {
                             height: "50px",
                             position: "relative",
                             marginTop: "8px",
-                            marginBottom: "30px",
+                            marginBottom: "0px",
                           }}
                             ref={itemBancoDestinoRef}>
                               <option value="">Seleccione Banco destino</option>
@@ -366,19 +379,7 @@ const Pago = () => {
                               <option value="Banesco Panama">Banesco Panamá</option>
                             </Form.Select>
                       </Form.Group>
-                      <Form.Label className="etiqueta" style={{ color: "#000000" }}>Banco origen</Form.Label>
-                      <Row>
-                        <RadioGroup name="bancoOrigen" ref={bancoOrigenRef} >
-                          <div className="row">
-                            <div className="col-xs-12 col-sm-6">
-                              <RadioButton value="mismo" checked={origen === "mismo"} onClick={handlerBancoOrigen}> Mismo banco</RadioButton>
-                            </div>
-                            <div className="col-xs-12 col-sm-6">
-                              <RadioButton value="otro" checked={origen === "otro"} onClick={handlerBancoOrigen}>Otro banco</RadioButton>
-                            </div>
-                          </div>
-                        </RadioGroup>
-                      </Row>
+                     
                       <br />
                       <Form.Group className="mb-3" controlId="formGroupFecha">
                         <Form.Label className="etiqueta" style={{ color: "#000000" }}>Fecha</Form.Label>
@@ -397,7 +398,7 @@ const Pago = () => {
                           type="text"
                           placeholder="Ingrese numero de operacion bancaria"
                           ref={idDepositoRef}
-                          style={{ width: "100%", height: "50px", marginBottom: "25px" }}
+                          style={{ width: "100%", height: "50px", marginBottom: "0px" }}
                         />
                       </Form.Group>
            
@@ -428,6 +429,19 @@ const Pago = () => {
                <div>
 
                     <Form>
+                    <Form.Label style={{ color: "#000000", display:"none" }}>Banco origen</Form.Label>
+                      <Row>
+                        <RadioGroup name="bancoOrigen" ref={bancoOrigenRef} >
+                          <div className="row">
+                            <div className="col-xs-12 col-sm-6">
+                              <RadioButton value="mismo" checked={origen === "mismo"} onClick={handlerBancoOrigen} style={{display:"none"}}>Mismo banco</RadioButton>
+                            </div>
+                            <div className="col-xs-12 col-sm-6">
+                              <RadioButton value="otro" checked={origen === "otro"} onClick={handlerBancoOrigen} style={{display:"none"}}>Otro banco</RadioButton>
+                            </div>
+                          </div>
+                        </RadioGroup>
+                      </Row>
                       <Form.Group as={Col} controlId="formGroupBancos" className="groupBancos" style={{display:"none"}}>
                         <Form.Label
                           style={{
@@ -444,7 +458,7 @@ const Pago = () => {
                             height: "50px",
                             position: "relative",
                             marginTop: "8px",
-                            marginBottom: "30px",
+                            marginBottom: "0px",
                           }}
                           className="etiqueta"
                             ref={itemBancoDestinoRef}>
@@ -454,19 +468,7 @@ const Pago = () => {
                               <option value="Banesco Panama">Banesco Panamá</option>
                             </Form.Select>
                       </Form.Group>
-                      <Form.Label style={{ color: "#000000", display:"none" }}>Banco origen</Form.Label>
-                      <Row>
-                        <RadioGroup name="bancoOrigen" ref={bancoOrigenRef} >
-                          <div className="row">
-                            <div className="col-xs-12 col-sm-6">
-                              <RadioButton value="mismo" checked={origen === "mismo"} onClick={handlerBancoOrigen} style={{display:"none"}}> Mismo banco</RadioButton>
-                            </div>
-                            <div className="col-xs-12 col-sm-6">
-                              <RadioButton value="otro" checked={origen === "otro"} onClick={handlerBancoOrigen} style={{display:"none"}}>Otro banco</RadioButton>
-                            </div>
-                          </div>
-                        </RadioGroup>
-                      </Row>
+                     
                     <br />
                     <Form.Group className="mb-3" controlId="formGroupFecha">
                       <Form.Label className="etiqueta" style={{ color: "#000000" }}>Fecha</Form.Label>
@@ -485,7 +487,7 @@ const Pago = () => {
                         type="text"
                         placeholder="Opcion solo para Pago-movil"
                         ref={idDepositoRef}
-                        style={{ width: "100%", height: "50px", marginBottom: "25px" }}
+                        style={{ width: "100%", height: "50px", marginBottom: "0px" }}
                       />
                     </Form.Group>
          
