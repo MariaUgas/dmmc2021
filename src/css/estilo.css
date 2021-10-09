@@ -127,14 +127,14 @@ a {
 }
 
 .titulo.left {
-  text-align: left;
+  text-align: justify;
   font-weight: 500;
   margin-top: 40px;
   margin-bottom:10px;
 }
 
 .titulo.left2 {
-  text-align: center;
+  text-align: justify;
   font-weight: 500;
   margin-top: 20px;
   margin-bottom:10px;
@@ -169,7 +169,7 @@ a {
 }
 
 .parrafo2 {
-  text-align: center;
+  text-align: justify;
   font-size: 1.2em;
   margin-bottom: 20px;
 }
@@ -401,8 +401,15 @@ nav {
 }
 
 .conocenos > p{
-  text-align: center;
+  text-align: justify;
   font-size: 1.2em;
+}
+
+.centrado{
+  display: block;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 40px;
 }
 
 
@@ -784,6 +791,7 @@ footer {
   margin: 0 auto;
 }
 
+
 .btnContacto {
   margin: 0 auto;
   display: flex;
@@ -953,14 +961,15 @@ select > option {
 
 .social-flex {
   display: flex;
-  justify-content: inherit;
+  justify-content: space-around;
   padding-bottom: 30px;
   color: #2c303b;
 }
 
 .sociales{
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
+  margin-left: -300px;
 }
 
 .twitter {

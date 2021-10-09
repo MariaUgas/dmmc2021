@@ -20,7 +20,7 @@ function Social(){
         
         <div class="social">
             <div className="social-flex">
-                <div className="institucional">
+                <div className="institucional" width="33%">
                 <OverlayTrigger
                       overlay={
                         <Tooltip >
@@ -53,7 +53,7 @@ function Social(){
                     ><a href="http://bcv.org.ve/" target="_blank" className="bcv" alt="logo-bcv" rel="noreferrer" ><img src={bcvLogo} width="60px"/></a></OverlayTrigger>
                 </div>
                 <hr />
-                <div className="sociales">
+                <div className="sociales" width="33%">
                      <OverlayTrigger
                       overlay={
                         <Tooltip >
@@ -83,7 +83,7 @@ function Social(){
                       }
                     ><a href="http://wa.me/584167051749/?text=ILAP. %20Contacto%20desde%20el%20post" target="_blank" className="twitter" rel="noreferrer"><AiOutlineWhatsApp style={{fill:"#2c303b", fontSize:"45px"}}/></a></OverlayTrigger>
                 </div>
-                <div className="direccion">
+                <div className="direccion" width="33%">
                   <p>
                   <strong>Dirección:</strong> <br />
 

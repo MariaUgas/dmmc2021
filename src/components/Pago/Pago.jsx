@@ -156,7 +156,7 @@ const Pago = () => {
     <footer id="contacto">
       <div className="contenedor">
         <div className="reductor">
-          <h1 className="titulo" id="contacto-id">
+          <h1 className="titulo titulo-pago" id="contacto-id" style={{marginLeft:"130px"}}>
             Notificación de Pago
           </h1>
           <Form>
