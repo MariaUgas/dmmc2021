@@ -163,7 +163,7 @@ a {
 
 
 .parrafo {
-  text-align: left;
+  text-align: justify;
   font-size: 1.2em;
   margin-bottom: 20px;
 }
@@ -410,6 +410,14 @@ nav {
   text-align: center;
   padding-top: 50px;
   padding-bottom: 40px;
+}
+
+h2.titulo.left2{
+  text-align: center;
+}
+
+p.parrafo.parrafo-i{
+  margin-left: 50px;
 }
 
 
@@ -1853,6 +1861,7 @@ select > option {
   .sociales{
     padding-right: 0px;
     margin-top: 30px;
+    margin-left: 0;
   }
 
   .copyright{
