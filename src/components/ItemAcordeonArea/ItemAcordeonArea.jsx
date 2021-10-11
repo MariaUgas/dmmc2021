@@ -7,7 +7,7 @@ export const ItemAcordeonArea = ({ mapaAreasObj }) => {
   return (
     <div className="contenedor-cursos" id="cursos-id">
       <h3 className="titulo">TE OFRECEMOS:</h3>
-      <Accordion flush>
+      <Accordion flush style={{marginLeft:"20px"}}>
         {mapaAreasObj &&
           mapaAreasObj.map((a, i) => {
             return (

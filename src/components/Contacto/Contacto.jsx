@@ -98,33 +98,35 @@ function Contacto() {
   const handlerTipoPersona = function (e) {
     tipoPersonaRef.current.value = e.target.value;
     setTipoPersona(tipoPersonaRef.current.value);
-  
-  
   };
+
+
   
   return (
     <footer id="contacto">
       <div className="contenedor">
         <div className="reductor">
-          <h2 className="titulo">
+          <h1 className="titulo">
             Contáctanos
-          </h2>
+          </h1>
           <Form>
           <Row>
               <RadioGroup name="tipoPersona" ref={tipoPersonaRef} >
+              <h4>Datos del alumno</h4>
+            <hr />
                 <div className="row">
-                  <div className="col-xs-12 col-sm-6">
-                    <RadioButton value="persona" checked={tipoPersona === "persona"} onClick={handlerTipoPersona}>Persona</RadioButton>
+                  <div className="col-xs-12 col-sm-4">
+                    <RadioButton value="persona" className="etiqueta" checked={tipoPersona === "persona"} onClick={handlerTipoPersona} style={{color:"black"}}>Persona</RadioButton>
                   </div>
                   <div className="col-xs-12 col-sm-6">
-                    <RadioButton value="empresa" checked={tipoPersona === "empresa"} onClick={handlerTipoPersona}>Empresa</RadioButton>
+                    <RadioButton value="empresa" className="etiqueta" checked={tipoPersona === "empresa"} onClick={handlerTipoPersona} style={{color:"black"}}>Empresa</RadioButton>
                   </div>
                 </div>
               </RadioGroup>
             </Row>
             <br />
-            <Form.Group className="mb-3" controlId="formGroupNombre">
-              <Form.Label style={{ color: "#000000" }}>Nombre</Form.Label>
+            <Form.Group className="mb-2" controlId="formGroupNombre">
+              <Form.Label className="etiqueta" style={{ color: "#000000", fontSize:".8em"}}>Nombre</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Ingrese nombre completo"
@@ -132,8 +134,8 @@ function Contacto() {
                 style={{ width: "100%", height: "50px" }}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formGroupEmail">
-              <Form.Label style={{ color: "#000000" }}>Email</Form.Label>
+            <Form.Group className="mb-2" controlId="formGroupEmail">
+              <Form.Label className="etiqueta" style={{ color: "#000000", fontSize:".8em" }}>Email</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Ingrese email Ejemplo abc@xyz.xx"
@@ -141,23 +143,25 @@ function Contacto() {
                 style={{ width: "100%", height: "50px" }}
               />
             </Form.Group>
-            <Row className="mb-4 resp-cont">
+            <Row className="mb-2 resp-cont">
               <Form.Group as={Col} controlId="formGrroupCodigo" md={4}>
                 <Form.Label
                   style={{
                     color: "#000000",
                     width: "250px !important",
                     display: "inline",
+                    fontSize:".8em"
                   }}
+                  className="etiqueta"
                 >
                   Código de area
-                </Form.Label>
+                </Form.Label >
                 <Form.Select
                   aria-label="Default select example"
                   style={{
                     height: "50px",
                     position: "relative",
-                    marginTop: "8px",
+                    marginTop: "8px"
                   }}
                   ref={itemPaisRef} /*onChange={()=>handlerOnChange()}*/
                 >
@@ -194,7 +198,7 @@ function Contacto() {
                 </Form.Select>
               </Form.Group>
               <Form.Group as={Col} controlId="formGroupTlf">
-                <Form.Label style={{ color: "#000000" }}>Teléfono</Form.Label>
+                <Form.Label className="etiqueta" style={{ color: "#000000" , fontSize:".8em"}}>Teléfono</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Ingrese teléfono. Ejemplo 1234567"
@@ -202,10 +206,13 @@ function Contacto() {
                   style={{ width: "100%", height: "50px" }}
                 />
               </Form.Group>
+             
             </Row>
+            <h4>Selección de curso</h4>
+            <hr />
             <Row className="mb-3">
               <Form.Group className="mb-3" controlId="formGroupCursos">
-                <Form.Label style={{ color: "#000000" }}>Categorias</Form.Label>
+                <Form.Label className="etiqueta" style={{ color: "#000000" , fontSize:".8em"}}>Categorias</Form.Label>
                 <Form.Select
                   aria-label="Default select example"
                   ref={itemCategoriaRef}
@@ -226,7 +233,7 @@ function Contacto() {
             </Row>
             <Row className="mb-3">
               <Form.Group className="mb-3" controlId="formGroupCursos">
-                <Form.Label style={{ color: "#000000" }}>Cursos</Form.Label>
+                <Form.Label className="etiqueta" style={{ color: "#000000" , fontSize:".8em"}}>Cursos</Form.Label>
                 <Form.Select
                   aria-label="Default select example"
                   ref={itemCursoRef}

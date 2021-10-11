@@ -31,7 +31,7 @@ function CursoDiplo() {
         
         <div
           className="svg-wave"
-          style={{ height: "150px", overflow: "hidden", background: "#f6f6f6" }}
+          style={{ height: "150px", overflow: "hidden", background: "#eeeaea" }}
         >
           <svg
             viewBox="0 0 500 150"

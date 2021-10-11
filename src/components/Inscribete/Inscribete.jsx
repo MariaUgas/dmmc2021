@@ -21,7 +21,7 @@ function Inscribete() {
         >
           <path
             d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-            style={{ stroke: "none", fill: "#f6f6f6" }}
+            style={{ stroke: "none", fill: "#eeeaea" }}
           ></path>
         </svg>
       </div>
@@ -67,7 +67,7 @@ function Inscribete() {
           <div className="texto-notificacion">
 
           <h2 className="titulo left">Elige lo mejor para tu futuro!</h2>
-          <p className="parrafo">
+          <p className="parrafo parrafo2">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa ullam
             aliquam perspiciatis, dolore quaerat odio laudantium adipisci
             laboriosam libero quis voluptas cupiditate exercitationem soluta
@@ -112,7 +112,7 @@ function Inscribete() {
         </Modal.Body>
       </Modal>
     </div>
-    <div className="svg-wave" style={{ height: "150px", overflow: "hidden", background: "#f6f6f6"}}>
+    <div className="svg-wave" style={{ height: "150px", overflow: "hidden", background: "#eeeaea"}}>
         <svg
           viewBox="0 0 500 150"
           preserveAspectRatio="none"

@@ -14,10 +14,12 @@ import "./css/estilo.css";
 import "./css/bootstrap.min.css";
 import "./firebase/firebase";
 
+
 const divRoot = document.querySelector("#root");
 
 ReactDOM.render(
   [
+   
     <UpScroll />,
     <Header />,
     <Impulsa />,
