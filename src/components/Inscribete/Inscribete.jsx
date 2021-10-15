@@ -46,7 +46,7 @@ function Inscribete() {
           <h2 className="titulo left">Elige lo mejor para tu futuro!</h2>
           <p className="parrafo">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa ullam
-            aliquam perspiciatis, dolore quaerat odio laudantium adipisci
+            aliquam perspiciatis, instituto lap en prueba de edicion produccion
             laboriosam libero quis voluptas cupiditate exercitationem soluta
             distinctio magnam dignissimos. Aspernatur, veniam aperiam.
           </p>

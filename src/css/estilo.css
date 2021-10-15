@@ -1440,6 +1440,7 @@ select > option {
     margin-left: 0;
   }
 
+
   .resp-ocult{
     display: none;
   }
@@ -1558,6 +1559,7 @@ select > option {
     text-align: center;
     font-size: 1.2em;
     margin-bottom: 20px;
+    width: 85%;
   }
 
   .parrafo2{
