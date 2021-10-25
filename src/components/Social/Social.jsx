@@ -28,6 +28,7 @@ function Social(){
                         </Tooltip>
                       }
                       placement="top"
+                      // eslint-disable-next-line
                     ><a href="https://aula.institutolap.com/" target="_blank" className="bcv"><img src={aulaVirtual} alt="aulaVirtual" width="80px"/></a></OverlayTrigger>
                 
                 <OverlayTrigger
@@ -36,6 +37,7 @@ function Social(){
                           ICG Consultores
                         </Tooltip>
                       }
+                      // eslint-disable-next-line
                     ><a href="http://www.consultoresicg.com/" target="_blank" className="bcv" alt="logo-icg" rel="noreferrer"><img src={icgLogo} width="60px"/></a></OverlayTrigger>
                      <OverlayTrigger
                       overlay={
@@ -43,6 +45,7 @@ function Social(){
                           Avesid.net
                         </Tooltip>
                       }
+                      // eslint-disable-next-line
                     ><a href="https://www.avesid.net/" target="_blank" className="bcv" alt="logo-avesid" rel="noreferrer"><img src={avesidLogo} width="60px"/></a></OverlayTrigger>
                     <OverlayTrigger
                       overlay={
@@ -50,6 +53,7 @@ function Social(){
                           Banco Central de Venezuela
                         </Tooltip>
                       }
+                      // eslint-disable-next-line
                     ><a href="http://bcv.org.ve/" target="_blank" className="bcv" alt="logo-bcv" rel="noreferrer" ><img src={bcvLogo} width="60px"/></a></OverlayTrigger>
                 </div>
                 <hr />
@@ -93,7 +97,7 @@ Av. Francisco de Miranda, Cruce con Calle <br /> Mohedano, Torre Sud America, Pi
                 </div>
             </div>
              <div className="copyright">
-                <p style={{fontSize:"1em"}}><BiCopyright />2021 Derechos reservados Instituto LAP - <span className="moodle">Soportado por Moodle.org</span> </p>
+                <p style={{fontSize:"1em"}}><BiCopyright />2021 Derechos reservados Instituto LAP</p>
             </div>  
         </div>
         

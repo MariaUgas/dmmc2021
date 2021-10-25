@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Noticia } from "../Noticia/Noticia.jsx";
 import store from "../../firebase/firebase.js";
 import Slider from "../Slider/Slider.jsx";
 

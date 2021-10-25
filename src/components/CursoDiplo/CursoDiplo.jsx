@@ -25,7 +25,8 @@ function CursoDiplo() {
         <ItemAcordeonArea mapaAreasObj={mapaAreasObj[0]} />
       </div>
       <div className="pdfs" style={{textAlign:"center"}}>
-        <a href="#" target="_blank" rel="noreferrer" >PDF´s informativos aqui</a>
+        
+        <a href="javascript:void(0)" target="_blank" rel="noreferrer" >PDF´s informativos aqui</a>
       </div>
       <div>
         

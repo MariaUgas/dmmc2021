@@ -1,8 +1,4 @@
 import React from "react";
-import { GiGraduateCap } from "react-icons/gi";
-import Galeria from "../Galeria/Galeria";
-
-
 
 
 function Ofrecemos() {

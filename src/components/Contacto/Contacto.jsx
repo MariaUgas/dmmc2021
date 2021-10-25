@@ -53,7 +53,7 @@ function Contacto() {
       setObjetoCursos(documents);
     });
   }, []);
-
+  // eslint-disable-next-line
   const [identCurso, setIdentCurso] = useState("");
 
   const handlerCargarCursos = function (e) {
@@ -62,7 +62,7 @@ function Contacto() {
   };
 
   const mapeo = objetoCursos.map((cursos) => cursos);
-
+  // eslint-disable-next-line
   const filterByArea = mapeo.filter((curso) => {
     if (curso.idarea === itemCategoriaRef.current.value) {
       return true;

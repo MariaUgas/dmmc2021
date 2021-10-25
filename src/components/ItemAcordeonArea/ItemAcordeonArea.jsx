@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 //import store from "../../firebase/firebase.js";
 import { Accordion } from "react-bootstrap";
 import TablaCursos from "../TablaCursos/TablaCursos.jsx";

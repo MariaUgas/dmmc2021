@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import Header from "./components/Header/Header.jsx";
 import Impulsa from "./components/Impulsa/Impulsa.jsx";
 import Ofrecemos from "./components/Ofrecemos/Ofrecemos.jsx";
-/*import Galeria from "./components/Galeria/Galeria.jsx";*/
 import Inscribete from "./components/Inscribete/Inscribete.jsx";
 import Container from "./components/Noticia/Container.jsx";
 import CursoDiplo from "./components/CursoDiplo/CursoDiplo.jsx";
@@ -25,7 +24,6 @@ ReactDOM.render(
     <Impulsa />,
     <Ofrecemos />,
     <CursoDiplo />,
-    // <Galeria />,
     <Container />,
     <Inscribete />,
     <Social />

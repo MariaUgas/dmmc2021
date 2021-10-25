@@ -26,6 +26,7 @@ function Impulsa() {
       
       
       <div className="contenedor-textos-main">
+        
         <h2 className="titulo left2">Impulsa tu talento!!!</h2>
         <p className="parrafo parrafo-i">
           El Instituto Latinoamericano de Actualización Profesional, ILAP, nace

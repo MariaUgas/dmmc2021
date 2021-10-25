@@ -51,7 +51,7 @@ const BarNav = () => {
                         </Tooltip>
                       }
                       placement="bottom"
-                    ><a href="https://aula.institutolap.com/" target="_blank"><img src={aulaVirtual} alt="aulaVirtual" width="70px"/></a></OverlayTrigger>
+                    ><a href="https://aula.institutolap.com/" target="_blank" rel="noreferrer"><img src={aulaVirtual} alt="aulaVirtual" width="70px"/></a></OverlayTrigger>
         </li>
       </ul>
     </div>

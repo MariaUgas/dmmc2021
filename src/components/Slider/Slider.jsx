@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useDebugValue } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import Modal from "react-bootstrap/Modal";
 import Noticia from "../../components/Noticia/Noticia.jsx";
 import ilapLogo from "../../img/ilap-logo.png";
-
+// eslint-disable-next-line
 export default (props) => {
   //({noticias}) => {
 
@@ -18,6 +18,7 @@ export default (props) => {
   };
 
   const [sizeArray, setSizeArray] = useState(props.noticias.length);
+  // eslint-disable-next-line
   useEffect(() => {
     setSizeArray(props.noticias.length);
   });
@@ -38,10 +39,13 @@ export default (props) => {
           <div className="navigation-wrapper">
             <div ref={sliderRef} className="keen-slider">
               {props.noticias.map((noticia, index) => (
+                // eslint-disable-next-line
                 <div key={index} className="keen-slider__slide item-slide">
+                 
                   <img
                     className="slide-img"
                     src={noticia.image}
+                    // eslint-disable-next-line
                     className="slide-img"
                   />
                   <Button

@@ -56,7 +56,7 @@ const Pago = () => {
       setObjetoCursos(documents);
     });
   }, []);
-
+  // eslint-disable-next-line
   const [identCurso, setIdentCurso] = useState("");
   
   const handlerCargarCursos = function (e) {
@@ -66,7 +66,7 @@ const Pago = () => {
   }
 
   const mapeo = objetoCursos.map((cursos) => cursos);
-
+  // eslint-disable-next-line
   const filterByArea = mapeo.filter((curso) => {
     if (curso.idarea === itemCategoriaRef.current.value) {
       return true;
