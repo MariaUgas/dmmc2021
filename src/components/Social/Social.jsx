@@ -93,7 +93,7 @@ Av. Francisco de Miranda, Cruce con Calle <br /> Mohedano, Torre Sud America, Pi
                 </div>
             </div>
              <div className="copyright">
-                <p style={{fontSize:"1em"}}><BiCopyright />2021 Derechos reservados Instituto LAP - <span className="moodle">Soportado por Moodle.org</span> </p>
+                <p style={{fontSize:"1em"}}><BiCopyright />2021 Derechos reservados Instituto LAP </p>
             </div>  
         </div>
         
