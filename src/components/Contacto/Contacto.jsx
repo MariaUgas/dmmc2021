@@ -26,6 +26,7 @@ function Contacto() {
 
   /*** Obtener Area */
   const [areasObj, setAreasObj] = useState([]);
+  
 
   useEffect(() => {
     store.collection("areas").onSnapshot((snap) => {
@@ -37,10 +38,13 @@ function Contacto() {
     });
   }, []);
 
+  console.log("areasObj =>", areasObj);
+
   const mapaAreasObj = areasObj.map((areaObj) => {
     return areaObj.areas;
   });
 
+  console.log("mapaAreasObj =>", mapaAreasObj);
   /********  Curso **** */
 
   const [objetoCursos, setObjetoCursos] = useState([]);
@@ -53,22 +57,29 @@ function Contacto() {
       setObjetoCursos(documents);
     });
   }, []);
-
+  // eslint-disable-next-line
   const [identCurso, setIdentCurso] = useState("");
-
+  
   const handlerCargarCursos = function (e) {
     itemCategoriaRef.current.value = e.target.value;
-    setIdentCurso(itemCategoriaRef.current.value);
-  };
+    setIdentCurso(itemCategoriaRef.current.value)
+    
+  }
 
   const mapeo = objetoCursos.map((cursos) => cursos);
-
+  // eslint-disable-next-line
   const filterByArea = mapeo.filter((curso) => {
-    if (curso.idarea === itemCategoriaRef.current.value) {
+    const auxiliar = itemCategoriaRef.current.value;
+    console.log("codigoCategoria", auxiliar.substring(0,5))
+    if (curso.idarea === (auxiliar.substring(0,5))) {
       return true;
     }
   });
 
+  console.log(filterByArea);
+  
+  /*MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM*/
+  
   const handlerClick = () => {
     const contacto = [
       {
@@ -78,8 +89,8 @@ function Contacto() {
         email: emailRef.current.value,
         codigoArea: itemPaisRef.current.value,
         telefono: tlfRef.current.value,
-        categoria: itemCategoriaRef.current.value,
-        curso: itemCursoRef.current.value,
+        categoria:itemCategoriaRef.current.value,
+        curso:itemCursoRef.current.value
       },
     ];
     console.log(JSON.stringify(contacto, null, 2));
@@ -223,7 +234,7 @@ function Contacto() {
                   {mapaAreasObj[0] &&
                     mapaAreasObj[0].map((identCurso) => {
                       return (
-                        <option value={identCurso.codigo}>
+                        <option  value={identCurso.codigo +"_"+ identCurso.nombre}>
                           {identCurso.nombre}
                         </option>
                       );
@@ -242,7 +253,7 @@ function Contacto() {
                   <option value={-1}>Seleccione un Curso</option>
                   {filterByArea &&
                     filterByArea.map((a) => {
-                      return <option value={a.idcurso}>{a.curso}</option>;
+                      return <option value={a.curso}>{a.curso}</option>;
                     })}
                 </Form.Select>
               </Form.Group>
