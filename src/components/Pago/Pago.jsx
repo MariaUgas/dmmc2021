@@ -56,19 +56,21 @@ const Pago = () => {
       setObjetoCursos(documents);
     });
   }, []);
-
+  // eslint-disable-next-line
   const [identCurso, setIdentCurso] = useState("");
   
   const handlerCargarCursos = function (e) {
-    itemCategoriaRef.current.value  = e.target.value;
+    itemCategoriaRef.current.value = e.target.value;
     setIdentCurso(itemCategoriaRef.current.value)
     
   }
 
   const mapeo = objetoCursos.map((cursos) => cursos);
-
+  // eslint-disable-next-line
   const filterByArea = mapeo.filter((curso) => {
-    if (curso.idarea === itemCategoriaRef.current.value) {
+    const auxiliar = itemCategoriaRef.current.value;
+    console.log("codigoCategoria", auxiliar.substring(0,5))
+    if (curso.idarea === (auxiliar.substring(0,5))) {
       return true;
     }
   });
@@ -278,11 +280,10 @@ const Pago = () => {
             <h4>Selección de curso</h4>
             <hr />
             <Row className="mb-3">
-              <Form.Group className="mb-3" controlId="formGroupCursos">
-                <Form.Label className="etiqueta" style={{ color: "#000000" }}>Categoría</Form.Label>
+            <Form.Group className="mb-3" controlId="formGroupCursos">
+                <Form.Label className="etiqueta" style={{ color: "#000000" , fontSize:".8em"}}>Categorias</Form.Label>
                 <Form.Select
                   aria-label="Default select example"
-                  placeholder="Seleccione una categoría"
                   ref={itemCategoriaRef}
                   style={{ width: "100%", height: "50px" }}
                   onClick={handlerCargarCursos}
@@ -290,24 +291,27 @@ const Pago = () => {
                   <option value={-1}>Seleccione una Categoria</option>
                   {mapaAreasObj[0] &&
                     mapaAreasObj[0].map((identCurso) => {
-                      return <option value={identCurso.codigo}>{identCurso.nombre}</option>;
+                      return (
+                        <option  value={identCurso.codigo +"_"+ identCurso.nombre}>
+                          {identCurso.nombre}
+                        </option>
+                      );
                     })}
                 </Form.Select>
               </Form.Group>
             </Row>
             <Row className="mb-3">
               <Form.Group className="mb-3" controlId="formGroupCursos">
-                <Form.Label className="etiqueta" style={{ color: "#000000" }}>Cursos</Form.Label>
+                <Form.Label className="etiqueta" style={{ color: "#000000" , fontSize:".8em"}}>Cursos</Form.Label>
                 <Form.Select
                   aria-label="Default select example"
-                  placeholder="Seleccione un curso"
                   ref={itemCursoRef}
                   style={{ width: "100%", height: "50px" }}
                 >
                   <option value={-1}>Seleccione un Curso</option>
                   {filterByArea &&
                     filterByArea.map((a) => {
-                      return <option value={a.idcurso}>{a.curso}</option>;
+                      return <option value={a.curso}>{a.curso}</option>;
                     })}
                 </Form.Select>
               </Form.Group>
