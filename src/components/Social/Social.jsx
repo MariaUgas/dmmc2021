@@ -8,7 +8,6 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import avesidLogo from "../../img/avesidLogo.png"
 import bcvLogo from "../../img/bcvLogo.png"
-import icgLogo from "../../img/icgLogo.png"
 import aulaVirtual from "../../img/aula-virtual.png";
 
 
@@ -31,14 +30,7 @@ function Social(){
                       // eslint-disable-next-line
                     ><a href="https://aula.institutolap.com/" target="_blank" className="bcv"><img src={aulaVirtual} alt="aulaVirtual" width="80px"/></a></OverlayTrigger>
                 
-                <OverlayTrigger
-                      overlay={
-                        <Tooltip >
-                          ICG Consultores
-                        </Tooltip>
-                      }
-                      // eslint-disable-next-line
-                    ><a href="http://www.consultoresicg.com/" target="_blank" className="bcv" alt="logo-icg" rel="noreferrer"><img src={icgLogo} width="60px"/></a></OverlayTrigger>
+               
                      <OverlayTrigger
                       overlay={
                         <Tooltip >
@@ -64,40 +56,41 @@ function Social(){
                           Encuentranos en Facebook
                         </Tooltip>
                       }
-                    ><a href="http://www.facebook.com/institutolap" target="_blank" className="twitter" rel="noreferrer"><GrFacebook style={{fill:"#2c303b", fontSize:"40px"}}/></a></OverlayTrigger>
+                    ><a href="http://www.facebook.com/institutolap" target="_blank" className="twitter" rel="noreferrer"><GrFacebook style={{fill:"white", fontSize:"40px"}}/></a></OverlayTrigger>
                      <OverlayTrigger
                       overlay={
                         <Tooltip >
                           Siguenos en Twitter
                         </Tooltip>
                       }
-                    ><a href="http://www.twitter.com/institutolap" target="_blank" className="twitter" rel="noreferrer"><AiOutlineTwitter style={{fill:"#2c303b", fontSize:"45px"}}/></a></OverlayTrigger>
+                    ><a href="http://www.twitter.com/institutolap" target="_blank" className="twitter" rel="noreferrer"><AiOutlineTwitter style={{fill:"white", fontSize:"45px"}}/></a></OverlayTrigger>
                      <OverlayTrigger
                       overlay={
                         <Tooltip >
                           Siguenos en Instagram
                         </Tooltip>
                       }
-                    ><a href="http://www.instagram.com/institutolap" target="_blank" className="twitter" rel="noreferrer"><GrInstagram style={{fill:"#2c303b", fontSize:"40px"}}/></a></OverlayTrigger>
+                    ><a href="http://www.instagram.com/institutolap_ve" target="_blank" className="twitter" rel="noreferrer"><GrInstagram style={{fill:"white", fontSize:"40px"}}/></a></OverlayTrigger>
                      <OverlayTrigger
                       overlay={
                         <Tooltip >
                           Contáctanos por WhatsApp
                         </Tooltip>
                       }
-                    ><a href="http://wa.me/584167051749/?text=ILAP. %20Contacto%20desde%20el%20post" target="_blank" className="twitter" rel="noreferrer"><AiOutlineWhatsApp style={{fill:"#2c303b", fontSize:"45px"}}/></a></OverlayTrigger>
+                    ><a href="http://wa.me/584167051749/?text=ILAP. %20Contacto%20desde%20el%20post" target="_blank" className="twitter" rel="noreferrer"><AiOutlineWhatsApp style={{fill:"white", fontSize:"45px"}}/></a></OverlayTrigger>
                 </div>
                 <div className="direccion" width="33%">
                   <p>
                   <strong>Dirección:</strong> <br />
 
-Av. Francisco de Miranda, Cruce con Calle <br /> Mohedano, Torre Sud America, Piso 11, <br /> Ofic. 11-A (Diagonal a la Torre Europa), <br /> El Rosal, Caracas. Teléfonos 58 212 9514689 <br /> y 58 212 9510794
+Av. Francisco de Miranda, Cruce con Calle <br /> Mohedano, Torre Sud America, Piso 11, <br /> Ofic. 11-A (Diagonal a la Torre Europa), <br /> El Rosal, Caracas. Teléfonos 58 212 9512689 <br /> y 58 212 9516337
  
                   </p>
                 </div>
+                <hr />
             </div>
              <div className="copyright">
-                <p style={{fontSize:"1em"}}><BiCopyright />2021 Derechos reservados Instituto LAP</p>
+                <p style={{fontSize:"1em"}}><BiCopyright />2022 Derechos reservados ICG Consultores <br></br>RIF: J406630632</p>
             </div>  
         </div>
         

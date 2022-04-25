@@ -9,7 +9,8 @@
     "@testing-library/user-event": "^12.8.3",
     "@trendmicro/react-radio": "^4.0.0-alpha",
     "bootstrap": "^5.1.1",
-    "firebase": "^8.8.1",
+    "firebase": "^9.5.0",
+    "formik": "^2.2.9",
     "input": "^1.0.1",
     "keen-slider": "^5.5.1",
     "react": "^17.0.2",
@@ -20,7 +21,8 @@
     "suneditor": "^2.41.3",
     "suneditor-react": "^3.3.0",
     "uuidv4": "^6.2.11",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",

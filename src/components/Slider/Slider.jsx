@@ -1,12 +1,14 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import Modal from "react-bootstrap/Modal";
-import Noticia from "../../components/Noticia/Noticia.jsx";
-import ilapLogo from "../../img/ilap-logo.png";
+import Noticia from "../Noticia/Noticia.jsx";
+import icglogo from "../../img/icg_logo.jpg";
 // eslint-disable-next-line
 export default (props) => {
+  
   //({noticias}) => {
 
   const [show, setShow] = useState(null);
@@ -41,12 +43,12 @@ export default (props) => {
               {props.noticias.map((noticia, index) => (
                 // eslint-disable-next-line
                 <div key={index} className="keen-slider__slide item-slide">
-                 
+                 {
+                 // eslint-disable-next-line max-len
+                 }
                   <img
                     className="slide-img"
                     src={noticia.image}
-                    // eslint-disable-next-line
-                    className="slide-img"
                   />
                   <Button
                     variant="outline-light"
@@ -71,8 +73,8 @@ export default (props) => {
                   centered
                 >
                   <Modal.Header closeButton>
-                    <Modal.Title id="example-custom-modal-styling-title" style={{color:"#f38115", fontSize:"1.8em"}}>
-                    <img src={ilapLogo} alt="ilapLogo" width="100px" margin-right="200px"/>NOTICIA DEL DIA
+                    <Modal.Title id="example-custom-modal-styling-title" style={{fontSize:"1.8em"}}>
+                    <img src={icglogo} alt="icglogo" width="100px" margin-right="200px"/>NOTICIA DEL DIA
                     </Modal.Title>
                   </Modal.Header>
                   <Modal.Body>

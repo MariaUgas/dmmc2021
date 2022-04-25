@@ -19,10 +19,10 @@ const BarNav = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto" style={{textAlign:"center"}} >
-                        <Nav.Link href="#cursos-id">Cursos</Nav.Link>
-                        <Nav.Link href="#noticia-id">Noticia</Nav.Link>
+                        <Nav.Link href="#somos">Quienes somos</Nav.Link>
+                        <Nav.Link href="#servicios">Servicios</Nav.Link>
                         <Nav.Link href="#contacto-id">Contacto</Nav.Link>
-                        <Nav.Link href="#inscribete-id">Notificación de Pago</Nav.Link>
+                        
                         <Nav.Link href="https://aula.institutolap.com/" target="_blank">Aula virtual</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
@@ -32,16 +32,13 @@ const BarNav = () => {
     <div class="container-nav">
       <ul>
         <li>
-          <a href="#cursos-id">Cursos</a>
+          <a href="#somos">Quienes somos</a>
         </li>
         <li>
-          <a href="#noticia-id">Noticia</a>
+          <a href="#servicios">Servcios</a>
         </li>
         <li>
           <a href="#contacto-id">Contacto</a>
-        </li>
-        <li>
-          <a href="#inscribete-id">Notificación de pago</a>
         </li>
         <li>
         <OverlayTrigger

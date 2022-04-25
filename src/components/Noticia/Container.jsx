@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import store from "../../firebase/firebase.js";
-import Slider from "../Slider/Slider.jsx";
+import Slider from "./../Slider/Slider.jsx";
 
 export const Container = () => {
   const [noticias, setNoticias] = useState([]);
@@ -15,9 +15,10 @@ export const Container = () => {
         snap.forEach((doc) => {
           documents.push({ id: doc.id, ...doc.data() });
         });
+        
         setNoticias(documents);
       });
-  }, []);
+  }, [noticias]);
   
 
   return  <Slider noticias={noticias} />;

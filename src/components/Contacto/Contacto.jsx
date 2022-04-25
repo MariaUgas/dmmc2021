@@ -1,10 +1,11 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
+import { Formik } from "formik";
 import { Col, Form, Row } from "react-bootstrap";
 import { RadioButton, RadioGroup } from "@trendmicro/react-radio";
 import Button from "react-bootstrap/Button";
-import store from "../../firebase/firebase.js";
+
 
 function Contacto() {
   const nombreRef = useRef();
@@ -15,60 +16,8 @@ function Contacto() {
   const itemCursoRef = useRef();
   const tipoPersonaRef = useRef();
 
-  /*const handlerOnChange=()=> {
-    tlfRef.value = this.value;
-    if((this.value).trim() !== '') {
-      tlfRef.disabled = false;
-    } else {
-      tlfRef.disabled = true
-    }
-  }*/
-
-  /*** Obtener Area */
-  const [areasObj, setAreasObj] = useState([]);
-
-  useEffect(() => {
-    store.collection("areas").onSnapshot((snap) => {
-      const documents = [];
-      snap.forEach((doc) => {
-        documents.push({ id: doc.id, ...doc.data() });
-      });
-      setAreasObj(documents);
-    });
-  }, []);
-
-  const mapaAreasObj = areasObj.map((areaObj) => {
-    return areaObj.areas;
-  });
-
-  /********  Curso **** */
-
-  const [objetoCursos, setObjetoCursos] = useState([]);
-  useEffect(() => {
-    store.collection("cursos").onSnapshot((snap) => {
-      const documents = [];
-      snap.forEach((doc) => {
-        documents.push({ id: doc.id, ...doc.data() });
-      });
-      setObjetoCursos(documents);
-    });
-  }, []);
-  // eslint-disable-next-line
-  const [identCurso, setIdentCurso] = useState("");
-
-  const handlerCargarCursos = function (e) {
-    itemCategoriaRef.current.value = e.target.value;
-    setIdentCurso(itemCategoriaRef.current.value);
-  };
-
-  const mapeo = objetoCursos.map((cursos) => cursos);
-  // eslint-disable-next-line
-  const filterByArea = mapeo.filter((curso) => {
-    if (curso.idarea === itemCategoriaRef.current.value) {
-      return true;
-    }
-  });
-
+  
+  
   const handlerClick = () => {
     const contacto = [
       {
@@ -78,8 +27,8 @@ function Contacto() {
         email: emailRef.current.value,
         codigoArea: itemPaisRef.current.value,
         telefono: tlfRef.current.value,
-        categoria: itemCategoriaRef.current.value,
-        curso: itemCursoRef.current.value,
+        categoria:itemCategoriaRef.current.value,
+        curso:itemCursoRef.current.value
       },
     ];
     console.log(JSON.stringify(contacto, null, 2));
@@ -100,39 +49,113 @@ function Contacto() {
     setTipoPersona(tipoPersonaRef.current.value);
   };
 
+ 
 
   
   return (
+
+    
     <footer id="contacto">
       <div className="contenedor">
         <div className="reductor">
           <h1 className="titulo">
             Contáctanos
           </h1>
-          <Form>
+          <>
+          <Formik
+
+            initialValues={{
+              nombre:"",
+              email:"",
+              area:"",
+              phone:""
+              
+            }}
+
+            validate={(valores) => {
+              let errores = {}
+              
+              //VALIDACION PARA EL NOMBRE
+              if(!valores.nombre){
+                errores.nombre = "Debe ingresar un nombre";
+              } else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)){
+                errores.nombre = "El nombre solo puede contener letras y espacios"
+              }
+              
+              //VALIDACION PARA EL CORREO
+              if(!valores.email){
+                errores.email = "Debe ingresar un correo electrónico";
+              } else if(!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.email)){
+                errores.email = "El correo debe contener al menos @ y punto para ser valido"
+              }
+              
+              //VALIDACION PARA EL CODIGO DE PAIS
+              if(!valores.area){
+                errores.area = "Debe seleccionar un código de país";
+              } 
+              
+              //VALIDACION PARA EL NUMERO DE TELEFONO
+              if(!valores.phone){
+                errores.phone = "Debe ingresar un numero telefonico";
+              } else if(!/^[0-9]{10}$/.test(valores.phone)){
+                errores.phone = "Debe ingresar un número de teléfono válido"
+              }
+
+              return errores;
+            }}
+            
+            onSubmit={(valores, {resetForm}) => {
+              resetForm();
+              console.log("formulario enviado")
+            }}
+            >
+            
+            {( {values, errors, touched, handleSubmit, handleChange, handleBlur} ) => (
+
+          <Form onSubmit={handleSubmit}>
+            
           <Row>
               <RadioGroup name="tipoPersona" ref={tipoPersonaRef} >
-              <h4>Datos del alumno</h4>
-            <hr />
+          
                 <div className="row">
                   <div className="col-xs-12 col-sm-4">
-                    <RadioButton value="persona" className="etiqueta" checked={tipoPersona === "persona"} onClick={handlerTipoPersona} style={{color:"black"}}>Persona</RadioButton>
+                    <RadioButton 
+                    value="persona" 
+                    className="etiqueta" 
+                    checked={tipoPersona === "persona"} 
+                    onClick={handlerTipoPersona} 
+                    style={{color:"black"}}
+                    
+                    >Persona</RadioButton>
                   </div>
                   <div className="col-xs-12 col-sm-6">
-                    <RadioButton value="empresa" className="etiqueta" checked={tipoPersona === "empresa"} onClick={handlerTipoPersona} style={{color:"black"}}>Empresa</RadioButton>
+                    <RadioButton 
+                    value="empresa" 
+                    className="etiqueta" 
+                    name="tipoPersona" 
+                    checked={tipoPersona === "empresa"} 
+                    onClick={handlerTipoPersona} 
+                    style={{color:"black"}}
+                   
+                    >Empresa</RadioButton>
                   </div>
                 </div>
               </RadioGroup>
             </Row>
             <br />
-            <Form.Group className="mb-2" controlId="formGroupNombre">
-              <Form.Label className="etiqueta" style={{ color: "#000000", fontSize:".8em"}}>Nombre</Form.Label>
+            <Form.Group className="mb-2" controlId="formGroupNombre" required="true" >
+              <Form.Label for="validationCustom01" className="form-label" style={{ color: "#000000", fontSize:".8em"}} required id="validationCustom01">Nombre</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Ingrese nombre completo"
                 ref={nombreRef}
                 style={{ width: "100%", height: "50px" }}
+                name="nombre"
+                value={values.nombre}
+                onChange={handleChange}
+                onBlur={handleBlur}
               />
+              {touched.nombre && errors.nombre && <div className="error" style={{color:"red", fontWeight:"bold", fontSize:"small"}}>{errors.nombre}</div>}
             </Form.Group>
             <Form.Group className="mb-2" controlId="formGroupEmail">
               <Form.Label className="etiqueta" style={{ color: "#000000", fontSize:".8em" }}>Email</Form.Label>
@@ -141,7 +164,12 @@ function Contacto() {
                 placeholder="Ingrese email Ejemplo abc@xyz.xx"
                 ref={emailRef}
                 style={{ width: "100%", height: "50px" }}
+                name="email"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
               />
+              {touched.email && errors.email && <div className="error" style={{color:"red", fontWeight:"bold", fontSize:"small"}}>{errors.email}</div>}
             </Form.Group>
             <Row className="mb-2 resp-cont">
               <Form.Group as={Col} controlId="formGrroupCodigo" md={4}>
@@ -154,7 +182,7 @@ function Contacto() {
                   }}
                   className="etiqueta"
                 >
-                  Código de area
+                  Código de país
                 </Form.Label >
                 <Form.Select
                   aria-label="Default select example"
@@ -164,6 +192,10 @@ function Contacto() {
                     marginTop: "8px"
                   }}
                   ref={itemPaisRef} /*onChange={()=>handlerOnChange()}*/
+                  name="area"
+                  value={values.area}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                 >
                   <option value="">País</option>
                   <option value="+58" className="ven">
@@ -196,67 +228,39 @@ function Contacto() {
                   <option value="+55">Uruguay (+55)</option>
                   <option value="+">Otros</option>
                 </Form.Select>
+                {touched.area && errors.area && <div className="error" style={{color:"red", fontWeight:"bold", fontSize:"small"}}>{errors.area}</div>}
               </Form.Group>
               <Form.Group as={Col} controlId="formGroupTlf">
                 <Form.Label className="etiqueta" style={{ color: "#000000" , fontSize:".8em"}}>Teléfono</Form.Label>
                 <Form.Control
-                  type="text"
+                  type="number"
                   placeholder="Ingrese teléfono. Ejemplo 1234567"
                   ref={tlfRef}
                   style={{ width: "100%", height: "50px" }}
+                  name="phone"
+                  value={values.phone}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                 />
+                {touched.phone && errors.phone && <div className="error" style={{color:"red", fontWeight:"bold", fontSize:"small"}}>{errors.phone}</div>}
               </Form.Group>
              
             </Row>
-            <h4>Selección de curso</h4>
-            <hr />
-            <Row className="mb-3">
-              <Form.Group className="mb-3" controlId="formGroupCursos">
-                <Form.Label className="etiqueta" style={{ color: "#000000" , fontSize:".8em"}}>Categorias</Form.Label>
-                <Form.Select
-                  aria-label="Default select example"
-                  ref={itemCategoriaRef}
-                  style={{ width: "100%", height: "50px" }}
-                  onClick={handlerCargarCursos}
-                >
-                  <option value={-1}>Seleccione una Categoria</option>
-                  {mapaAreasObj[0] &&
-                    mapaAreasObj[0].map((identCurso) => {
-                      return (
-                        <option value={identCurso.codigo}>
-                          {identCurso.nombre}
-                        </option>
-                      );
-                    })}
-                </Form.Select>
-              </Form.Group>
-            </Row>
-            <Row className="mb-3">
-              <Form.Group className="mb-3" controlId="formGroupCursos">
-                <Form.Label className="etiqueta" style={{ color: "#000000" , fontSize:".8em"}}>Cursos</Form.Label>
-                <Form.Select
-                  aria-label="Default select example"
-                  ref={itemCursoRef}
-                  style={{ width: "100%", height: "50px" }}
-                >
-                  <option value={-1}>Seleccione un Curso</option>
-                  {filterByArea &&
-                    filterByArea.map((a) => {
-                      return <option value={a.idcurso}>{a.curso}</option>;
-                    })}
-                </Form.Select>
-              </Form.Group>
-            </Row>
-          </Form>
-          <div className="btnContacto">
+         
+            <div className="btnContacto">
             <Button
+              type="submit"
               variant="primary"
               style={{ background: "#2c303b" }}
               onClick={() => handlerClick()}
-            >
+              >
               Enviar
             </Button>
           </div>
+          </Form>
+            )}
+          </Formik>
+          </>
         </div>
       </div>
     </footer>

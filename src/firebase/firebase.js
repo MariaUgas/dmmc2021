@@ -1,15 +1,15 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
-import "firebase/auth";
+import firebase from 'firebase/compat/app';
+import "firebase/compat/firestore";
+import "firebase/compat/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCq5KskdpMi8_xy3RFGu7g-P5vZLS1lJZ0",
-    authDomain: "ilap-noticias.firebaseapp.com",
-    projectId: "ilap-noticias",
-    storageBucket: "ilap-noticias.appspot.com",
-    messagingSenderId: "1075333268237",
-    appId: "1:1075333268237:web:f541efef7cbe9bb473a644"
-  };
+  apiKey: "AIzaSyBh-_NSaCsT2DysHxS8iPbHnhMGXylAYmM",
+  authDomain: "web-icg.firebaseapp.com",
+  projectId: "web-icg",
+  storageBucket: "web-icg.appspot.com",
+  messagingSenderId: "968818496641",
+  appId: "1:968818496641:web:b2cfc616c1cc14ed98a980"
+};
   // Initialize Firebase
   const fire = firebase.initializeApp(firebaseConfig);
   const store = fire.firestore();

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import BarNav from "../BarNav/BarNav";
-import ilaplogo from "../../img/ilap-logo.png";
+import icglogo from "../../img/icg_logo.jpg";
 
 function Header() {
   return (
@@ -9,10 +9,10 @@ function Header() {
         <BarNav />
 
         <div className="textos-hero">
-          <img src={ilaplogo} alt="logo"></img>
-          <h1>Instituto Latinoamericano de Actualización Profesional</h1>
+          <img src={icglogo} alt="logo"></img>
+          <h1>I C G Consultores Empresariales</h1>
           <p>
-            <span>Excelencia</span> en enseñanza y aprendizaje
+            <span>Excelencia</span> en asesoria financiera
           </p>
           <a href="#media-id">
             <input type="button" value="Ven con Nosotros" className="cta cta1" />
